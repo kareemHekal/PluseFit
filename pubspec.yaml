@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: any
   fluttertoast: any
   flutter_screenutil: any
+  flutter_lints: ^5.0.0
   dartz: any
   cached_network_image: any
   flutter_bloc: any
