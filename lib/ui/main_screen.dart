@@ -5,6 +5,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.red, body: Text("PluseFit"));
+    return Scaffold(
+        backgroundColor: Colors.white, body: Center(child: Text("PluseFit")));
   }
 }
