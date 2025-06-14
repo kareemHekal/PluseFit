@@ -12,7 +12,5 @@ jobs:
       - uses: subosito/flutter-action@v1.5.3
       - name: Install packages
         run: flutter pub get
-      - name: Run generator
-        run: flutter pub run build_runner build
       - name: Run test
         run: flutter test test

@@ -29,7 +29,7 @@ class CacheHelper {
   static T? getData<T>(String key) {
     if (_sharedPrefs == null) return null;
 
-    if (T == String || T == null) {
+    if (T == String) {
       return _sharedPrefs!.getString(key) as T?;
     } else if (T == bool) {
       return _sharedPrefs!.getBool(key) as T?;
