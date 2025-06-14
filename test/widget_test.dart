@@ -5,6 +5,6 @@ void main() {
     var x = 5;
     var y = 6;
     var result = x + y;
-    expect(result, 15);
+    expect(result, 11);
   });
 }
