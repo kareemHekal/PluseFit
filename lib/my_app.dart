@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       routes: {
-        RouteManager.mainScreen: (context) => const mainScreen(),
+        RouteManager.mainScreen: (context) => const MainScreen(),
       },
       initialRoute: RouteManager.mainScreen,
     );
