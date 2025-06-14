@@ -39,7 +39,6 @@ dependencies:
   cupertino_icons: any
   fluttertoast: any
   flutter_screenutil: any
-  flutter_lints: ^4.0.0
   dartz: any
   cached_network_image: any
   flutter_bloc: any
@@ -68,6 +67,8 @@ dependencies:
   smooth_page_indicator: ^1.2.1
   logger: ^2.5.0
   badges: ^3.1.2
+  flutter_lints: ^5.0.0
+
   animation_list: ^3.1.0
   auto_size_text: ^3.0.0
   mocktail: ^1.0.4
@@ -95,7 +96,6 @@ flutter_launcher_icons:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
