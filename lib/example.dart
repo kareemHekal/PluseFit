@@ -1,5 +1,7 @@
 import 'package:fit_zone/core/resuable_comp/auth_background_cuver.dart';
+import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:flutter/material.dart';
+
 import 'core/resuable_comp/blurred_container.dart';
 import 'core/resuable_comp/validator.dart';
 
@@ -31,7 +33,7 @@ class Example extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: const Text('Next'),
+                    child: Text('Next', style: AppTextStyle.regular16),
                   ),
                 ),
                 OutlinedButton(onPressed: () {}, child: const Text("dadsada")),
