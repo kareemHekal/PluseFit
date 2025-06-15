@@ -1,7 +1,9 @@
 import 'package:fit_zone/core/resuable_comp/auth_background_cuver.dart';
+import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:flutter/material.dart';
 
+import 'core/resuable_comp/back_icon.dart';
 import 'core/resuable_comp/blurred_container.dart';
 import 'core/resuable_comp/validator.dart';
 
@@ -11,7 +13,18 @@ class Example extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthBackgroundCuver(
-      widget: Center(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: Image.asset(
+          height: 48,
+          width: 70,
+          AssetsManager.imagesIconAppIcon,
+        ),
+        leading: BackIcon(
+          onPressed: () {},
+        ),
+      ),
+      bodyWidget: Center(
         child: BlurredContainer(
           child: Padding(
             padding: const EdgeInsets.all(16),
