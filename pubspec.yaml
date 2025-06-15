@@ -44,12 +44,10 @@ dependencies:
   flutter_bloc: any
   pretty_dio_logger: ^1.4.0
   provider: any
-  injectable_generator: ^2.7.0
   bloc: any
   get_it: ^8.0.3
   injectable: ^2.5.0
   shimmer:
-  build_runner: ^2.4.15
   webview_flutter: ^4.11.0
   flutter_svg: ^2.1.0
   flutter_otp_text_field: any
@@ -82,6 +80,8 @@ dev_dependencies:
   json_serializable: ^6.9.5
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^5.0.0
+  injectable_generator:
+  build_runner:
 
 flutter_launcher_icons:
   android: true

@@ -1,6 +1,5 @@
 import 'package:fit_zone/core/resuable_comp/auth_background_cuver.dart';
 import 'package:flutter/material.dart';
-
 import 'core/resuable_comp/blurred_container.dart';
 import 'core/resuable_comp/validator.dart';
 
