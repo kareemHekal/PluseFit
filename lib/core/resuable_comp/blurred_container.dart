@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:flutter/material.dart';
 
 class BlurredContainer extends StatelessWidget {
@@ -21,11 +20,11 @@ class BlurredContainer extends StatelessWidget {
     return ClipRRect(
       borderRadius: effectiveRadius,
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
+        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: ColorManager.white70.withValues(alpha: 0.1),
+            color: const Color(0x1A242424).withValues(alpha: 0.001),
             borderRadius: effectiveRadius,
           ),
           child: child,
