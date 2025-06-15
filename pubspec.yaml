@@ -136,3 +136,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_assets:
+  assets_path: assets/
+  output_path: lib/core/utils/
+  filename: assets_manager.dart
+  field_prefix:
+  classname: AssetsManager
