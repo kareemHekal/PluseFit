@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class ColorManager {
   static const Color primaryColor = Color(0xffFF4100);
-  static const Color secondaryColor = Colors.pink;
-  static const Color backgroundColor = Colors.white;
+  static const Color onPrimaryColor = Color(0xffFFFFFF);
+  static const Color secondaryColor = Color(0xffFF6A00);
+  static const Color onSecondaryColor = Colors.black;
+  static const Color tertiaryColor = Color(0xffD3D3D3);
+  static const Color errorBorderColor = Colors.redAccent;
+
+  static const Color backgroundColor = Colors.transparent;
 
   //==================================== Const Colors ====================================//
   static const white = Color(0xffF9F9F9);
