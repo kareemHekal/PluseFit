@@ -24,7 +24,7 @@ class BlurredContainer extends StatelessWidget {
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: const Color(0xff2424241A).withValues(alpha: 0.001),
+            color: const Color(0x1A242424).withValues(alpha: 0.001),
             borderRadius: effectiveRadius,
           ),
           child: child,

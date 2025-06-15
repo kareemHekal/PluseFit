@@ -35,7 +35,7 @@ class Example extends StatelessWidget {
                     child: const Text('Next'),
                   ),
                 ),
-                OutlinedButton(onPressed: () {}, child: Text("dadsada")),
+                OutlinedButton(onPressed: () {}, child: const Text("dadsada")),
               ],
             ),
           ),
