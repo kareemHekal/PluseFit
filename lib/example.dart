@@ -13,17 +13,7 @@ class Example extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthBackgroundCuver(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Image.asset(
-          height: 48,
-          width: 70,
-          AssetsManager.imagesIconAppIcon,
-        ),
-        leading: BackIcon(
-          onPressed: () {},
-        ),
-      ),
+      backButton: true,
       bodyWidget: Center(
         child: BlurredContainer(
           child: Padding(

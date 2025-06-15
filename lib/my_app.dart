@@ -1,14 +1,7 @@
-// ignore_for_file: avoid_print
-
 import 'package:easy_localization/easy_localization.dart';
-<<<<<<< HEAD
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
-=======
-import 'package:fit_zone/example.dart';
->>>>>>> development
 import 'package:fit_zone/ui/main_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'config/theme/app_theme.dart';
 import 'core/utils/routes_manager.dart';
 
@@ -28,11 +21,7 @@ class MyApp extends StatelessWidget {
         RouteManager.mainScreen: (context) => const MainScreen(),
       },
       // initialRoute: RouteManager.mainScreen,
-<<<<<<< HEAD
       home: const RegisterView(),
-=======
-      home: const Example(),
->>>>>>> development
     );
   }
 }

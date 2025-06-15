@@ -1,31 +1,40 @@
+import 'package:fit_zone/core/resuable_comp/back_icon.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
+import 'package:fit_zone/core/utils/config.dart';
 import 'package:flutter/material.dart';
 
 class AuthBackgroundCuver extends StatelessWidget {
   final Widget bodyWidget;
-  final AppBar? appBar;
-
-  const AuthBackgroundCuver({super.key, this.appBar, required this.bodyWidget});
+  final bool backButton;
+  const AuthBackgroundCuver(
+      {super.key, required this.backButton, required this.bodyWidget});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // Background image behind everything including AppBar
-        Positioned.fill(
-          child: Image.asset(
-            AssetsManager.imagesAuthBackground,
-            fit: BoxFit.cover,
+    Config().init(context);
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AssetsManager.imagesAuthBackground),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          leading: backButton
+              ? BackIcon(onPressed: () => Navigator.pop(context))
+              : null,
+          title: Image.asset(
+            AssetsManager.imagesIconAppIcon,
+            fit: BoxFit.contain,
+            height: Config.screenHight! * 0.05,
+            width: Config.screenWidth! * 0.5,
           ),
         ),
-
-        // Transparent scaffold with optional AppBar and your widget
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: appBar,
-          body: bodyWidget,
-        ),
-      ],
+        body: bodyWidget,
+      ),
     );
   }
 }
