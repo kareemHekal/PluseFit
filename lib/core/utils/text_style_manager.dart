@@ -56,6 +56,11 @@ class AppTextStyle {
     fontWeight: FontWeight.w600,
     fontSize: 12,
   );
+  static const TextStyle semiBold14 = TextStyle(
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w800,
+    fontSize: 14,
+  );
 
   static const TextStyle semiBold20 = TextStyle(
     fontFamily: 'Inter',
