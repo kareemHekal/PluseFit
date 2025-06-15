@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class AuthBackgroundCuver extends StatelessWidget {
   final Widget widget;
-  const AuthBackgroundCuver({super.key, required this.widget});
+  final AppBar? appBar;
+
+  const AuthBackgroundCuver({super.key, this.appBar, required this.widget});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,8 @@ class AuthBackgroundCuver extends StatelessWidget {
         ),
         color: Colors.transparent,
       ),
-      child: Scaffold(backgroundColor: Colors.transparent, body: widget),
+      child: Scaffold(
+          backgroundColor: Colors.transparent, appBar: appBar, body: widget),
     );
   }
 }
