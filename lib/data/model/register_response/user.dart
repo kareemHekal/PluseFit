@@ -1,5 +1,5 @@
-class UserModel {
-  UserModel({
+class User {
+  User({
     this.firstName,
     this.lastName,
     this.email,
@@ -11,9 +11,10 @@ class UserModel {
     this.goal,
     this.photo,
     this.id,
-    this.createdAt,});
+    this.createdAt,
+  });
 
-  UserModel.fromJson(dynamic json) {
+  User.fromJson(dynamic json) {
     firstName = json['firstName'];
     lastName = json['lastName'];
     email = json['email'];
@@ -56,5 +57,4 @@ class UserModel {
     map['createdAt'] = createdAt;
     return map;
   }
-
 }
