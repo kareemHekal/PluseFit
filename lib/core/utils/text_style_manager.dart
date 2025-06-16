@@ -17,7 +17,7 @@ class AppTextStyle {
 
   // Helper method (Named Parameters)
   static TextStyle _style({required double size, required FontWeight weight}) =>
-      GoogleFonts.balooThambi2(fontSize: size, fontWeight: weight);
+      GoogleFonts.balooThambi2(fontSize: size, fontWeight: weight,color: ColorManager.white);
 
   // Regular
   static final regular10 = _style(size: s10, weight: FontWeight.w400);
