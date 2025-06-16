@@ -1,1 +1,18 @@
-{}
+{
+  "emailCantBeEmpty": "Email can't be empty",
+  "enterValidEmailAddress": "Enter a valid email address",
+  "passwordCantBeEmpty": "Password can't be empty",
+  "passwordMustBeAtLeast6Characters": "Password must be at least 6 characters",
+  "passwordMustContainAtLeastOneUppercaseLetter": "Password must contain at least one uppercase letter",
+  "passwordMustContainAtLeastOneNumber": "Password must contain at least one number",
+  "passwordMustContainAtLeastOneSpecialCharacter": "Password must contain at least one special character",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "userNameCannotBeEmpty": "Username cannot be empty",
+  "userNameCannotBeMoreThan20Characters": "Username cannot be more than 20 characters",
+  "firstNameCannotBeEmpty": "First name cannot be empty",
+  "firstNameCannotBeMoreThan20Characters": "First name cannot be more than 20 characters",
+  "lastNameCannotBeEmpty": "Last name cannot be empty",
+  "lastNameCannotBeMoreThan20Characters": "Last name cannot be more than 20 characters",
+  "phoneNumberCannotBeEmpty": "Phone number cannot be empty",
+  "phoneNumberCannotBeMoreThan20Characters": "Phone number cannot be more than 20 characters"
+}
