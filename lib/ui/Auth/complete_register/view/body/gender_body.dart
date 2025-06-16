@@ -61,9 +61,13 @@ class GenderBody extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {
-                            cubit.doIntent(UpdateIndex(isBackButton: false));
-                          },
+                          onPressed: cubit.user.gender == 'male' ||
+                                  cubit.user.gender == 'female'
+                              ? () {
+                                  cubit.doIntent(
+                                      UpdateIndex(isBackButton: false));
+                                }
+                              : null,
                           child: Text(AppStrings.next),
                         ),
                       ),

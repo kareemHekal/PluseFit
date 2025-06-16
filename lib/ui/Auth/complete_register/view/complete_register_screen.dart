@@ -47,6 +47,7 @@ class CompleteRegisterScreen extends StatelessWidget {
                     CircularPercentIndicator(
                       radius: 30,
                       animation: true,
+                      animateFromLastPercent: true,
                       backgroundColor: Colors.transparent,
                       lineWidth: 5.0,
                       percent: cubit.currentIndex / 6,
