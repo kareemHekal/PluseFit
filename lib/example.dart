@@ -1,28 +1,21 @@
-import 'package:fit_zone/core/resuable_comp/auth_background_cuver.dart';
-import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:flutter/material.dart';
 
-import 'core/resuable_comp/back_icon.dart';
-import 'core/resuable_comp/blurred_container.dart';
-import 'core/resuable_comp/validator.dart';
+import 'core/reusable_comp/auth_background_cuver.dart';
+import 'core/reusable_comp/back_icon.dart';
+import 'core/reusable_comp/blurred_container.dart';
+import 'core/utils/validator.dart';
 
 class Example extends StatelessWidget {
   const Example({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return AuthBackgroundCuver(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Image.asset(
-          height: 48,
-          width: 70,
-          AssetsManager.imagesIconAppIcon,
-        ),
-        leading: BackIcon(
-          onPressed: () {},
-        ),
+    return AuthBackgroundCover(
+      backIcon: BackIcon(
+        // optionally, set an `onPressed` callback
+        // if you didn't set it the default behavior will be Navigator.pop
+        onPressed: () {},
       ),
       bodyWidget: Center(
         child: BlurredContainer(

@@ -8,6 +8,7 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
       appBarTheme: const AppBarTheme(
           centerTitle: true, elevation: 0, backgroundColor: Colors.transparent),
+      scaffoldBackgroundColor: Colors.transparent,
       colorScheme: ColorScheme.fromSeed(
         seedColor: ColorManager.primaryColor,
         primary: ColorManager.primaryColor,
