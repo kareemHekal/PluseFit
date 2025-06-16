@@ -32,6 +32,7 @@ class CompleteRegisterScreen extends StatelessWidget {
               const AgeBody(),
               const WeightBody(),
               const HeightBody(),
+              // add here you other pages
             ];
 
             return AuthBackgroundCover(

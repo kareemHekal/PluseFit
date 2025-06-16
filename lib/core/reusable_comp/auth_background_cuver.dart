@@ -23,6 +23,7 @@ class AuthBackgroundCover extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
+          forceMaterialTransparency: true,
           leading: backIcon,
           title: Image.asset(
             AssetsManager.imagesIconAppIcon,
