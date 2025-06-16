@@ -19,10 +19,14 @@ class CustomWheelSlider extends StatelessWidget {
     return WheelSlider.number(
       perspective: 0.003,
       totalCount: totalCount,
-      selectedNumberStyle: AppTextStyle.extraBold30
+      isInfinite: false,
+      animationType: Curves.bounceIn,
+      itemSize: 55,
+      squeeze: .91,
+      selectedNumberStyle: AppTextStyle.extraBold25
           .copyWith(color: Theme.of(context).colorScheme.primary),
       initValue: initialValue,
-      unSelectedNumberStyle: AppTextStyle.extraBold25,
+      unSelectedNumberStyle: AppTextStyle.extraBold20,
       currentIndex: initialValue,
       onValueChanged: (val) {
         onChanged(val as int);

@@ -3,16 +3,16 @@ class AppStrings {
   static String get male => "male".tr();
   static String get female => "female".tr();
   static String get next => "next".tr();
-
   static String get year => "Year".tr();
 
-  static String get whatIsYourHeight => "whatIsYourHeight".tr();
+  static String get cm => "cm".tr();
 
+  static String get kg => "kg".tr();
+  static String get whatIsYourHeight => "whatIsYourHeight".tr();
   static String get whatIsYourWeight => "whatIsYourWeight".tr();
 
   static String get thisHelpsUsCreateYourPersonalizedPlan =>
       "thisHelpsUsCreateYourPersonalizedPlan".tr();
-
   static String get howOldAreYou => "howOldAreYou".tr();
   static String get tellUsAboutYourself => "tellUsAboutYourself".tr();
   static String get weNeedToKnowYourGender => "weNeedToKnowYourGender".tr();
