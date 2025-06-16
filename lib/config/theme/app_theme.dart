@@ -75,8 +75,8 @@ class AppTheme {
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorManager.primaryColor,
           foregroundColor: ColorManager.onPrimaryColor,
-          textStyle: AppTextStyle.semiBold14,
-          padding: const EdgeInsets.symmetric(vertical: 16),
+          textStyle: AppTextStyle.extraBold14,
+          padding: const EdgeInsets.symmetric(vertical: 8),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           ),

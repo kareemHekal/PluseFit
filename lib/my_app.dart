@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:fit_zone/example.dart';
+import 'package:fit_zone/ui/Auth/complete_register/view/complete_register_screen.dart';
 import 'package:fit_zone/ui/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         RouteManager.mainScreen: (context) => const MainScreen(),
       },
       // initialRoute: RouteManager.mainScreen,
-      home: const Example(),
+      home: const CompleteRegisterScreen(),
     );
   }
 }

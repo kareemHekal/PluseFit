@@ -1,0 +1,81 @@
+import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
+import 'package:fit_zone/core/utils/string_manager.dart';
+import 'package:fit_zone/core/utils/text_style_manager.dart';
+import 'package:fit_zone/ui/Auth/complete_register/view/widgets/gender_widget.dart';
+import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_cubit.dart';
+import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_intent.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+class GenderBody extends StatelessWidget {
+  const GenderBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CompleteRegisterCubit, CompleteRegisterState>(
+      builder: (context, state) {
+        final cubit = CompleteRegisterCubit.get(context);
+
+        return Center(
+          child: Column(
+            spacing: 8,
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      AppStrings.tellUsAboutYourself,
+                      style: AppTextStyle.extraBold20,
+                    ),
+                    Text(AppStrings.weNeedToKnowYourGender,
+                        style: AppTextStyle.regular18),
+                  ],
+                ),
+              ),
+              BlurredContainer(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Column(
+                    spacing: 12,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const SizedBox(height: 10),
+                      GenderWidget(
+                        onTap: () {
+                          cubit.doIntent(UpdateUserIntent(gender: 'male'));
+                        },
+                        isMale: true,
+                        isSelected: cubit.user.gender == 'male',
+                      ),
+                      GenderWidget(
+                        onTap: () {
+                          cubit.doIntent(UpdateUserIntent(gender: 'female'));
+                        },
+                        isMale: false,
+                        isSelected: cubit.user.gender == 'female',
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            cubit.doIntent(UpdateIndex(isBackButton: false));
+                          },
+                          child: Text(AppStrings.next),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+}

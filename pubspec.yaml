@@ -55,7 +55,7 @@ dependencies:
   dio: any
   image_picker: any
   shared_preferences: ^2.5.3
-  percent_indicator: any
+  percent_indicator: ^4.2.5
   flutter_plugin_android_lifecycle: any
   easy_localization: any
   mockito: any
