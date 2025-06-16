@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:fit_zone/core/utils/colors_manager.dart';
 
 class AppTextStyle {
   // Font Sizes
