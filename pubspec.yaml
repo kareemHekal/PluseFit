@@ -74,7 +74,7 @@ dependencies:
   json_annotation: ^4.9.0
   get: ^4.6.6
   dots_indicator: ^3.0.0
-  flutter_native_splash: ^2.4.6
+  flutter_native_splash: ^2.4.4
 
 dev_dependencies:
   flutter_test:
