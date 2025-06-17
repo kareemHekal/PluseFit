@@ -1,11 +1,9 @@
 // ignore_for_file: avoid_print
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:fit_zone/ui/Auth/complete_register/view/complete_register_screen.dart';
 import 'package:fit_zone/ui/main_screen.dart';
 import 'package:fit_zone/ui/splash_onboarding/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'config/theme/app_theme.dart';
 import 'core/utils/routes_manager.dart';
