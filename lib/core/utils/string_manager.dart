@@ -1,22 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 class AppStrings {
-  static String get male => "male".tr();
-  static String get female => "female".tr();
-  static String get next => "next".tr();
-  static String get year => "Year".tr();
-  static String get cm => "cm".tr();
-  static String get kg => "kg".tr();
-  static String get activityLevel => "activityLevel".tr();
-  static String get yourRegularPhysical => "yourRegularPhysical".tr();
-  static String get whatIsYourGoal => "whatIsYourGoal".tr();
-  static String get whatIsYourHeight => "whatIsYourHeight".tr();
-  static String get whatIsYourWeight => "whatIsYourWeight".tr();
-
-  static String get thisHelpsUsCreateYourPersonalizedPlan =>
-      "thisHelpsUsCreateYourPersonalizedPlan".tr();
-  static String get howOldAreYou => "howOldAreYou".tr();
-  static String get tellUsAboutYourself => "tellUsAboutYourself".tr();
-  static String get weNeedToKnowYourGender => "weNeedToKnowYourGender".tr();
+  static String get heyThere => "heyThere".tr();
+  static String get createAnAccount => "createAnAccount".tr();
+  static String get firstName => "firstName".tr();
+  static String get lastName => "lastName".tr();
+  static String get email => "email".tr();
+  static String get password => "password".tr();
+  static String get register => "register".tr();
+  static String get alreadyHaveAnAccount => "alreadyHaveAnAccount".tr();
+  static String get login => "login".tr();
   static String get emailCantBeEmpty => "emailCantBeEmpty".tr();
   static String get enterValidEmailAddress => "enterValidEmailAddress".tr();
   static String get passwordCantBeEmpty => "passwordCantBeEmpty".tr();
@@ -33,11 +25,4 @@ class AppStrings {
   static String get lastNameCannotBeMoreThan20Characters => "lastNameCannotBeMoreThan20Characters".tr();
   static String get phoneNumberCannotBeEmpty => "phoneNumberCannotBeEmpty".tr();
   static String get phoneNumberCannotBeMoreThan20Characters => "phoneNumberCannotBeMoreThan20Characters".tr();
-  static String get skip => "skip".tr();
-  static String get back => "back".tr();
-  static String get doIt => "doIt".tr();
-  static String get onBoardingOne => "onBoardingOne".tr();
-  static String get onBoardingTwo => "onBoardingTwo".tr();
-  static String get onBoardingThree => "onBoardingThree".tr();
-  static String get subtitle => "subtitle".tr();
 }

@@ -124,6 +124,7 @@ flutter:
     - assets/images/icon/
     - assets/images/splash_onboarding/
     - assets/translations/
+    - assets/images/icon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -150,3 +151,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_assets:
+  assets_path: assets/
+  output_path: lib/core/utils/
+  filename: assets_manager.dart
+  field_prefix:
+  classname: AssetsManager

@@ -1,5 +1,7 @@
 // ignore_for_file: file_names
 
+import 'package:fit_zone/core/constant.dart';
+
 import '../utils/string_manager.dart';
 
 class Validator {
@@ -7,9 +9,9 @@ class Validator {
     if (value == null || value.isEmpty) {
       return AppStrings.emailCantBeEmpty;
     }
-    // if (!RegExp(Constant.regExValidateEmail).hasMatch(value)) {
-    //   return AppStrings.enterValidEmailAddress;
-    // }
+    if (!RegExp(Constant.regExValidateEmail).hasMatch(value)) {
+      return AppStrings.enterValidEmailAddress;
+    }
     return null;
   }
 

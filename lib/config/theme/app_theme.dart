@@ -36,7 +36,7 @@ class AppTheme {
         labelSmall: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: ColorManager.white),
       ),
       inputDecorationTheme: InputDecorationTheme(
-        filled: true,
+        filled: false,
         fillColor: Colors.transparent,
         iconColor: ColorManager.tertiaryColor,
         contentPadding:
