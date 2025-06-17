@@ -1,5 +1,5 @@
-class User {
-  User({
+class UserModel {
+  UserModel({
     this.firstName,
     this.lastName,
     this.email,
@@ -14,7 +14,7 @@ class User {
     this.createdAt,
   });
 
-  User.fromJson(dynamic json) {
+  UserModel.fromJson(dynamic json) {
     firstName = json['firstName'];
     lastName = json['lastName'];
     email = json['email'];

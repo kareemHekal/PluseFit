@@ -1,6 +1,6 @@
 import 'package:fit_zone/core/resuable_comp/auth_background_cuver.dart';
-import 'package:fit_zone/core/resuable_comp/blurred_container.dart';
-import 'package:fit_zone/core/resuable_comp/validator.dart';
+import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
+import 'package:fit_zone/core/reusable_comp/validator.dart';
 import 'package:fit_zone/core/utils/config.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';

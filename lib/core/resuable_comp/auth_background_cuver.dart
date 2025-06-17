@@ -1,4 +1,4 @@
-import 'package:fit_zone/core/resuable_comp/back_icon.dart';
+import 'package:fit_zone/core/reusable_comp/back_icon.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/config.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages, avoid_print, non_constant_identifier_names
 
-import 'package:fit_zone/data/model/user_model.dart';
+import 'package:fit_zone/data/model/register_response/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';

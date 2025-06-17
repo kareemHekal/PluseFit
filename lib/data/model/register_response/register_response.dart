@@ -1,4 +1,4 @@
-import 'user.dart';
+import 'user_model.dart';
 
 class RegisterResponse {
   RegisterResponse({
@@ -9,11 +9,11 @@ class RegisterResponse {
 
   RegisterResponse.fromJson(dynamic json) {
     message = json['message'];
-    user = json['user'] != null ? User.fromJson(json['user']) : null;
+    user = json['user'] != null ? UserModel.fromJson(json['user']) : null;
     token = json['token'];
   }
   String? message;
-  User? user;
+  UserModel? user;
   String? token;
 
   Map<String, dynamic> toJson() {
