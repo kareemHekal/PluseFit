@@ -4,10 +4,14 @@ class AppStrings {
   static String get female => "female".tr();
   static String get next => "next".tr();
   static String get year => "Year".tr();
-
   static String get cm => "cm".tr();
-
   static String get kg => "kg".tr();
+
+  static String get activityLevel => "activityLevel".tr();
+
+  static String get yourRegularPhysical => "yourRegularPhysical".tr();
+
+  static String get whatIsYourGoal => "whatIsYourGoal".tr();
   static String get whatIsYourHeight => "whatIsYourHeight".tr();
   static String get whatIsYourWeight => "whatIsYourWeight".tr();
 

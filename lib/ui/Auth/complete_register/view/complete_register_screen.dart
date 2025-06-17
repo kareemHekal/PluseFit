@@ -11,6 +11,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
+import 'body/goal.dart';
+import 'body/physical_activity_body.dart';
+
 class CompleteRegisterScreen extends StatelessWidget {
   const CompleteRegisterScreen({super.key});
 
@@ -32,6 +35,8 @@ class CompleteRegisterScreen extends StatelessWidget {
               const AgeBody(),
               const WeightBody(),
               const HeightBody(),
+              GoalBody(),
+              PhysicalActivityBody(),
               // add here you other pages
             ];
 
@@ -42,6 +47,7 @@ class CompleteRegisterScreen extends StatelessWidget {
                   },
                 ),
                 bodyWidget: Column(
+                  spacing: 8,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
