@@ -1,1 +1,26 @@
-{}
+{
+  "emailCantBeEmpty": "لا يمكن ترك البريد الإلكتروني فارغًا",
+  "enterValidEmailAddress": "أدخل عنوان بريد إلكتروني صالح",
+  "passwordCantBeEmpty": "لا يمكن ترك كلمة المرور فارغة",
+  "passwordMustBeAtLeast6Characters": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+  "passwordMustContainAtLeastOneUppercaseLetter": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+  "passwordMustContainAtLeastOneNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+  "passwordMustContainAtLeastOneSpecialCharacter": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+  "userNameCannotBeEmpty": "لا يمكن ترك اسم المستخدم فارغًا",
+  "userNameCannotBeMoreThan20Characters": "لا يمكن أن يزيد اسم المستخدم عن 20 حرفًا",
+  "firstNameCannotBeEmpty": "لا يمكن ترك الاسم الأول فارغًا",
+  "firstNameCannotBeMoreThan20Characters": "لا يمكن أن يزيد الاسم الأول عن 20 حرفًا",
+  "lastNameCannotBeEmpty": "لا يمكن ترك الاسم الأخير فارغًا",
+  "lastNameCannotBeMoreThan20Characters": "لا يمكن أن يزيد الاسم الأخير عن 20 حرفًا",
+  "phoneNumberCannotBeEmpty": "لا يمكن ترك رقم الهاتف فارغًا",
+  "phoneNumberCannotBeMoreThan20Characters": "لا يمكن أن يزيد رقم الهاتف عن 20 رقمًا",
+  "next": "التالي",
+  "skip": "تخطي",
+  "back": "السابق",
+  "doIt": "افعلها",
+  "onBoardingOne": "ثمن التميز هو الانضباط",
+  "onBoardingTwo": "اللياقة لم تكن ممتعة بهذا الشكل من قبل",
+  "onBoardingThree": "لا مزيد من الأعذار، افعلها الآن",
+  "subtitle": "لوريم إيبسوم دولور سيت أميت كونسيكتيتور إت إيليتنا إيليتنا كوي سيد كويز إينيم إت دويس، مايسيل ماسا"
+}

@@ -23,6 +23,10 @@ class AppStrings {
   static String get emailCantBeEmpty => "emailCantBeEmpty".tr();
   static String get enterValidEmailAddress => "enterValidEmailAddress".tr();
   static String get passwordCantBeEmpty => "passwordCantBeEmpty".tr();
+  static String get passwordMustBeAtLeast6Characters => "passwordMustBeAtLeast6Characters".tr();
+  static String get passwordMustContainAtLeastOneUppercaseLetter => "passwordMustContainAtLeastOneUppercaseLetter".tr();
+  static String get passwordMustContainAtLeastOneNumber => "passwordMustContainAtLeastOneNumber".tr();
+  static String get passwordMustContainAtLeastOneSpecialCharacter => "passwordMustContainAtLeastOneSpecialCharacter".tr();
 
   static String get passwordMustBeAtLeast6Characters =>
       "passwordMustBeAtLeast6Characters".tr();
@@ -40,11 +44,24 @@ class AppStrings {
 
   static String get userNameCannotBeMoreThan20Characters =>
       "userNameCannotBeMoreThan20Characters".tr();
+  static String get userNameCannotBeMoreThan20Characters => "userNameCannotBeMoreThan20Characters".tr();
   static String get firstNameCannotBeEmpty => "firstNameCannotBeEmpty".tr();
 
   static String get firstNameCannotBeMoreThan20Characters =>
       "firstNameCannotBeMoreThan20Characters".tr();
+  static String get firstNameCannotBeMoreThan20Characters => "firstNameCannotBeMoreThan20Characters".tr();
   static String get lastNameCannotBeEmpty => "lastNameCannotBeEmpty".tr();
+  static String get lastNameCannotBeMoreThan20Characters => "lastNameCannotBeMoreThan20Characters".tr();
+  static String get phoneNumberCannotBeEmpty => "phoneNumberCannotBeEmpty".tr();
+  static String get phoneNumberCannotBeMoreThan20Characters => "phoneNumberCannotBeMoreThan20Characters".tr();
+  static String get next => "next".tr();
+  static String get skip => "skip".tr();
+  static String get back => "back".tr();
+  static String get doIt => "doIt".tr();
+  static String get onBoardingOne => "onBoardingOne".tr();
+  static String get onBoardingTwo => "onBoardingTwo".tr();
+  static String get onBoardingThree => "onBoardingThree".tr();
+  static String get subtitle => "subtitle".tr();
 
   static String get lastNameCannotBeMoreThan20Characters =>
       "lastNameCannotBeMoreThan20Characters".tr();
