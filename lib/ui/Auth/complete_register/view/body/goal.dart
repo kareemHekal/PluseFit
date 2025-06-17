@@ -20,7 +20,7 @@ class GoalBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CompleteRegisterCubit, CompleteRegisterState>(
+    return BlocBuilder<CompleteRegisterCubit, RegisterStates>(
       builder: (context, state) {
         final cubit = CompleteRegisterCubit.get(context);
         String? selectedLevel = cubit.user.goal;

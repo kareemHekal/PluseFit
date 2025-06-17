@@ -10,20 +10,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class PhysicalActivityBody extends StatelessWidget {
   PhysicalActivityBody({super.key});
 
-  final activityLevels = [
-    'Rookie',
-    'Beginner',
-    'Intermediate',
-    'Advance',
-    'True Beast',
-  ];
+  final activityLevels = {
+    'Rookie': 'level1',
+    'Beginner': 'level2',
+    'Intermediate': 'level3',
+    'Advance': 'level4',
+    'True Beast': 'level5',
+  };
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CompleteRegisterCubit, CompleteRegisterState>(
+    return BlocBuilder<CompleteRegisterCubit, RegisterStates>(
       builder: (context, state) {
         final cubit = CompleteRegisterCubit.get(context);
         String? selectedLevel = cubit.user.activityLevel;
+
         return Center(
           child: Column(
             spacing: 8,
@@ -53,13 +54,15 @@ class PhysicalActivityBody extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Column(
                         children: [
-                          ...activityLevels.map((level) {
+                          ...activityLevels.entries.map((entry) {
+                            final displayName = entry.key;
+                            final value = entry.value;
                             return CustomRadioButton(
-                              isSelected: selectedLevel == level,
-                              label: level,
+                              isSelected: selectedLevel == value,
+                              label: displayName,
                               onTap: () {
                                 cubit.doIntent(
-                                    UpdateUserIntent(activityLevel: level));
+                                    UpdateUserIntent(activityLevel: value));
                               },
                             );
                           }),
@@ -73,7 +76,7 @@ class PhysicalActivityBody extends StatelessWidget {
                       child: SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: cubit.user.activityLevel != null
+                          onPressed: selectedLevel != null
                               ? () {
                                   cubit.doIntent(
                                       UpdateIndex(isBackButton: false));

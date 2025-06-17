@@ -27,7 +27,7 @@ class _AgeBodyState extends State<AgeBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CompleteRegisterCubit, CompleteRegisterState>(
+    return BlocBuilder<CompleteRegisterCubit, RegisterStates>(
       builder: (context, state) {
         final cubit = CompleteRegisterCubit.get(context);
         return Center(

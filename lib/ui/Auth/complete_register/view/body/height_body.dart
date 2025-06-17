@@ -27,7 +27,7 @@ class _HeightBodyState extends State<HeightBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CompleteRegisterCubit, CompleteRegisterState>(
+    return BlocBuilder<CompleteRegisterCubit, RegisterStates>(
       builder: (context, state) {
         final cubit = CompleteRegisterCubit.get(context);
         return Center(

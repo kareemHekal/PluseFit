@@ -1,6 +1,6 @@
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
+import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
-import 'package:fit_zone/ui/Auth/complete_register/view/complete_register_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/utils/colors_manager.dart';
@@ -76,12 +76,12 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                     right: 5,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  const CompleteRegisterScreen(),
-                            ));
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+
+                          ///                      👇 Login but when it is ready
+                          RouteManager.registerScreen, (route) => false,
+                        );
                       },
                       child: Text(AppStrings.skip,
                           style: AppTextStyle.regular16
@@ -178,8 +178,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                               side: const BorderSide(
                                                   color:
                                                       ColorManager.primaryColor,
-                                                  width:
-                                                      2), // 👈 لون وسمك الإطار
+                                                  width: 2),
                                             ),
                                           ),
                                           child: Text(AppStrings.back),
@@ -191,12 +190,13 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                           onPressed: () {
                                             if (_currentPage ==
                                                 pages.length - 1) {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const CompleteRegisterScreen(),
-                                                  ));
+                                              Navigator.pushNamedAndRemoveUntil(
+                                                context,
+
+                                                ///                    👇 Login but when it is ready
+                                                RouteManager.registerScreen,
+                                                (route) => false,
+                                              );
                                             } else {
                                               _controller.nextPage(
                                                 duration: const Duration(

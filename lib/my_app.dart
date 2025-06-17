@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:fit_zone/ui/Auth/register/register_view.dart';
 import 'package:fit_zone/ui/main_screen.dart';
 import 'package:fit_zone/ui/splash_onboarding/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +21,10 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       routes: {
         RouteManager.mainScreen: (context) => const MainScreen(),
+        RouteManager.registerScreen: (context) => const RegisterView(),
+        RouteManager.onBoardingScreen: (context) => const OnBoardingScreen(),
       },
-      // initialRoute: RouteManager.mainScreen,
-      home: const OnBoardingScreen(),
+      initialRoute: RouteManager.onBoardingScreen,
     );
   }
 }

@@ -3,6 +3,7 @@
 class RouteManager {
   static const String mainScreen = "/MAINSCREEN";
   static const String loginScreen = "/LOGINSCREEN";
+  static const String registerScreen = "/registerScreen";
   static const String forgetPasswordScreen = "/FORGETPASSWORDSCREEN";
   static const String onBoardingScreen = "/OnBoardingScreen";
   static const String emailVerificationScreen = "/EMAILVERIFICATIONSCREEN";

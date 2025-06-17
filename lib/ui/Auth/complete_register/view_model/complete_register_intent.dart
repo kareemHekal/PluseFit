@@ -15,6 +15,7 @@ class UpdateUserIntent extends CompleteRegisterIntent {
   final String? firstName;
   final String? lastName;
   final String? email;
+  final String? password;
   final String? gender;
   final num? age;
   final num? weight;
@@ -27,6 +28,7 @@ class UpdateUserIntent extends CompleteRegisterIntent {
     this.lastName,
     this.email,
     this.gender,
+    this.password,
     this.age,
     this.weight,
     this.height,
