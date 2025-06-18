@@ -2,7 +2,7 @@ import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AppTextStyle {
+abstract class AppTextStyle {
   // Font Sizes
   static const double s10 = 10;
   static const double s12 = 12;

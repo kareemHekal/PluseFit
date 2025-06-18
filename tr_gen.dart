@@ -83,7 +83,7 @@ void updateStringManagerClass(
 
   final buffer = StringBuffer();
   buffer.writeln("import 'package:easy_localization/easy_localization.dart';");
-  buffer.writeln('class AppStrings {');
+  buffer.writeln('abstract class AppStrings {');
 
   // الاحتفاظ بالمفاتيح القديمة كما هي
   for (final key in existingKeys) {

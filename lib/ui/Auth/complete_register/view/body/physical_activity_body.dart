@@ -20,11 +20,10 @@ class PhysicalActivityBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = CompleteRegisterCubit.get(context);
     return BlocBuilder<CompleteRegisterCubit, RegisterStates>(
       builder: (context, state) {
-        final cubit = CompleteRegisterCubit.get(context);
         String? selectedLevel = cubit.user.activityLevel;
-
         return Center(
           child: Column(
             spacing: 8,

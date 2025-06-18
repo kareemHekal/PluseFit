@@ -1,10 +1,10 @@
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/back_icon.dart';
-import 'package:fit_zone/core/reusable_comp/toast_message.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
+import 'package:fit_zone/core/utils/toast_message.dart';
 import 'package:fit_zone/ui/Auth/complete_register/view/body/age_body.dart';
 import 'package:fit_zone/ui/Auth/complete_register/view/body/gender_body.dart';
 import 'package:fit_zone/ui/Auth/complete_register/view/body/height_body.dart';

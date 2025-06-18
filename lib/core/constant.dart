@@ -1,4 +1,4 @@
-class Constant {
+abstract class Constant {
   static const String tokenKey = 'auth_token';
   static const String baseUrl = "https://fitness.elevateegy.com";
   static const String regExValidateEmail =

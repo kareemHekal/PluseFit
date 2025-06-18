@@ -1,4 +1,4 @@
-class AssetsManager {
+abstract class AssetsManager {
   /// Assets for imagesAuthBackground
   /// assets/images/auth_background.png
   static const String imagesAuthBackground =

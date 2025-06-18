@@ -4,7 +4,7 @@ import 'package:fit_zone/core/constant.dart';
 
 import '../utils/string_manager.dart';
 
-class Validator {
+abstract class Validator {
   static String? email(String? value) {
     if (value == null || value.isEmpty) {
       return AppStrings.emailCantBeEmpty;
