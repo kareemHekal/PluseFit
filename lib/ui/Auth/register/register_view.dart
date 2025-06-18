@@ -49,6 +49,7 @@ class _RegisterViewState extends State<RegisterView> {
 
   @override
   Widget build(BuildContext context) {
+    Config().init(context);
     return AuthBackgroundCover(
       bodyWidget: SingleChildScrollView(
         child: Center(
@@ -96,6 +97,7 @@ class _RegisterViewState extends State<RegisterView> {
                                               .onPrimary)),
                                 ),
                                 TextFormField(
+                                  key: const ValueKey('firstName'),
                                   decoration: InputDecoration(
                                     labelText: AppStrings.firstName,
                                     prefixIcon: const Icon(
@@ -109,6 +111,7 @@ class _RegisterViewState extends State<RegisterView> {
                                           .tertiary),
                                 ),
                                 TextFormField(
+                                  key: const ValueKey('lastName'),
                                   decoration: InputDecoration(
                                     labelText: AppStrings.lastName,
                                     prefixIcon: const Icon(
@@ -122,6 +125,7 @@ class _RegisterViewState extends State<RegisterView> {
                                           .tertiary),
                                 ),
                                 TextFormField(
+                                  key: const ValueKey('email'),
                                   decoration: const InputDecoration(
                                     labelText: 'Email',
                                     prefixIcon: Icon(Icons.email_outlined),
@@ -134,6 +138,7 @@ class _RegisterViewState extends State<RegisterView> {
                                           .tertiary),
                                 ),
                                 TextFormField(
+                                  key: const ValueKey('password'),
                                   decoration: InputDecoration(
                                     labelText: AppStrings.password,
                                     prefixIcon:

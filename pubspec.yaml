@@ -77,10 +77,10 @@ dependencies:
   dots_indicator: ^3.0.0
   flutter_native_splash: ^2.4.4
   lottie: ^3.3.1
-
-dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dev_dependencies:
   retrofit_generator: ^9.2.0
   json_serializable: ^6.9.5
   flutter_launcher_icons: ^0.14.4
