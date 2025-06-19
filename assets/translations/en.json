@@ -28,4 +28,13 @@
   "createNewPasssword": "create new password",
   "password": "Password",
   "done": "Done"
+  "phoneNumberCannotBeMoreThan20Characters": "Phone number cannot be more than 20 characters",
+  "next": "Next",
+  "skip": "Skip",
+  "back": "Back",
+  "doIt": "Do IT",
+  "onBoardingOne": "The Price Of Excellence\nIs Discipline",
+  "onBoardingTwo": "Fitness Has Never Been So\nMuch Fun",
+  "onBoardingThree": "NO MORE EXCUSES\nDo It Now",
+  "subtitle": "Lorem Ipsum Dolor Sit Amet Consectetur Et Elitna Elitna Quae Sed Quis Enim Et Duis, Maecel Massa"
 }
