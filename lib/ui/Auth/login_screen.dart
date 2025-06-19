@@ -12,6 +12,7 @@ import 'package:fit_zone/ui/Auth/view_model/cubit/auth_intent.dart';
 import 'package:fit_zone/core/reusable_comp/toast_message.dart';
 import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
+import '../main_navigation_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -50,9 +51,10 @@ class _LoginScreenState extends State<LoginScreen> {
             if (state is AuthSuccess) {
               // Save user data (example: token, user info)
               await CacheHelper.setData('user', state.user.toJson().toString());
-              // Navigate to home
-              Navigator.of(context)
-                  .pushReplacementNamed(RouteManager.mainScreen);
+              // Navigate to main app sections
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (_) => const MainNavigationScreen()),
+              );
             }
           },
           child: SingleChildScrollView(
