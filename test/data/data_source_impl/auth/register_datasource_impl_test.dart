@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fit_zone/core/api/api_manager.dart';
 import 'package:fit_zone/core/api/api_result.dart';
 import 'package:fit_zone/core/api/endpoints.dart';
-import 'package:fit_zone/data/data_source_contract/auth/register_datasource.dart';
 import 'package:fit_zone/data/model/register_response/register_response.dart';
 import 'package:fit_zone/data/model/register_response/register_user_model.dart';
 import 'package:fit_zone/data/data_source_impl/auth/register_datasource_impl.dart';
