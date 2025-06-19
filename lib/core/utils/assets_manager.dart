@@ -20,4 +20,20 @@ class AssetsManager {
   /// Assets for translationsEn
   /// assets/translations/en.json
   static const String translationsEn = "assets/translations/en.json";
+
+  /// Assets for iconHome
+  /// assets/images/icon/home.png
+  static const String iconHome = "assets/images/icon/home.png";
+
+  /// Assets for iconSmartCoach
+  /// assets/images/icon/chat ai.png
+  static const String iconSmartCoach = "assets/images/icon/chat ai.png";
+
+  /// Assets for iconWorkouts
+  /// assets/images/icon/gym.png
+  static const String iconWorkouts = "assets/images/icon/gym.png";
+
+  /// Assets for iconProfile
+  /// assets/images/icon/profile.png
+  static const String iconProfile = "assets/images/icon/profile.png";
 }

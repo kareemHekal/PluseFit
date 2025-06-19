@@ -59,4 +59,6 @@ class ColorManager {
   static const black80 = Color(0xff060808);
   static const black90 = Color(0xff040507);
   static const black100 = Color(0xff020304);
+
+  static const Color navBarBackgroundColor = Color(0xCC242424); // #242424CC
 }
