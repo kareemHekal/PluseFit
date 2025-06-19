@@ -9,9 +9,9 @@ import 'package:injectable/injectable.dart';
 
 @Injectable(as: RegisterDataSource)
 class RegisterDatasourceImpl implements RegisterDataSource {
-  final ApiManager apiManager;
+  final ApiManager _apiManager;
 
-  RegisterDatasourceImpl({required this.apiManager});
+  RegisterDatasourceImpl(this._apiManager);
 
   @override
   Future<ApiResult<RegisterResponse>> register({
@@ -20,7 +20,7 @@ class RegisterDatasourceImpl implements RegisterDataSource {
     return executeApi(() async {
       final body = userModel.toJson();
 
-      final apiResponse = await apiManager.postRequest(
+      final apiResponse = await _apiManager.postRequest(
         endpoint: EndPoint.registerEndpoint,
         body: body,
       );

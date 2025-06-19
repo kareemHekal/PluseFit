@@ -17,7 +17,7 @@ import '../../data/data_source_contract/auth/register_datasource.dart' as _i504;
 import '../../data/data_source_impl/auth/register_datasource_impl.dart'
     as _i112;
 import '../../data/repo_impl/register_repo_impl.dart' as _i357;
-import '../../domain/repo_contract/register_contract.dart' as _i188;
+import '../../domain/repo_contract/register_repo.dart' as _i188;
 import '../../domain/use_cases/register_usecase.dart' as _i328;
 import '../../ui/Auth/complete_register/view_model/complete_register_cubit.dart'
     as _i765;
@@ -43,12 +43,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i299.CacheHelper>(() => _i299.CacheHelper());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.loggerProvider);
     gh.lazySingleton<_i974.PrettyPrinter>(() => loggerModule.prettyPrinter);
-    gh.factory<_i504.RegisterDataSource>(() =>
-        _i112.RegisterDatasourceImpl(apiManager: gh<_i1047.ApiManager>()));
-    gh.factory<_i188.RegisterContract>(
+    gh.factory<_i504.RegisterDataSource>(
+        () => _i112.RegisterDatasourceImpl(gh<_i1047.ApiManager>()));
+    gh.factory<_i188.RegisterRepo>(
         () => _i357.RegisterRepoImpl(gh<_i504.RegisterDataSource>()));
     gh.factory<_i328.RegisterUseCase>(() =>
-        _i328.RegisterUseCase(registerContract: gh<_i188.RegisterContract>()));
+        _i328.RegisterUseCase(registerContract: gh<_i188.RegisterRepo>()));
     gh.factory<_i765.CompleteRegisterCubit>(
         () => _i765.CompleteRegisterCubit(gh<_i328.RegisterUseCase>()));
     return this;
