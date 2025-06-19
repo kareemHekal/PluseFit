@@ -14,5 +14,18 @@
   "lastNameCannotBeEmpty": "Last name cannot be empty",
   "lastNameCannotBeMoreThan20Characters": "Last name cannot be more than 20 characters",
   "phoneNumberCannotBeEmpty": "Phone number cannot be empty",
-  "phoneNumberCannotBeMoreThan20Characters": "Phone number cannot be more than 20 characters"
+  "phoneNumberCannotBeMoreThan20Characters": "Phone number cannot be more than 20 characters",
+  "enterYourEmail": "Enter Your Email",
+  "forgetPassword": "Forget Password",
+  "email": "Email",
+  "sendOtp": "Send OTP",
+  "otpCode": "OTP CODE",
+  "enterYourOtp": "Enter Your OTP Check Your Email",
+  "confirm": "Confirm",
+  "didntRecieve": "Didnt Recieve Verification Code?",
+  "resendCode": "Resend Code?",
+  "makeSureIts8Characters": "make sure its 8 characters or more",
+  "createNewPasssword": "create new password",
+  "password": "Password",
+  "done": "Done"
 }
