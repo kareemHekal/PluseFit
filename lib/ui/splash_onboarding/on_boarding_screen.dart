@@ -1,7 +1,8 @@
-
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
+import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../core/utils/colors_manager.dart';
 import '../../core/utils/text_style_manager.dart';
@@ -76,7 +77,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                     right: 5,
                     child: TextButton(
                       onPressed: () {
-                        // Skip to login or home
+                        Get.offAllNamed(RouteManager.loginScreen);
                       },
                       child: Text(AppStrings.skip,
                           style: AppTextStyle.regular16
@@ -112,7 +113,8 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                 pages.length,
                                 (dotIndex) => AnimatedContainer(
                                   duration: const Duration(milliseconds: 300),
-                                  margin: const EdgeInsets.symmetric(horizontal: 5),
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 5),
                                   width: _currentPage == dotIndex ? 30 : 10,
                                   height: 10,
                                   decoration: BoxDecoration(
@@ -131,7 +133,8 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                     child: ElevatedButton(
                                       onPressed: () {
                                         _controller.nextPage(
-                                          duration: const Duration(milliseconds: 300),
+                                          duration:
+                                              const Duration(milliseconds: 300),
                                           curve: Curves.easeIn,
                                         );
                                       },
@@ -139,7 +142,8 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                         backgroundColor:
                                             ColorManager.primaryColor,
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(24),
+                                          borderRadius:
+                                              BorderRadius.circular(24),
                                         ),
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 40, vertical: 14),
@@ -156,8 +160,8 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                         child: ElevatedButton(
                                           onPressed: () {
                                             _controller.previousPage(
-                                              duration:
-                                                  const Duration(milliseconds: 300),
+                                              duration: const Duration(
+                                                  milliseconds: 300),
                                               curve: Curves.easeIn,
                                             );
                                           },
@@ -170,7 +174,8 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                               side: const BorderSide(
                                                   color:
                                                       ColorManager.primaryColor,
-                                                  width: 2), // 👈 لون وسمك الإطار
+                                                  width:
+                                                      2), // 👈 لون وسمك الإطار
                                             ),
                                           ),
                                           child: Text(AppStrings.back),
@@ -182,11 +187,12 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                           onPressed: () {
                                             if (_currentPage ==
                                                 pages.length - 1) {
-                                              // Navigate to home or login
+                                              Get.offAllNamed(
+                                                  RouteManager.loginScreen);
                                             } else {
                                               _controller.nextPage(
-                                                duration:
-                                                    const Duration(milliseconds: 300),
+                                                duration: const Duration(
+                                                    milliseconds: 300),
                                                 curve: Curves.easeIn,
                                               );
                                             }
