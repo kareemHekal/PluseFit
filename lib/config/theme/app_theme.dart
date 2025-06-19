@@ -36,7 +36,7 @@ class AppTheme {
         labelSmall: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: ColorManager.white),
       ),
       inputDecorationTheme: InputDecorationTheme(
-        filled: true,
+        filled: false,
         fillColor: Colors.transparent,
         iconColor: ColorManager.tertiaryColor,
         contentPadding:
@@ -72,13 +72,39 @@ class AppTheme {
         suffixIconColor: ColorManager.tertiaryColor,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: ColorManager.primaryColor,
-          foregroundColor: ColorManager.onPrimaryColor,
-          textStyle: AppTextStyle.semiBold14,
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (states) {
+              if (states.contains(MaterialState.disabled)) {
+                return ColorManager.tertiaryColor;
+              }
+              return ColorManager.primaryColor;
+            },
+          ),
+          foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (states) {
+              if (states.contains(MaterialState.disabled)) {
+                return Colors.white; // لون الخط لما يكون disabled
+              }
+              return ColorManager.onPrimaryColor;
+            },
+          ),
+          side: MaterialStateProperty.resolveWith<BorderSide?>(
+            (states) {
+              if (states.contains(MaterialState.disabled)) {
+                return const BorderSide(color: Colors.white, width: 1.5);
+              }
+              return null;
+            },
+          ),
+          textStyle: MaterialStateProperty.all(AppTextStyle.extraBold14),
+          padding: MaterialStateProperty.all(
+            const EdgeInsets.symmetric(vertical: 8),
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+            ),
           ),
         ),
       ),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'core/reusable_comp/auth_background_cuver.dart';
 import 'core/reusable_comp/back_icon.dart';
 import 'core/reusable_comp/blurred_container.dart';
-import 'core/utils/validator.dart';
+import 'core/reusable_comp/validator.dart';
 
 class Example extends StatelessWidget {
   const Example({super.key});
