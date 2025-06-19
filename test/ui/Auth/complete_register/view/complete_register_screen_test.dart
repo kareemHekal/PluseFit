@@ -12,7 +12,6 @@ import 'complete_register_screen_test.mocks.dart';
 
 @GenerateMocks([RegisterUseCase, CompleteRegisterCubit])
 void main() {
-  final mockCubit = MockCompleteRegisterCubit();
   late MockRegisterUseCase mockRegisterUseCase;
   Widget buildWidget() => const MaterialApp(
         home: CompleteRegisterScreen(
