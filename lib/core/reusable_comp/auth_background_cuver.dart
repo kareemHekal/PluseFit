@@ -21,17 +21,46 @@ class AuthBackgroundCover extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Scaffold(
-        appBar: AppBar(
-          leading: backIcon,
-          title: Image.asset(
-            AssetsManager.imagesIconAppIcon,
-            fit: BoxFit.contain,
-            height: Config.screenHight! * 0.05,
-            width: Config.screenWidth! * 0.5,
+      child: Stack(
+        children: [
+          // Optional back icon at top left
+          if (backIcon != null)
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 8,
+              left: 8,
+              child: backIcon!,
+            ),
+          // Main content
+          Align(
+            alignment: Alignment.topCenter,
+            child: Scaffold(
+              backgroundColor: Colors.transparent,
+              body: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).padding.top + 40,
+                    left: 24,
+                    right: 24,
+                    bottom: 24,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Logo centered at the top
+                      Image.asset(
+                        AssetsManager.imagesIconAppIcon,
+                        fit: BoxFit.contain,
+                        height: Config.screenHight! * 0.09,
+                      ),
+                      const SizedBox(height: 32),
+                      bodyWidget,
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ),
-        ),
-        body: bodyWidget,
+        ],
       ),
     );
   }
