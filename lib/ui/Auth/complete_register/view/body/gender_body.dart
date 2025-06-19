@@ -1,6 +1,7 @@
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
+import 'package:fit_zone/domain/entity/gender_enum.dart';
 import 'package:fit_zone/ui/Auth/complete_register/view/widgets/gender_widget.dart';
 import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_cubit.dart';
 import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_intent.dart';
@@ -47,23 +48,24 @@ class GenderBody extends StatelessWidget {
                       const SizedBox(height: 10),
                       GenderWidget(
                         onTap: () {
-                          cubit.doIntent(UpdateUserIntent(gender: 'male'));
+                          cubit.doIntent(UpdateUserIntent(gender: Gender.male));
                         },
                         isMale: true,
-                        isSelected: cubit.user.gender == 'male',
+                        isSelected: cubit.user.gender == Gender.male,
                       ),
                       GenderWidget(
                         onTap: () {
-                          cubit.doIntent(UpdateUserIntent(gender: 'female'));
+                          cubit.doIntent(
+                              UpdateUserIntent(gender: Gender.female));
                         },
                         isMale: false,
-                        isSelected: cubit.user.gender == 'female',
+                        isSelected: cubit.user.gender == Gender.female,
                       ),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: cubit.user.gender == 'male' ||
-                                  cubit.user.gender == 'female'
+                          onPressed: cubit.user.gender == Gender.male ||
+                                  cubit.user.gender == Gender.female
                               ? () {
                                   cubit.doIntent(
                                       UpdateIndex(isBackButton: false));

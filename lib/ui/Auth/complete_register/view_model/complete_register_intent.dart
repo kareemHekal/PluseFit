@@ -1,5 +1,7 @@
 // ignore_for_file: camel_case_types
 
+import 'package:fit_zone/domain/entity/gender_enum.dart';
+
 ///  Auth Intent ///
 // ignore_for_file: non_constant_identifier_names, dangling_library_doc_comments
 
@@ -16,7 +18,7 @@ class UpdateUserIntent extends CompleteRegisterIntent {
   final String? lastName;
   final String? email;
   final String? password;
-  final String? gender;
+  final Gender? gender;
   final num? age;
   final num? weight;
   final num? height;

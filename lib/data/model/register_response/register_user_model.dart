@@ -1,3 +1,5 @@
+import 'package:fit_zone/domain/entity/gender_enum.dart';
+
 class RegisterUserModel {
   RegisterUserModel({
     this.firstName,
@@ -16,7 +18,7 @@ class RegisterUserModel {
   String? lastName;
   String? email;
   String? password;
-  String? gender;
+  Gender? gender;
   num? height;
   num? weight;
   num? age;
@@ -30,7 +32,11 @@ class RegisterUserModel {
     map['email'] = email;
     map['password'] = password;
     map['rePassword'] = password;
-    map['gender'] = gender;
+    map['gender'] = gender == Gender.male
+        ? 'male'
+        : gender == Gender.female
+            ? 'female'
+            : null;
     map['height'] = height;
     map['weight'] = weight;
     map['age'] = age;

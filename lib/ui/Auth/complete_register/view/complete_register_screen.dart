@@ -1,6 +1,7 @@
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/back_icon.dart';
+import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
@@ -68,7 +69,7 @@ class CompleteRegisterScreen extends StatelessWidget {
                   elevation: 0,
                   child: Center(
                     child: Lottie.asset(
-                      'assets/lottie/loading.json',
+                      AssetsManager.lottieLoading,
                       width: 150,
                       height: 150,
                       reverse: true,
