@@ -1,13 +1,11 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   Widget buildWidget() => const MaterialApp(home: RegisterView());
