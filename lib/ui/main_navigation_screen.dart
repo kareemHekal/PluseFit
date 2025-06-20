@@ -1,11 +1,13 @@
-import 'package:flutter/material.dart';
-import 'home_screen.dart';
-import 'smart_coach_screen.dart';
-import 'workouts_screen.dart';
-import 'profile_screen.dart';
+import 'dart:ui';
+
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
-import 'dart:ui';
+import 'package:flutter/material.dart';
+
+import 'home_screen.dart';
+import 'profile_screen.dart';
+import 'smart_coach_screen.dart';
+import 'workouts_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -36,7 +38,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ),
         Positioned.fill(
           child: Container(
-            color: Colors.black.withOpacity(0.6),
+            color: Colors.black.withValues(alpha: 0.6),
           ),
         ),
         // Main content
@@ -91,8 +93,8 @@ class CustomBottomNavBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(32),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            offset: Offset(0, 2),
+            color: Colors.black.withValues(alpha: (0.1)),
+            offset: const Offset(0, 2),
             blurRadius: 5,
             spreadRadius: 0,
           ),
