@@ -1,4 +1,4 @@
-class AssetsManager {
+abstract class AssetsManager {
   /// Assets for imagesAuthBackground
   /// assets/images/auth_background.png
   static const String imagesAuthBackground =
@@ -7,6 +7,7 @@ class AssetsManager {
   /// Assets for imagesIconAppIcon
   /// assets/images/icon/app_icon.png
   static const String imagesIconAppIcon = "assets/images/icon/app_icon.png";
+  static const String lottieLoading = "assets/lottie/loading.json";
 
   /// Assets for imagesIconAppIconForeground
   /// assets/images/icon/app_icon_foreground.png

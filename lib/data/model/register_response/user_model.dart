@@ -11,7 +11,8 @@ class UserModel {
     this.goal,
     this.photo,
     this.id,
-    this.createdAt,});
+    this.createdAt,
+  });
 
   UserModel.fromJson(dynamic json) {
     firstName = json['firstName'];
@@ -56,5 +57,4 @@ class UserModel {
     map['createdAt'] = createdAt;
     return map;
   }
-
 }

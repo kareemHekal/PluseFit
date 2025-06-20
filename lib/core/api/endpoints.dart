@@ -5,3 +5,6 @@ class EndPoint {
   static const String resetPassword = "/v1/auth/resetPassword";
 
 }
+abstract class EndPoint {
+  static const String registerEndpoint = '/api/v1/auth/signup';
+}
