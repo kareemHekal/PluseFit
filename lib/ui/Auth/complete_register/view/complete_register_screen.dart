@@ -15,7 +15,7 @@ import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
+ import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import 'body/goal.dart';
 import 'body/physical_activity_body.dart';
