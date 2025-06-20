@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         RouteManager.onBoardingScreen: (context) => const OnBoardingScreen(),
       },
       // initialRoute: RouteManager.mainScreen,
-     initialRoute: RouteManager.forgetPassword,
+     initialRoute: RouteManager.onBoardingScreen,
     );
   }
 }
