@@ -3,7 +3,7 @@ class Constant {
   static const String highestPrice = 'HighestPrice';
   static const String lowestPrice = 'LowestPrice';
   static const String isRememberMe = 'isRememberMe';
-  static const String baseUrl = "https://flower.elevateegy.com/api";
+  static const String baseUrl = "https://fitness.elevateegy.com/api";
   static const String regExValidateEmail =
       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
   static RegExp regexPass = RegExp(

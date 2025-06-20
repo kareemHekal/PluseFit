@@ -27,9 +27,8 @@
   "makeSureIts8Characters": "make sure its 8 characters or more",
   "createNewPasssword": "create new password",
   "password": "Password",
-  "done": "Done"
-  "phoneNumberCannotBeMoreThan20Characters": "Phone number cannot be more than 20 characters",
-  "next": "Next",
+  "done": "Done",
+   "next": "Next",
   "skip": "Skip",
   "back": "Back",
   "doIt": "Do IT",

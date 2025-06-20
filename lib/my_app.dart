@@ -26,11 +26,11 @@ class MyApp extends StatelessWidget {
       routes: {
         RouteManager.mainScreen: (context) => const MainScreen(),
         RouteManager.forgetPassword: (context) => const ForgetPasswordScreen(),
-        RouteManager.otpScreen: (context) =>  const OtpScreen(),
-        RouteManager.createNewPassword: (context) =>  const CreateNewPassword(),
+       // RouteManager.otpScreen: (context) =>  const OtpScreen(),
+        //RouteManager.createNewPassword: (context) =>  const CreateNewPassword(),
       },
       // initialRoute: RouteManager.mainScreen,
-     initialRoute: RouteManager.createNewPassword,
+     initialRoute: RouteManager.forgetPassword,
     );
   }
 }
