@@ -1,6 +1,5 @@
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/custom_button.dart';
-import 'package:fit_zone/core/reusable_comp/toast_message.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/ui/Auth/forget_password/view/create_new_password/view/create_password.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
@@ -11,11 +10,12 @@ import '../../../../../../core/reusable_comp/auth_background_cuver.dart';
 import '../../../../../../core/utils/colors_manager.dart';
 import '../../../../../../core/utils/string_manager.dart';
 import '../../../../../../core/utils/text_style_manager.dart';
+import '../../../../../../core/utils/toast_message.dart';
 import '../../../../view_model/cubit/auth_intent.dart';
 
 class OtpScreen extends StatefulWidget {
   final String email;
-  OtpScreen(this.email);
+   const OtpScreen(this.email,{super.key,});
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
@@ -70,7 +70,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 Text(AppStrings.enterYourOtp, style: AppTextStyle.regular18),
                 const SizedBox(height: 25),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: ColorManager.backgroundColorr,
                   ),
                   child: Column(

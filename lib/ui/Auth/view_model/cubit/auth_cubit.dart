@@ -8,12 +8,9 @@ import 'package:fit_zone/domain/use_cases/forget_password_usecases/reset_passwor
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import '../../../../core/api/api_result.dart';
-
 import '../../../../domain/use_cases/forget_password_usecases/forget_password_usecase.dart';
 import 'auth_intent.dart';
-
 part 'auth_state.dart';
 @injectable
 class AuthCubit extends Cubit<AuthState> {

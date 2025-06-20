@@ -1,6 +1,5 @@
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/custom_button.dart';
-import 'package:fit_zone/core/reusable_comp/toast_message.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
@@ -12,6 +11,7 @@ import '../../../../../../core/reusable_comp/custom-form_field.dart';
 import '../../../../../../core/utils/colors_manager.dart';
 import '../../../../../../core/utils/string_manager.dart';
 import '../../../../../../core/utils/text_style_manager.dart';
+import '../../../../../../core/utils/toast_message.dart';
 import '../../../../view_model/cubit/auth_intent.dart';
 
 class CreateNewPassword extends StatelessWidget {

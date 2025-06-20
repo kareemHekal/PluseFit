@@ -1,5 +1,4 @@
 import 'package:fit_zone/core/reusable_comp/custom_button.dart';
-import 'package:fit_zone/core/reusable_comp/toast_message.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/ui/Auth/forget_password/view/otp/view/otp_screen.dart';
@@ -13,6 +12,8 @@ import '../../../../../../core/utils/colors_manager.dart';
 import '../../../../../../core/utils/string_manager.dart';
 import '../../../../../../core/utils/text_style_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../../core/utils/toast_message.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
@@ -49,7 +50,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               BlocConsumer<AuthCubit, AuthState>(
                 builder: (context, state) {
                   if(state is SendEmailVerificationLoadingState){
-                    return Center(child: CircularProgressIndicator(),);
+                    return  const Center(child: CircularProgressIndicator(),);
                   }
                   return CustomButton(
                     onPressed: () {

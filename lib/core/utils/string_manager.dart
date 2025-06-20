@@ -55,7 +55,6 @@ class AppStrings {
   static String get password => "password".tr();
   static String get done => "done".tr();
 
-  static String get next => "next".tr();
   static String get skip => "skip".tr();
   static String get back => "back".tr();
   static String get doIt => "doIt".tr();
@@ -66,8 +65,6 @@ class AppStrings {
   static String get createAnAccount => "createAnAccount".tr();
   static String get firstName => "firstName".tr();
   static String get lastName => "lastName".tr();
-  static String get email => "email".tr();
-  static String get password => "password".tr();
   static String get register => "register".tr();
   static String get alreadyHaveAnAccount => "alreadyHaveAnAccount".tr();
   static String get login => "login".tr();
