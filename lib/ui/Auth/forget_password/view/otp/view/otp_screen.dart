@@ -1,6 +1,5 @@
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/custom_button.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/ui/Auth/forget_password/view/create_new_password/view/create_password.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,6 @@
 part of 'auth_cubit.dart';
 
-@immutable
-sealed class AuthState {}
+ sealed class AuthState {}
 
 final class AuthInitial extends AuthState {}///  FORGOT PASSWORD STATES  ///
 
@@ -30,6 +29,7 @@ final class VerifyResetCodeLoadingState extends AuthState {
   VerifyResetCodeLoadingState();
 }
 
+// ignore: must_be_immutable
 final class VerifyResetCodeErrorState extends AuthState {
   String? message;
   VerifyResetCodeErrorState({required this.message});

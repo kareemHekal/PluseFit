@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/reusable_comp/auth_background_cuver.dart';
-import '../../../../../../core/reusable_comp/custom-form_field.dart';
+import '../../../../../../core/reusable_comp/custom_form_field.dart';
 import '../../../../../../core/utils/colors_manager.dart';
 import '../../../../../../core/utils/string_manager.dart';
 import '../../../../../../core/utils/text_style_manager.dart';
@@ -15,8 +15,8 @@ import '../../../../../../core/utils/toast_message.dart';
 import '../../../../view_model/cubit/auth_intent.dart';
 
 class CreateNewPassword extends StatelessWidget {
-  String email;
-  CreateNewPassword(this.email);
+ final String email;
+  const CreateNewPassword(this.email,{super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class CreateNewPassword extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 96,),
+              const SizedBox(height: 96,),
               Text(AppStrings.enterYourEmail, style: AppTextStyle.regular18),
               const SizedBox(height: 8),
               Text(AppStrings.forgetPassword, style: AppTextStyle.bold20),
@@ -60,11 +60,11 @@ class CreateNewPassword extends StatelessWidget {
                 suffixIcon: const Icon(Icons.remove_red_eye_outlined, color: ColorManager.white70, size: 25),
               ),
 
-              SizedBox(height: 24,),
+              const SizedBox(height: 24,),
               BlocConsumer<AuthCubit,AuthState>(
                   builder: (context, state) {
                     if(state is ResetPasswordLoadingState){
-                      return Center(child: CircularProgressIndicator(),);
+                      return const Center(child:  CircularProgressIndicator(),);
                     }
                     return  CustomButton(
                       onPressed: (){
@@ -77,10 +77,9 @@ class CreateNewPassword extends StatelessWidget {
 
                   },
                   listener: (context, state) {
-                    print("STATE => $state");
+
 
                     if (state is ResetPasswordSuccessState) {
-                      print("SUCCESS: ${state.response?.message}");
 
                       toastMessage(
                         message: state.response?.message ?? "Password reset successfully",
@@ -89,7 +88,6 @@ class CreateNewPassword extends StatelessWidget {
                       Navigator.pushNamed(context, RouteManager.mainScreen);
 
                     } else if (state is ResetPasswordErrorState) {
-                      print("ERROR: ${state.message}");
 
                       toastMessage(
                         message: state.message ?? "Unknown error",

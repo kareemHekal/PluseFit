@@ -10,6 +10,6 @@ class ForgetPasswordUseCase{
   ForgetPasswordRepo forgetPasswordRepo;
   ForgetPasswordUseCase(this.forgetPasswordRepo);
   Future<ApiResult<ForgetPasswordResponse>> call({required String email})async{
-    return await forgetPasswordRepo.ForgetPassword(email: email);
+    return await forgetPasswordRepo.forgetPassword(email: email);
   }
 }

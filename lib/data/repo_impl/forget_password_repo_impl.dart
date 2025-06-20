@@ -13,10 +13,10 @@ class ForgetPasswordRepoImpl extends ForgetPasswordRepo {
   ForgetPasswordRepoImpl(this.forgetPasswordDatasource);
 
   @override
-  Future<ApiResult<ForgetPasswordResponse>> ForgetPassword({
+  Future<ApiResult<ForgetPasswordResponse>> forgetPassword({
     required String email,
   }) async {
-    return await forgetPasswordDatasource.ForgetPassword(email: email);
+    return await forgetPasswordDatasource.forgetPassword(email: email);
   }
 
   @override

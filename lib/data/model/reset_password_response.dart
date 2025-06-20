@@ -1,5 +1,3 @@
-/// message : "success"
-/// token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTQ0NWIyZGI2NTIwMDUxNDQxNjVmYSIsImlhdCI6MTc1MDQyMTkxNX0.rSKIAwMM4wXygGJm_a1Vk2Ka0xqBaT_RBmyWkpeaczA"
 
 class ResetPasswordResponse {
   ResetPasswordResponse({

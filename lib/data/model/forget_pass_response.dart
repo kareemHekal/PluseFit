@@ -1,5 +1,3 @@
-/// message : "success"
-/// info : "OTP sent to your email"
 
 class ForgetPasswordResponse {
   ForgetPasswordResponse({

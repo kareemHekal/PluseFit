@@ -6,7 +6,7 @@ import '../../model/forget_pass_response.dart';
 
 abstract class ForgetPasswordDatasource{
 
-  Future<ApiResult<ForgetPasswordResponse>> ForgetPassword({
+  Future<ApiResult<ForgetPasswordResponse>> forgetPassword({
     required String email,
   });
   Future<ApiResult<OtpResponse>> verifyResetCode({

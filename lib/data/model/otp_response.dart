@@ -1,4 +1,3 @@
-/// status : "Success"
 
 class OtpResponse {
   OtpResponse({

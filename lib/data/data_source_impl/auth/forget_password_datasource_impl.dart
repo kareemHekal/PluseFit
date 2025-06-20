@@ -15,7 +15,7 @@ class ForgetPasswordDatasourceImpl extends ForgetPasswordDatasource {
   ForgetPasswordDatasourceImpl(this.apiManager);
 
    @override
-  Future<ApiResult<ForgetPasswordResponse>> ForgetPassword({
+  Future<ApiResult<ForgetPasswordResponse>> forgetPassword({
     required String email,
   }) async {
     final apiResult = await executeApi(() async {

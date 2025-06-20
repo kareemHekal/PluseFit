@@ -1,13 +1,12 @@
 import 'package:fit_zone/core/reusable_comp/custom_button.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/ui/Auth/forget_password/view/otp/view/otp_screen.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_intent.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../core/di/di.dart';
 import '../../../../../../core/reusable_comp/auth_background_cuver.dart';
-import '../../../../../../core/reusable_comp/custom-form_field.dart';
+import '../../../../../../core/reusable_comp/custom_form_field.dart';
 import '../../../../../../core/utils/colors_manager.dart';
 import '../../../../../../core/utils/string_manager.dart';
 import '../../../../../../core/utils/text_style_manager.dart';
