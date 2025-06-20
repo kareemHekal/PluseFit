@@ -3,6 +3,8 @@ abstract class AssetsManager {
   /// assets/images/auth_background.png
   static const String imagesAuthBackground =
       "assets/images/auth_background.png";
+  static const String imagesHomeBackground =
+      "assets/images/home_background.png";
 
   /// Assets for imagesIconAppIcon
   /// assets/images/icon/app_icon.png
