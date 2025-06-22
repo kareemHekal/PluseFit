@@ -13,8 +13,10 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:logger/logger.dart' as _i974;
 
-import '../../data/auth_repository_impl.dart' as _i990;
-import '../../domain/common/auth_repository.dart' as _i72;
+import '../../data/login_datasource.dart' as _i899;
+import '../../data/login_datasource_impl.dart' as _i734;
+import '../../data/login_repo_impl.dart' as _i349;
+import '../../domain/common/login_repo.dart' as _i772;
 import '../../domain/usescases/login_usecase.dart' as _i433;
 import '../../ui/Auth/view_model/cubit/auth_cubit.dart' as _i906;
 import '../api/api_manager.dart' as _i1047;
@@ -38,10 +40,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i299.CacheHelper>(() => _i299.CacheHelper());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.loggerProvider);
     gh.lazySingleton<_i974.PrettyPrinter>(() => loggerModule.prettyPrinter);
-    gh.lazySingleton<_i72.AuthRepository>(
-        () => _i990.AuthRepositoryImpl(gh<_i1047.ApiManager>()));
+    gh.singleton<_i899.LoginDataSource>(
+        () => _i734.LoginDataSourceImpl(gh<_i1047.ApiManager>()));
+    gh.singleton<_i772.AuthRepository>(
+        () => _i349.AuthRepositoryImpl(gh<_i899.LoginDataSource>()));
     gh.factory<_i433.LoginUseCase>(
-        () => _i433.LoginUseCase(gh<_i72.AuthRepository>()));
+        () => _i433.LoginUseCase(gh<_i772.AuthRepository>()));
     return this;
   }
 }

@@ -1,14 +1,14 @@
-import 'package:fit_zone/core/api/api_excuter.dart';
 import 'package:fit_zone/core/api/api_manager.dart';
-import 'package:fit_zone/data/model/user_model.dart';
-import 'package:fit_zone/domain/common/auth_repository.dart';
+import 'package:fit_zone/core/api/api_excuter.dart';
 import 'package:fit_zone/core/api/api_result.dart';
+import 'package:fit_zone/data/model/user_model.dart';
+import 'login_datasource.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton(as: AuthRepository)
-class AuthRepositoryImpl implements AuthRepository {
+@Singleton(as: LoginDataSource)
+class LoginDataSourceImpl implements LoginDataSource {
   final ApiManager apiManager;
-  AuthRepositoryImpl(this.apiManager);
+  LoginDataSourceImpl(this.apiManager);
 
   @override
   Future<UserModel> login(
