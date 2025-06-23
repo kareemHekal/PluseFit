@@ -194,9 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               style: AppTextStyle.medium12,
                             ),
                             GestureDetector(
-                              onTap: () {
-                                // TODO: Register navigation (leave empty for now)
-                              },
+                              onTap: () {},
                               child: Text(
                                 'Register',
                                 style: AppTextStyle.bold12.copyWith(

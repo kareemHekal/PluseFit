@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
