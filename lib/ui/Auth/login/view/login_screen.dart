@@ -195,7 +195,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                // TODO: Register navigation (leave empty for now)
+                                Navigator.pushReplacementNamed(
+                                    context, RouteManager.registerScreen);
                               },
                               child: Text(
                                 'Register',
