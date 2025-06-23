@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:fit_zone/ui/main_screen/home_screen.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen.dart';
 import 'package:fit_zone/ui/main_screen/smart_coach_screen.dart';
@@ -92,7 +94,7 @@ class CustomBottomNavBar extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
             blurRadius: 5,
             spreadRadius: 0,
           ),
