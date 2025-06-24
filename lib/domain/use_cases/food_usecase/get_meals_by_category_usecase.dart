@@ -1,6 +1,7 @@
 import 'package:fit_zone/data/model/food/meal.dart';
 import 'package:injectable/injectable.dart';
 import '../../../core/api/api_result.dart';
+
 import '../../repo_contract/food_repo/get_meals_by_category_repo.dart';
 
 
