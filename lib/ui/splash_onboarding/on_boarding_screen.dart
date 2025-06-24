@@ -83,7 +83,8 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                           RouteManager.registerScreen, (route) => false,
                         );
                       },
-                      child: Text(AppStrings.skip,
+                      child: _currentPage == pages.length - 1
+                          ? const SizedBox() : Text(AppStrings.skip,
                           style: AppTextStyle.regular16
                               .copyWith(color: Colors.white)),
                     ),

@@ -5,4 +5,9 @@ class EndPoint {
   static const String verifyResetCode = "/v1/auth/verifyResetCode";
   static const String resetPassword = "/v1/auth/resetPassword";
 
+
+  /////    Meals     //////
+  static const String getCategoriesOfMeals = "/v1/1/categories.php";
+  static const String getMealsByCategory = "/v1/1/filter.php";
+
 }
