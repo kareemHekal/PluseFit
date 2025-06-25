@@ -23,6 +23,10 @@ abstract class AssetsManager {
   /// Assets for translationsEn
   /// assets/translations/en.json
   static const String translationsEn = "assets/translations/en.json";
+
+
+  static const String imageFoodBackground = "assets/images/food_background.jpg";
+  static const String backIcon = "assets/images/icon/back_icon.png";
   static const String iconHome = "assets/images/icon/home.png";
 
   /// Assets for iconSmartCoach

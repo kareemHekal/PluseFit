@@ -44,7 +44,6 @@
   "createNewPasssword": "create new password",
   "password": "Password",
   "done": "Done",
-   "next": "Next",
   "skip": "Skip",
   "back": "Back",
   "doIt": "Do IT",
@@ -55,10 +54,9 @@
   "createAnAccount": "create an account",
   "firstName": "First Name",
   "lastName": "Last Name",
-  "email": "Email",
-  "password": "Password",
   "register": "Register",
   "alreadyHaveAnAccount": "Already have an account?",
   "login": "Login",
+  "foodRecommendation": "Food Recommendation",
   "subtitle": "Lorem Ipsum Dolor Sit Amet Consectetur Et Elitna Elitna Quae Sed Quis Enim Et Duis, Maecel Massa"
 }
