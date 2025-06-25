@@ -17,4 +17,7 @@ abstract class Constant {
   static const String acceptedOrderKey = "accepted_order_id";
 
   static const Duration connectTimeout = Duration(seconds: 40);
+
+  static const String mealBaseUrl = "https://www.themealdb.com/api/json";
+
 }

@@ -13,6 +13,7 @@ abstract class AppTextStyle {
   static const double s22 = 22;
   static const double s24 = 24;
   static const double s25 = 25;
+  static const double s26 = 26;
   static const double s28 = 28;
   static const double s30 = 30;
 
@@ -44,6 +45,7 @@ abstract class AppTextStyle {
   static final medium22 = _style(size: s22, weight: FontWeight.w500);
   static final medium24 = _style(size: s24, weight: FontWeight.w500);
   static final medium25 = _style(size: s25, weight: FontWeight.w500);
+  static final medium26 = _style(size: s26, weight: FontWeight.w500);
   static final medium28 = _style(size: s28, weight: FontWeight.w500);
   static final medium30 = _style(size: s30, weight: FontWeight.w500);
 
