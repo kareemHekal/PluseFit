@@ -37,6 +37,31 @@ class MockApiManager extends _i1.Mock implements _i3.ApiManager {
   }
 
   @override
+  _i4.Future<_i2.Response<dynamic>> getRequestForMeal({
+    required String? endpoint,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#getRequestForMeal, [], {
+              #endpoint: endpoint,
+              #queryParameters: queryParameters,
+              #headers: headers,
+            }),
+            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
+              _FakeResponse_0<dynamic>(
+                this,
+                Invocation.method(#getRequestForMeal, [], {
+                  #endpoint: endpoint,
+                  #queryParameters: queryParameters,
+                  #headers: headers,
+                }),
+              ),
+            ),
+          )
+          as _i4.Future<_i2.Response<dynamic>>);
+
+  @override
   _i4.Future<_i2.Response<dynamic>> getRequest({
     required String? endpoint,
     Map<String, dynamic>? queryParameters,
