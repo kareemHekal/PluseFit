@@ -61,4 +61,5 @@ abstract class AppStrings {
   static String get subtitle => "subtitle".tr();
   static String get workouts => "workouts".tr();
   static String get fullBody => "fullBody".tr();
+  static String get noWorkoutFound => "noWorkoutFound".tr();
 }

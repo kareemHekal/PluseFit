@@ -10,45 +10,50 @@ import 'package:injectable/injectable.dart';
 
 @Injectable(as: WorkoutDatasource)
 class WorkoutDatasourceImpl implements WorkoutDatasource {
-  final ApiManager apiManager;
+  final ApiManager _apiManager;
 
-  WorkoutDatasourceImpl(this.apiManager);
+  WorkoutDatasourceImpl(this._apiManager);
 
   @override
   Future<ApiResult<List<MusclesGroup>>> getAllGroupWorkout({
     required String id,
     required String name,
   }) async {
-    var response = await apiManager.getRequest(
-      endpoint: EndPoint.workoutTapEndpoint,
-    );
+    try {
+      final response = await _apiManager.getRequest(
+        endpoint: EndPoint.workoutTapEndpoint,
+      );
 
-    final groupWorkoutResponsedart =
-        WorkoutGroupResponse.fromJson(response.data);
+      final groupWorkoutResponse = WorkoutGroupResponse.fromJson(response.data);
+      final musclesGroup = groupWorkoutResponse.musclesGroup;
 
-    final musclesGroup = groupWorkoutResponsedart.musclesGroup;
-
-    if (musclesGroup != null && musclesGroup.isNotEmpty) {
-      return SuccessApiResult(musclesGroup.cast<MusclesGroup>());
-    } else {
-      return ErrorApiResult(Exception("No matching categories found"));
+      if (musclesGroup != null && musclesGroup.isNotEmpty) {
+        return SuccessApiResult(musclesGroup.cast<MusclesGroup>());
+      } else {
+        return ErrorApiResult(Exception("No muscle groups found."));
+      }
+    } catch (e) {
+      return ErrorApiResult(Exception("Failed to fetch muscle groups: $e"));
     }
   }
 
   @override
   Future<ApiResult<List<Muscles>>> getAllWorkout(String cardId) async {
-    var response = await apiManager.getRequest(
-      endpoint: EndPoint.workoutCardEndpoint,
-    );
+    try {
+      final response = await _apiManager.getRequest(
+        endpoint: EndPoint.workoutCardEndpoint,
+      );
 
-    final workoutCardResponsedart = WorkoutCardResponse.fromJson(response.data);
+      final workoutCardResponse = WorkoutCardResponse.fromJson(response.data);
+      final muscles = workoutCardResponse.muscles;
 
-    final muscles = workoutCardResponsedart.muscles;
-
-    if (muscles != null && muscles.isNotEmpty) {
-      return SuccessApiResult(muscles.cast<Muscles>());
-    } else {
-      return ErrorApiResult(Exception("No matching categories found"));
+      if (muscles != null && muscles.isNotEmpty) {
+        return SuccessApiResult(muscles.cast<Muscles>());
+      } else {
+        return ErrorApiResult(Exception("No muscles found for this card."));
+      }
+    } catch (e) {
+      return ErrorApiResult(Exception("Failed to fetch muscles: $e"));
     }
   }
 }

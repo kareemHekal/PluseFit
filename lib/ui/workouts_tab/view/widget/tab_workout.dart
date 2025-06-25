@@ -35,7 +35,7 @@ class _TabWorkoutState extends State<TabWorkout> with SingleTickerProviderStateM
   }
 
   void _loadCategories() async {
-    var response = await widget.workoutsCubit.fitnessUsecase.callGroup(
+    var response = await widget.workoutsCubit.fetchTabCategories(
       id: widget.id,
       name: "",
     );
@@ -68,7 +68,7 @@ class _TabWorkoutState extends State<TabWorkout> with SingleTickerProviderStateM
   }
 
   void _fetchCategoryData(String? selectedCategoryId) async {
-    await widget.workoutsCubit.fitnessUsecase.callGroup(
+    await widget.workoutsCubit.fetchTabCategories(
       id: widget.id,
       name: selectedCategoryId ?? "",
     );

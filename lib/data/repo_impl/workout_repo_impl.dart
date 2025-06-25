@@ -7,9 +7,9 @@ import 'package:injectable/injectable.dart';
 
 @Injectable(as: WorkoutRepo)
 class WorkoutRepoImpl implements WorkoutRepo {
-  final WorkoutDatasource workoutDatasource;
+  final WorkoutDatasource _workoutDatasource;
 
-  WorkoutRepoImpl(this.workoutDatasource);
+  WorkoutRepoImpl(this._workoutDatasource);
 
   @override
   Future<ApiResult<List<MusclesGroup>>> getAllGroupWorkout({
@@ -17,9 +17,11 @@ class WorkoutRepoImpl implements WorkoutRepo {
     required String name,
   }) async {
     final result =
-        await workoutDatasource.getAllGroupWorkout(id: id, name: name);
+        await _workoutDatasource.getAllGroupWorkout(id: id, name: name);
+
     if (result is SuccessApiResult<List<MusclesGroup>>) {
       final fetchedGroups = result.data;
+
       if (fetchedGroups == null || fetchedGroups.isEmpty) {
         return ErrorApiResult(
             Exception("No matching MusclesGroup found for id=$id, name=$name"));
@@ -35,11 +37,13 @@ class WorkoutRepoImpl implements WorkoutRepo {
     if (result is ErrorApiResult<List<MusclesGroup>>) {
       return ErrorApiResult(result.exception);
     }
-    return ErrorApiResult(Exception("Unknown error occurred"));
+    return ErrorApiResult(
+      Exception("Unknown error occurred while fetching muscle groups."),
+    );
   }
 
   @override
   Future<ApiResult<List<Muscles>>> getAllWorkout(String cardId) {
-    return workoutDatasource.getAllWorkout(cardId);
+    return _workoutDatasource.getAllWorkout(cardId);
   }
 }

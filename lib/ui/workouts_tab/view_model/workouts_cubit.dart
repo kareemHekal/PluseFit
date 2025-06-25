@@ -11,14 +11,14 @@ part 'workouts_state.dart';
 
 @injectable
 class WorkoutsCubit extends Cubit<WorkoutsState> {
-  final FitnessUsecase fitnessUsecase;
+  final FitnessUsecase _fitnessUsecase;
 
   @factoryMethod
-  WorkoutsCubit(this.fitnessUsecase) : super(WorkoutsInitial());
+  WorkoutsCubit(this._fitnessUsecase) : super(WorkoutsInitial());
 
   Future<void> _getWorkoutCard(String cardId) async {
     emit(WorkoutLoadingState());
-    final result = await fitnessUsecase.callMuscles(cardId);
+    final result = await _fitnessUsecase.callMuscles(cardId);
 
     switch (result) {
       case SuccessApiResult():
@@ -28,10 +28,10 @@ class WorkoutsCubit extends Cubit<WorkoutsState> {
     }
   }
 
-  Future<void> _getTabWorkout(WorkoutsGroupTabIntent intent) async {
+  Future<void> getTabWorkout(WorkoutsGroupTabIntent intent) async {
     emit(WorkoutLoadingState());
 
-    final result = await fitnessUsecase.callGroup(
+    final result = await _fitnessUsecase.callGroup(
       id: intent.id,
       name: intent.name,
     );
@@ -43,10 +43,17 @@ class WorkoutsCubit extends Cubit<WorkoutsState> {
     }
   }
 
+  Future<ApiResult<List<MusclesGroup>>> fetchTabCategories({
+    required String id,
+    String name = '',
+  }) {
+    return _fitnessUsecase.callGroup(id: id, name: name);
+  }
+
   void doIntent(WorkoutsIntent intent) {
     switch (intent) {
       case WorkoutsGroupTabIntent():
-        _getTabWorkout(intent);
+        getTabWorkout(intent);
         break;
       case WorkoutsCardIntent():
         _getWorkoutCard(intent.cardId);

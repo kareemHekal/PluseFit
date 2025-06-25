@@ -6,18 +6,18 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class FitnessUsecase {
-  final WorkoutRepo workoutRepo;
+  final WorkoutRepo _workoutRepo;
 
-  FitnessUsecase(this.workoutRepo);
+  FitnessUsecase(this._workoutRepo);
 
   Future<ApiResult<List<MusclesGroup>>> callGroup({
     required String id,
     required String name,
   }) async {
-    return await workoutRepo.getAllGroupWorkout(id: id, name: name);
+    return await _workoutRepo.getAllGroupWorkout(id: id, name: name);
   }
 
   Future<ApiResult<List<Muscles>>> callMuscles(String cardId) async {
-    return await workoutRepo.getAllWorkout(cardId);
+    return await _workoutRepo.getAllWorkout(cardId);
   }
 }
