@@ -15,7 +15,7 @@ import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
- import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import 'body/goal.dart';
 import 'body/physical_activity_body.dart';
@@ -48,12 +48,22 @@ class CompleteRegisterScreen extends StatelessWidget {
         listener: (context, state) {
           if (state is RegisterErrorState) {
             Navigator.of(context, rootNavigator: true).pop();
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              RouteManager.registerScreen,
+              (route) => false,
+            );
             toastMessage(
                 message: state.message.toString(),
                 tybeMessage: TybeMessage.negative);
           }
           if (state is RegisterSuccessState) {
             Navigator.of(context, rootNavigator: true).pop();
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              RouteManager.loginScreen,
+              (route) => false,
+            );
             toastMessage(
                 message: AppStrings.yourAccountHasBeenCreatedSuccessfully,
                 tybeMessage: TybeMessage.positive);

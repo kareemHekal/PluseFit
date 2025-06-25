@@ -1,18 +1,18 @@
 // ignore_for_file: use_build_context_synchronously, deprecated_member_use
 
+import 'package:fit_zone/core/cache/shared_pref.dart';
+import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
+import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
+import 'package:fit_zone/core/utils/colors_manager.dart';
+import 'package:fit_zone/core/utils/routes_manager.dart';
+import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:fit_zone/core/utils/toast_message.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_intent.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
-import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
-import 'package:fit_zone/core/utils/text_style_manager.dart';
-import 'package:fit_zone/core/utils/colors_manager.dart';
-import 'package:fit_zone/core/cache/shared_pref.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -127,38 +127,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8),
-                        Row(
-                          children: [
-                            const Expanded(child: Divider()),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Text('Or', style: AppTextStyle.medium12),
-                            ),
-                            const Expanded(child: Divider()),
-                          ],
-                        ),
-                        const SizedBox(height: 12),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _SocialIconButton(
-                              icon: Icons.facebook,
-                              onTap: () {},
-                            ),
-                            const SizedBox(width: 16),
-                            _SocialIconButton(
-                              icon: Icons.g_mobiledata,
-                              onTap: () {},
-                            ),
-                            const SizedBox(width: 16),
-                            _SocialIconButton(
-                              icon: Icons.apple,
-                              onTap: () {},
-                            ),
-                          ],
-                        ),
                         const SizedBox(height: 24),
                         SizedBox(
                           width: double.infinity,
@@ -220,24 +188,3 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-class _SocialIconButton extends StatelessWidget {
-  final IconData icon;
-  final VoidCallback onTap;
-  const _SocialIconButton({required this.icon, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(30),
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white.withOpacity(0.1),
-        ),
-        child: Icon(icon, color: ColorManager.primaryColor, size: 28),
-      ),
-    );
-  }
-}
