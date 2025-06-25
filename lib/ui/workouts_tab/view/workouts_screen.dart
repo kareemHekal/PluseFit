@@ -25,7 +25,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
     super.initState();
     _workoutsCubit = getIt<WorkoutsCubit>();
     final id = widget.selectedfitnessId ?? workoutID;
-    _workoutsCubit.doIntent(WorkoutsCardIntent(id));
+    _workoutsCubit.doIntent(WorkoutsCardIntent(cardId: id));
   }
 
   @override
@@ -54,7 +54,7 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
                       workoutID = selectedfitnessId ?? "";
                     });
                     _workoutsCubit.doIntent(
-                      WorkoutsCardIntent(workoutID),
+                      WorkoutsCardIntent(cardId: workoutID),
                     );
                   },
                 ),

@@ -18,7 +18,7 @@ class WorkoutsCubit extends Cubit<WorkoutsState> {
 
   Future<void> _getWorkoutCard(String cardId) async {
     emit(WorkoutLoadingState());
-    final result = await fitnessUsecase.execute(cardId);
+    final result = await fitnessUsecase.callMuscles(cardId);
 
     switch (result) {
       case SuccessApiResult():
@@ -31,7 +31,7 @@ class WorkoutsCubit extends Cubit<WorkoutsState> {
   Future<void> _getTabWorkout(WorkoutsGroupTabIntent intent) async {
     emit(WorkoutLoadingState());
 
-    final result = await fitnessUsecase.call(
+    final result = await fitnessUsecase.callGroup(
       id: intent.id,
       name: intent.name,
     );

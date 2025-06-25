@@ -10,5 +10,5 @@ class WorkoutsGroupTabIntent extends WorkoutsIntent {
 class WorkoutsCardIntent extends WorkoutsIntent {
   final String cardId;
 
-  WorkoutsCardIntent(this.cardId);
+  WorkoutsCardIntent({required this.cardId});
 }
