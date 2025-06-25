@@ -18,15 +18,6 @@ class FitnessUsecase {
   }
 
   Future<ApiResult<List<Muscles>>> callMuscles(String cardId) async {
-    if (cardId.trim().isEmpty) {
-      return ErrorApiResult(Exception("Category ID must not be empty"));
-    }
-
-    try {
-      final result = await workoutRepo.getAllWorkout(cardId);
-      return result;
-    } catch (e, stack) {
-      return ErrorApiResult(Exception("An unexpected error occurred"));
-    }
+    return await workoutRepo.getAllWorkout(cardId);
   }
 }

@@ -14,22 +14,22 @@ void main() {
   late MockWorkoutRepo mockWorkoutRepo;
   late FitnessUsecase useCase;
 
-  setUp(() {
+  setUpAll(() {
     mockWorkoutRepo = MockWorkoutRepo();
     useCase = FitnessUsecase(mockWorkoutRepo);
   });
 
   group('FitnessUsecase', () {
-    test('callGroup returns SuccessApiResult when data is returned', () async {
+    test('callGroup returns success result from WorkoutRepo', () async {
       // Arrange
       final id = 'group123';
       final name = 'Chest';
-      final groups = [
+      final musclesGroupList = [
         MusclesGroup(id: '1', name: 'Chest'),
         MusclesGroup(id: '2', name: 'Back'),
       ];
+      final expectedResult = SuccessApiResult<List<MusclesGroup>>(musclesGroupList);
 
-      final expectedResult = SuccessApiResult<List<MusclesGroup>>(groups);
       provideDummy<ApiResult<List<MusclesGroup>>>(expectedResult);
 
       when(mockWorkoutRepo.getAllGroupWorkout(id: id, name: name))
@@ -39,19 +39,19 @@ void main() {
       final result = await useCase.callGroup(id: id, name: name);
 
       // Assert
-      expect(result, expectedResult);
       verify(mockWorkoutRepo.getAllGroupWorkout(id: id, name: name)).called(1);
+      expect(result, expectedResult);
     });
 
-    test('callMuscles returns SuccessApiResult when muscles are returned', () async {
+    test('callMuscles returns success result from WorkoutRepo', () async {
       // Arrange
       final cardId = 'card123';
-      final muscles = [
+      final musclesList = [
         Muscles(id: '1', name: 'Push Up'),
         Muscles(id: '2', name: 'Pull Up'),
       ];
+      final expectedResult = SuccessApiResult<List<Muscles>>(musclesList);
 
-      final expectedResult = SuccessApiResult<List<Muscles>>(muscles);
       provideDummy<ApiResult<List<Muscles>>>(expectedResult);
 
       when(mockWorkoutRepo.getAllWorkout(cardId))
@@ -61,34 +61,8 @@ void main() {
       final result = await useCase.callMuscles(cardId);
 
       // Assert
-      expect(result, expectedResult);
       verify(mockWorkoutRepo.getAllWorkout(cardId)).called(1);
-    });
-
-    test('callMuscles returns ErrorApiResult when cardId is empty', () async {
-      // Act
-      final result = await useCase.callMuscles('');
-
-      // Assert
-      expect(result, isA<ErrorApiResult<List<Muscles>>>());
-      expect((result as ErrorApiResult).exception.toString(),
-          contains("Category ID must not be empty"));
-    });
-
-    test('callMuscles returns ErrorApiResult when exception occurs', () async {
-      // Arrange
-      final cardId = 'card123';
-      final exception = Exception('Server error');
-
-      when(mockWorkoutRepo.getAllWorkout(cardId)).thenThrow(exception);
-
-      // Act
-      final result = await useCase.callMuscles(cardId);
-
-      // Assert
-      expect(result, isA<ErrorApiResult<List<Muscles>>>());
-      expect((result as ErrorApiResult).exception.toString(),
-          contains("An unexpected error occurred"));
+      expect(result, expectedResult);
     });
   });
 }
