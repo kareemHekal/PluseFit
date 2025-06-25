@@ -16,14 +16,19 @@ import 'package:logger/logger.dart' as _i974;
 import '../../data/data_source_contract/auth/forget_password_datasource.dart'
     as _i1030;
 import '../../data/data_source_contract/auth/register_datasource.dart' as _i504;
+import '../../data/data_source_contract/auth/workout_datasource.dart' as _i692;
 import '../../data/data_source_impl/auth/forget_password_datasource_impl.dart'
     as _i449;
 import '../../data/data_source_impl/auth/register_datasource_impl.dart'
     as _i112;
+import '../../data/data_source_impl/workout_datasource_impl.dart' as _i279;
 import '../../data/repo_impl/forget_password_repo_impl.dart' as _i1051;
 import '../../data/repo_impl/register_repo_impl.dart' as _i357;
+import '../../data/repo_impl/workout_repo_impl.dart' as _i2;
 import '../../domain/repo_contract/forget_password_repo.dart' as _i109;
 import '../../domain/repo_contract/register_repo.dart' as _i513;
+import '../../domain/repo_contract/workout_repo.dart' as _i377;
+import '../../domain/use_cases/fitness_usecase.dart' as _i722;
 import '../../domain/use_cases/forget_password_usecases/forget_password_usecase.dart'
     as _i256;
 import '../../domain/use_cases/forget_password_usecases/otp_usecase.dart'
@@ -34,6 +39,7 @@ import '../../domain/use_cases/register_usecase.dart' as _i328;
 import '../../ui/Auth/complete_register/view_model/complete_register_cubit.dart'
     as _i765;
 import '../../ui/Auth/view_model/cubit/auth_cubit.dart' as _i906;
+import '../../ui/workouts_tab/view_model/workouts_cubit.dart' as _i927;
 import '../api/api_manager.dart' as _i1047;
 import '../cache/shared_pref.dart' as _i299;
 import '../logger/logger_module.dart' as _i279;
@@ -54,12 +60,18 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i299.CacheHelper>(() => _i299.CacheHelper());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.loggerProvider);
     gh.lazySingleton<_i974.PrettyPrinter>(() => loggerModule.prettyPrinter);
+    gh.factory<_i692.WorkoutDatasource>(
+        () => _i279.WorkoutDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i1030.ForgetPasswordDatasource>(
         () => _i449.ForgetPasswordDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i109.ForgetPasswordRepo>(() =>
         _i1051.ForgetPasswordRepoImpl(gh<_i1030.ForgetPasswordDatasource>()));
+    gh.factory<_i377.WorkoutRepo>(
+        () => _i2.WorkoutRepoImpl(gh<_i692.WorkoutDatasource>()));
     gh.factory<_i504.RegisterDataSource>(
         () => _i112.RegisterDatasourceImpl(gh<_i1047.ApiManager>()));
+    gh.factory<_i722.FitnessUsecase>(
+        () => _i722.FitnessUsecase(gh<_i377.WorkoutRepo>()));
     gh.factory<_i256.ForgetPasswordUseCase>(
         () => _i256.ForgetPasswordUseCase(gh<_i109.ForgetPasswordRepo>()));
     gh.factory<_i1026.OtpUsecase>(
@@ -75,6 +87,8 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i1026.OtpUsecase>(),
           gh<_i682.ResetPasswordUsecase>(),
         ));
+    gh.factory<_i927.WorkoutsCubit>(
+        () => _i927.WorkoutsCubit(gh<_i722.FitnessUsecase>()));
     gh.factory<_i765.CompleteRegisterCubit>(
         () => _i765.CompleteRegisterCubit(gh<_i328.RegisterUseCase>()));
     return this;
