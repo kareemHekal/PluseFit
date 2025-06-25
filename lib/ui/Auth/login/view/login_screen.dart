@@ -13,6 +13,7 @@ import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
+import 'dart:convert';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -37,7 +38,8 @@ class _LoginScreenState extends State<LoginScreen> {
               toastMessage(
                   message: state.message, tybeMessage: TybeMessage.negative);
             } else if (state is LoginSuccess) {
-              await CacheHelper.setData('user', state.user.toJson().toString());
+              await CacheHelper.setData(
+                  'user', json.encode(state.user.toJson()));
               Navigator.of(context)
                   .pushReplacementNamed(RouteManager.mainScreen);
             }

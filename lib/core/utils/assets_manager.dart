@@ -36,4 +36,6 @@ abstract class AssetsManager {
   /// Assets for iconProfile
   /// assets/images/icon/profile.png
   static const String iconProfile = "assets/images/icon/profile.png";
+
+  static const String user = "assets/images/user.png";
 }

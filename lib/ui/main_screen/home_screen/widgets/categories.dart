@@ -13,13 +13,13 @@ class CategorySection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: ColorManager.black.withOpacity(0.3),
+        color: ColorManager.black,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _buildItem('assets/images/icon/gym.png', 'Gym'),
+          _buildItem('assets/images/icon/gymicon.png', 'Gym'),
           _buildDivider(),
           _buildItem('assets/images/icon/fitness.png', 'Fitness'),
           _buildDivider(),
@@ -42,7 +42,10 @@ class CategorySection extends StatelessWidget {
           children: [
             Image.asset(imagePath, height: 50),
             const SizedBox(height: 8),
-            Text(label, style: const TextStyle(color: ColorManager.white)),
+            Text(
+              label,
+              style: const TextStyle(color: ColorManager.white, fontSize: 15),
+            ),
           ],
         ),
       ),

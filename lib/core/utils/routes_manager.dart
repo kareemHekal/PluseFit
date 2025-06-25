@@ -12,5 +12,5 @@ abstract class RouteManager {
   static const String forgetPassword = '/forget-password';
   static const String otpScreen = '/otp-screen';
   static const String createNewPassword = '/create-new-password-screen';
-
+  static const String smartCoach = '/smart-coach-screen';
 }
