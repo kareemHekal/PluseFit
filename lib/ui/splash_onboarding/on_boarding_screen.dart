@@ -189,7 +189,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                                 pages.length - 1) {
                                               Navigator.pushNamedAndRemoveUntil(
                                                 context,
-                                                RouteManager.registerScreen,
+                                                RouteManager.loginScreen,
                                                 (route) => false,
                                               );
                                             } else {

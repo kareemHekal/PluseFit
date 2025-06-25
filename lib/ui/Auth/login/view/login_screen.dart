@@ -194,7 +194,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               style: AppTextStyle.medium12,
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                    context, RouteManager.registerScreen);
+                              },
                               child: Text(
                                 'Register',
                                 style: AppTextStyle.bold12.copyWith(
