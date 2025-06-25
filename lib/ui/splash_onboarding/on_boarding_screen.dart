@@ -80,7 +80,8 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                         Navigator.pushReplacementNamed(
                             context, RouteManager.loginScreen);
                       },
-                      child: Text(AppStrings.skip,
+                      child: _currentPage == pages.length - 1
+                          ? const SizedBox() : Text(AppStrings.skip,
                           style: AppTextStyle.regular16
                               .copyWith(color: Colors.white)),
                     ),

@@ -8,6 +8,7 @@ import '../constant.dart';
 @singleton
 class ApiManager {
   static late Dio dio;
+  static late Dio mealDio;
   static init() {
     dio = Dio(
       BaseOptions(
@@ -33,6 +34,43 @@ class ApiManager {
           // don't print responses with unit8 list data
           return !args.isResponse || !args.hasUint8ListData;
         }));
+
+    mealDio = Dio(
+      BaseOptions(
+          baseUrl: Constant.mealBaseUrl,
+          connectTimeout: Constant.connectTimeout,
+          receiveTimeout: Constant.connectTimeout,
+          sendTimeout: Constant.connectTimeout),
+    );
+    mealDio.interceptors.add(PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: false,
+        error: true,
+        compact: true,
+        maxWidth: 90,
+        enabled: kDebugMode,
+        filter: (options, args) {
+          // don't print requests with uris containing '/posts'
+          if (options.path.contains('/posts')) {
+            return false;
+          }
+          // don't print responses with unit8 list data
+          return !args.isResponse || !args.hasUint8ListData;
+        }));
+  }
+
+  Future<Response> getRequestForMeal(
+      {required String endpoint,
+        Map<String, dynamic>? queryParameters,
+        Map<String, dynamic>? headers}) async {
+    var response = await mealDio.get(endpoint,
+        queryParameters: queryParameters,
+        options: Options(
+          headers: headers,
+        ));
+    return response;
   }
 
   Future<Response> getRequest(

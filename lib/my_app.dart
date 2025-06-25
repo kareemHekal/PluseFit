@@ -5,10 +5,17 @@ import 'package:fit_zone/ui/Auth/login/view/login_screen.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
 import 'package:fit_zone/ui/main_screen/main_screen.dart';
+import 'package:fit_zone/ui/food/view/food_screen.dart';
+import 'package:fit_zone/ui/food/view_model/categories_cubit.dart';
+import 'package:fit_zone/ui/food/view_model/meals_cubit.dart';
+import 'package:fit_zone/ui/main_screen.dart';
 import 'package:fit_zone/ui/splash_onboarding/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'config/theme/app_theme.dart';
+import 'core/di/di.dart';
 import 'core/utils/routes_manager.dart';
 
 class MyApp extends StatelessWidget {
@@ -30,6 +37,13 @@ class MyApp extends StatelessWidget {
         //RouteManager.createNewPassword: (context) =>  const CreateNewPassword(),
         RouteManager.registerScreen: (context) => const RegisterView(),
         RouteManager.onBoardingScreen: (context) => const OnBoardingScreen(),
+        RouteManager.foodScreen: (context) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => getIt<CategoriesCubit>()),
+            BlocProvider(create: (_) => getIt<MealsCubit>()),
+          ],
+          child: const FoodScreen(),
+        ),
         RouteManager.loginScreen: (context) => BlocProvider(
               create: (context) => getIt<LoginCubit>(),
               child: const LoginScreen(),
