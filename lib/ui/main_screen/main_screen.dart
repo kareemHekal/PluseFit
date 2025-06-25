@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:fit_zone/ui/main_screen/home_screen.dart';
+import 'package:fit_zone/ui/main_screen/home_screen/home_screen.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen.dart';
 import 'package:fit_zone/ui/main_screen/smart_coach_screen.dart';
 import 'package:fit_zone/ui/main_screen/workouts_screen.dart';
