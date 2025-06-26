@@ -1,6 +1,5 @@
 // ignore_for_file: use_build_context_synchronously, deprecated_member_use
 
-import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
@@ -49,7 +48,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   message: state.message, tybeMessage: TybeMessage.negative);
             }
             if (state is LoginSuccess) {
-              await CacheHelper.setData('user', state.user.toJson().toString());
               Navigator.of(context)
                   .pushReplacementNamed(RouteManager.mainScreen);
             }
@@ -117,7 +115,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, RouteManager.forgetPassword);
+                            },
                             child: Text(
                               'Forget Password ?',
                               style: AppTextStyle.medium12.copyWith(

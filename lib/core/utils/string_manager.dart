@@ -48,6 +48,8 @@ abstract class AppStrings {
   static String get skip => "skip".tr();
   static String get back => "back".tr();
   static String get doIt => "doIt".tr();
+
+  static String get confirmTheNewPassword => "confirmTheNewPassword".tr();
   static String get onBoardingOne => "onBoardingOne".tr();
   static String get onBoardingTwo => "onBoardingTwo".tr();
   static String get onBoardingThree => "onBoardingThree".tr();
