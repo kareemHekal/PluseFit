@@ -21,6 +21,9 @@ import '../../data/data_source_contract/food_datasource/get_categories_of_meals_
     as _i1015;
 import '../../data/data_source_contract/food_datasource/get_meals_by_category_datasource.dart'
     as _i187;
+import '../../data/data_source_contract/recommendation_to_day_datasource.dart'
+    as _i531;
+import '../../data/data_source_contract/workouts_datasource.dart' as _i395;
 import '../../data/data_source_impl/auth/forget_password_datasource_impl.dart'
     as _i449;
 import '../../data/data_source_impl/auth/login_datasource_impl.dart' as _i1013;
@@ -30,20 +33,27 @@ import '../../data/data_source_impl/food_datasource_impl/get_categories_of_meals
     as _i914;
 import '../../data/data_source_impl/food_datasource_impl/get_meals_by_category_datasource_impl.dart'
     as _i458;
+import '../../data/data_source_impl/recommendation_to_day_datasource_impl.dart'
+    as _i769;
+import '../../data/data_source_impl/workouts_datasource_impl.dart' as _i929;
 import '../../data/repo_impl/food_repo_impl/get_categories_of_meals_repo_impl.dart'
     as _i511;
 import '../../data/repo_impl/food_repo_impl/get_meals_by_category_repo_impl.dart'
     as _i267;
 import '../../data/repo_impl/forget_password_repo_impl.dart' as _i1051;
 import '../../data/repo_impl/login_repo_impl.dart' as _i886;
+import '../../data/repo_impl/recommendation_repo_impl.dart' as _i364;
 import '../../data/repo_impl/register_repo_impl.dart' as _i357;
+import '../../data/repo_impl/workouts_repo_impl.dart' as _i710;
 import '../../domain/repo_contract/food_repo/get_categories_of_meals_repo.dart'
     as _i272;
 import '../../domain/repo_contract/food_repo/get_meals_by_category_repo.dart'
     as _i879;
 import '../../domain/repo_contract/forget_password_repo.dart' as _i109;
 import '../../domain/repo_contract/login_repo.dart' as _i496;
+import '../../domain/repo_contract/recommendation_repo.dart' as _i422;
 import '../../domain/repo_contract/register_repo.dart' as _i513;
+import '../../domain/repo_contract/workouts_repo.dart' as _i320;
 import '../../domain/use_cases/food_usecase/get_categories_of_meals_usecase.dart'
     as _i723;
 import '../../domain/use_cases/food_usecase/get_meals_by_category_usecase.dart'
@@ -54,6 +64,10 @@ import '../../domain/use_cases/forget_password_usecases/otp_usecase.dart'
     as _i1026;
 import '../../domain/use_cases/forget_password_usecases/reset_password_usecase.dart'
     as _i682;
+import '../../domain/use_cases/get_muscles_groups_usecase.dart' as _i225;
+import '../../domain/use_cases/get_recommendation_to_day_usecase.dart' as _i201;
+import '../../domain/use_cases/get_workouts_by_muscle_group_id_usecase.dart'
+    as _i612;
 import '../../domain/use_cases/login_usecase.dart' as _i645;
 import '../../domain/use_cases/register_usecase.dart' as _i328;
 import '../../ui/Auth/complete_register/view_model/complete_register_cubit.dart'
@@ -62,6 +76,10 @@ import '../../ui/Auth/login/viewmodel/login_cubit.dart' as _i210;
 import '../../ui/Auth/view_model/cubit/auth_cubit.dart' as _i906;
 import '../../ui/food/view_model/categories_cubit.dart' as _i535;
 import '../../ui/food/view_model/meals_cubit.dart' as _i410;
+import '../../ui/main_screen/home_screen/view_model/recommendation_cubit.dart'
+    as _i842;
+import '../../ui/main_screen/home_screen/view_model/upcoming_workouts_cubit.dart'
+    as _i280;
 import '../api/api_manager.dart' as _i1047;
 import '../cache/shared_pref.dart' as _i299;
 import '../logger/logger_module.dart' as _i279;
@@ -87,17 +105,23 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i449.ForgetPasswordDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i109.ForgetPasswordRepo>(() =>
         _i1051.ForgetPasswordRepoImpl(gh<_i1030.ForgetPasswordDatasource>()));
+    gh.factory<_i395.WorkoutsDataSource>(
+        () => _i929.WorkoutsDataSourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i1015.GetCategoriesOfMealsDatasource>(() =>
         _i914.GetCategoriesOfMealsDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i187.GetMealsByCategoryDatasource>(
         () => _i458.GetMealsByCategoryDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.singleton<_i1048.LoginDataSource>(
         () => _i1013.LoginDataSourceImpl(gh<_i1047.ApiManager>()));
+    gh.factory<_i531.RecommendationToDayDataSource>(
+        () => _i769.RecommendationToDayDataSourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i272.GetCategoriesOfMealsRepo>(() =>
         _i511.GetCategoriesOfMealsRepoImpl(
             gh<_i1015.GetCategoriesOfMealsDatasource>()));
     gh.factory<_i504.RegisterDataSource>(
         () => _i112.RegisterDatasourceImpl(gh<_i1047.ApiManager>()));
+    gh.factory<_i320.WorkoutsRepo>(
+        () => _i710.WorkoutsRepoImpl(gh<_i395.WorkoutsDataSource>()));
     gh.factory<_i256.ForgetPasswordUseCase>(
         () => _i256.ForgetPasswordUseCase(gh<_i109.ForgetPasswordRepo>()));
     gh.factory<_i1026.OtpUsecase>(
@@ -107,6 +131,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i879.GetMealsByCategoryRepo>(() =>
         _i267.GetMealsByCategoryRepoImpl(
             gh<_i187.GetMealsByCategoryDatasource>()));
+    gh.factory<_i422.RecommendationRepo>(() => _i364.RecommendationRepoImpl(
+        gh<_i531.RecommendationToDayDataSource>()));
     gh.factory<_i61.GetMealsByCategoryUsecase>(() =>
         _i61.GetMealsByCategoryUsecase(gh<_i879.GetMealsByCategoryRepo>()));
     gh.singleton<_i496.LoginRepo>(
@@ -129,8 +155,20 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.factory<_i535.CategoriesCubit>(
         () => _i535.CategoriesCubit(gh<_i723.GetCategoriesOfMealsUsecase>()));
+    gh.factory<_i225.GetMusclesGroupsUseCase>(
+        () => _i225.GetMusclesGroupsUseCase(gh<_i320.WorkoutsRepo>()));
+    gh.factory<_i612.GetWorkoutsByMuscleGroupIdUseCase>(() =>
+        _i612.GetWorkoutsByMuscleGroupIdUseCase(gh<_i320.WorkoutsRepo>()));
+    gh.factory<_i280.UpcomingWorkoutsCubit>(() => _i280.UpcomingWorkoutsCubit(
+          gh<_i225.GetMusclesGroupsUseCase>(),
+          gh<_i612.GetWorkoutsByMuscleGroupIdUseCase>(),
+        ));
+    gh.factory<_i201.GetRecommendationToDayUseCase>(() =>
+        _i201.GetRecommendationToDayUseCase(gh<_i422.RecommendationRepo>()));
     gh.factory<_i765.CompleteRegisterCubit>(
         () => _i765.CompleteRegisterCubit(gh<_i328.RegisterUseCase>()));
+    gh.factory<_i842.RecommendationCubit>(() =>
+        _i842.RecommendationCubit(gh<_i201.GetRecommendationToDayUseCase>()));
     return this;
   }
 }

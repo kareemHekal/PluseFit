@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:fit_zone/ui/main_screen/home_screen.dart';
+import 'package:fit_zone/ui/main_screen/home_screen/home_screen.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen.dart';
 import 'package:fit_zone/ui/main_screen/smart_coach_screen.dart';
 import 'package:fit_zone/ui/main_screen/workouts_screen.dart';
@@ -18,18 +18,30 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
-  final List<Widget> _screens = const [
-    HomeScreen(),
-    SmartCoachScreen(),
-    WorkoutsScreen(),
-    ProfileScreen(),
-  ];
+  List<Widget> get _screens => [
+        HomeScreen(
+          onCategoryTap: (category) {
+            if (category == "Trainer") {
+              setState(() {
+                _currentIndex = 1;
+              });
+            }
+          },
+          onSeeAllTap: () {
+            setState(() {
+              _currentIndex = 2;
+            });
+          },
+        ),
+        const SmartCoachScreen(),
+        const WorkoutsScreen(),
+        const ProfileScreen(),
+      ];
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Background image with dark overlay
         Positioned.fill(
           child: Image.asset(
             AssetsManager.imagesAuthBackground,
@@ -41,17 +53,14 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             color: Colors.black.withOpacity(0.6),
           ),
         ),
-        // Main content
         Scaffold(
           backgroundColor: Colors.transparent,
           body: IndexedStack(
             index: _currentIndex,
             children: _screens,
           ),
-          bottomNavigationBar:
-              const SizedBox(height: 100), // Reserve space for custom nav bar
+          bottomNavigationBar: const SizedBox(height: 100),
         ),
-        // Custom floating nav bar
         Positioned(
           left: 16,
           right: 16,
@@ -93,7 +102,7 @@ class CustomBottomNavBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(32),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: ColorManager.black.withOpacity(0.1),
             offset: const Offset(0, 2),
             blurRadius: 5,
             spreadRadius: 0,
