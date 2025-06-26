@@ -1,5 +1,7 @@
 // ignore_for_file: use_build_context_synchronously, deprecated_member_use
 
+import 'dart:convert';
+
 import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
@@ -12,16 +14,7 @@ import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_intent.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
-import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
-import 'package:fit_zone/core/utils/text_style_manager.dart';
-import 'package:fit_zone/core/utils/colors_manager.dart';
-import 'package:fit_zone/core/cache/shared_pref.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
-import 'dart:convert';
-
+import 'package.flutter_bloc/flutter_bloc.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -244,6 +237,21 @@ class _LoginScreenState extends State<LoginScreen> {
             );
           },
         ),
+      ),
+    );
+  }
+
+  Widget _SocialIconButton({required IconData icon, required VoidCallback onTap}) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(30),
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white.withOpacity(0.1),
+        ),
+        child: Icon(icon, color: ColorManager.primaryColor, size: 28),
       ),
     );
   }
