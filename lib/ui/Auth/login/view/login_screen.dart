@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously, deprecated_member_use
+// ignore_for_file: use_build_context_synchronously
 
 import 'dart:convert';
 
@@ -14,7 +14,7 @@ import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_intent.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_state.dart';
 import 'package:flutter/material.dart';
-import 'package.flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -51,7 +51,8 @@ class _LoginScreenState extends State<LoginScreen> {
             }
             return SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
                 child: BlurredContainer(
                   borderRadius: BorderRadius.circular(32),
                   child: Padding(
@@ -108,41 +109,20 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
-
                           const SizedBox(height: 8),
                           Align(
                             alignment: Alignment.centerRight,
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed(RouteManager.forgetPassword);
+                              },
                               child: Text(
                                 'Forget Password ?',
                                 style: AppTextStyle.medium12.copyWith(
                                   color: ColorManager.primaryColor,
                                   decoration: TextDecoration.underline,
                                 ),
-
-                        ),
-                        const SizedBox(height: 24),
-                        SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              FocusScope.of(context).unfocus();
-                              if (_formKey.currentState?.validate() ?? false) {
-                                BlocProvider.of<LoginCubit>(context).doIntent(
-                                  LoginIntent(
-                                    email: _emailController.text.trim(),
-                                    password: _passwordController.text,
-                                  ),
-                                );
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: ColorManager.primaryColor,
-                              foregroundColor: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
-
                               ),
                             ),
                           ),
@@ -158,26 +138,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               const Expanded(child: Divider()),
                             ],
                           ),
-                          const SizedBox(height: 12),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              _SocialIconButton(
-                                icon: Icons.facebook,
-                                onTap: () {},
-                              ),
-                              const SizedBox(width: 16),
-                              _SocialIconButton(
-                                icon: Icons.g_mobiledata,
-                                onTap: () {},
-                              ),
-                              const SizedBox(width: 16),
-                              _SocialIconButton(
-                                icon: Icons.apple,
-                                onTap: () {},
-                              ),
-                            ],
-                          ),
                           const SizedBox(height: 24),
                           SizedBox(
                             width: double.infinity,
@@ -186,12 +146,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 FocusScope.of(context).unfocus();
                                 if (_formKey.currentState?.validate() ??
                                     false) {
-                                  BlocProvider.of<LoginCubit>(context).doIntent(
-                                    LoginIntent(
-                                      email: _emailController.text.trim(),
-                                      password: _passwordController.text,
-                                    ),
-                                  );
+                                  context.read<LoginCubit>().doIntent(
+                                        LoginIntent(
+                                          email: _emailController.text.trim(),
+                                          password: _passwordController.text,
+                                        ),
+                                      );
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -240,20 +200,4 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-
-  Widget _SocialIconButton({required IconData icon, required VoidCallback onTap}) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(30),
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white.withOpacity(0.1),
-        ),
-        child: Icon(icon, color: ColorManager.primaryColor, size: 28),
-      ),
-    );
-  }
 }
-
