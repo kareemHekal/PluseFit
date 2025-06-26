@@ -19,6 +19,8 @@ import '../../data/data_source_contract/auth/login_datasource.dart' as _i1048;
 import '../../data/data_source_contract/auth/register_datasource.dart' as _i504;
 import '../../data/data_source_contract/food_datasource/get_categories_of_meals_datasource.dart'
     as _i1015;
+import '../../data/data_source_contract/food_datasource/get_meal_details_datasource.dart'
+    as _i375;
 import '../../data/data_source_contract/food_datasource/get_meals_by_category_datasource.dart'
     as _i187;
 import '../../data/data_source_contract/recommendation_to_day_datasource.dart'
@@ -31,6 +33,8 @@ import '../../data/data_source_impl/auth/register_datasource_impl.dart'
     as _i112;
 import '../../data/data_source_impl/food_datasource_impl/get_categories_of_meals_datasource_impl.dart'
     as _i914;
+import '../../data/data_source_impl/food_datasource_impl/get_meal_details_datasource_impl.dart'
+    as _i106;
 import '../../data/data_source_impl/food_datasource_impl/get_meals_by_category_datasource_impl.dart'
     as _i458;
 import '../../data/data_source_impl/recommendation_to_day_datasource_impl.dart'
@@ -38,6 +42,8 @@ import '../../data/data_source_impl/recommendation_to_day_datasource_impl.dart'
 import '../../data/data_source_impl/workouts_datasource_impl.dart' as _i929;
 import '../../data/repo_impl/food_repo_impl/get_categories_of_meals_repo_impl.dart'
     as _i511;
+import '../../data/repo_impl/food_repo_impl/get_meal_details_repo_impl.dart'
+    as _i992;
 import '../../data/repo_impl/food_repo_impl/get_meals_by_category_repo_impl.dart'
     as _i267;
 import '../../data/repo_impl/forget_password_repo_impl.dart' as _i1051;
@@ -47,6 +53,8 @@ import '../../data/repo_impl/register_repo_impl.dart' as _i357;
 import '../../data/repo_impl/workouts_repo_impl.dart' as _i710;
 import '../../domain/repo_contract/food_repo/get_categories_of_meals_repo.dart'
     as _i272;
+import '../../domain/repo_contract/food_repo/get_meal_details_repo.dart'
+    as _i422;
 import '../../domain/repo_contract/food_repo/get_meals_by_category_repo.dart'
     as _i879;
 import '../../domain/repo_contract/forget_password_repo.dart' as _i109;
@@ -56,6 +64,8 @@ import '../../domain/repo_contract/register_repo.dart' as _i513;
 import '../../domain/repo_contract/workouts_repo.dart' as _i320;
 import '../../domain/use_cases/food_usecase/get_categories_of_meals_usecase.dart'
     as _i723;
+import '../../domain/use_cases/food_usecase/get_meal_details_usecase.dart'
+    as _i500;
 import '../../domain/use_cases/food_usecase/get_meals_by_category_usecase.dart'
     as _i61;
 import '../../domain/use_cases/forget_password_usecases/forget_password_usecase.dart'
@@ -75,6 +85,7 @@ import '../../ui/Auth/complete_register/view_model/complete_register_cubit.dart'
 import '../../ui/Auth/login/viewmodel/login_cubit.dart' as _i210;
 import '../../ui/Auth/view_model/cubit/auth_cubit.dart' as _i906;
 import '../../ui/food/view_model/categories_cubit.dart' as _i535;
+import '../../ui/food/view_model/meal_details_cubit.dart' as _i881;
 import '../../ui/food/view_model/meals_cubit.dart' as _i410;
 import '../../ui/main_screen/home_screen/view_model/recommendation_cubit.dart'
     as _i842;
@@ -101,6 +112,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i299.CacheHelper>(() => _i299.CacheHelper());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.loggerProvider);
     gh.lazySingleton<_i974.PrettyPrinter>(() => loggerModule.prettyPrinter);
+    gh.factory<_i375.GetMealDetailsDatasource>(
+        () => _i106.GetMealDetailsDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i1030.ForgetPasswordDatasource>(
         () => _i449.ForgetPasswordDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i109.ForgetPasswordRepo>(() =>
@@ -109,6 +122,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i929.WorkoutsDataSourceImpl(gh<_i1047.ApiManager>()));
     gh.factory<_i1015.GetCategoriesOfMealsDatasource>(() =>
         _i914.GetCategoriesOfMealsDatasourceImpl(gh<_i1047.ApiManager>()));
+    gh.factory<_i422.GetMealDetailsRepo>(() =>
+        _i992.GetMealDetailsRepoImpl(gh<_i375.GetMealDetailsDatasource>()));
     gh.factory<_i187.GetMealsByCategoryDatasource>(
         () => _i458.GetMealsByCategoryDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.singleton<_i1048.LoginDataSource>(
@@ -137,6 +152,8 @@ extension GetItInjectableX on _i174.GetIt {
         _i61.GetMealsByCategoryUsecase(gh<_i879.GetMealsByCategoryRepo>()));
     gh.singleton<_i496.LoginRepo>(
         () => _i886.LoginRepoImpl(gh<_i1048.LoginDataSource>()));
+    gh.factory<_i500.GetMealDetailsUsecase>(
+        () => _i500.GetMealDetailsUsecase(gh<_i422.GetMealDetailsRepo>()));
     gh.factory<_i513.RegisterRepo>(
         () => _i357.RegisterRepoImpl(gh<_i504.RegisterDataSource>()));
     gh.factory<_i723.GetCategoriesOfMealsUsecase>(() =>
@@ -146,6 +163,10 @@ extension GetItInjectableX on _i174.GetIt {
         _i328.RegisterUseCase(registerContract: gh<_i513.RegisterRepo>()));
     gh.factory<_i645.LoginUseCase>(
         () => _i645.LoginUseCase(gh<_i496.LoginRepo>()));
+    gh.factory<_i881.MealDetailsCubit>(() => _i881.MealDetailsCubit(
+          gh<_i500.GetMealDetailsUsecase>(),
+          gh<_i61.GetMealsByCategoryUsecase>(),
+        ));
     gh.factory<_i410.MealsCubit>(
         () => _i410.MealsCubit(gh<_i61.GetMealsByCategoryUsecase>()));
     gh.factory<_i906.AuthCubit>(() => _i906.AuthCubit(

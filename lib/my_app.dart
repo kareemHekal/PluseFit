@@ -5,6 +5,7 @@ import 'package:fit_zone/ui/Auth/login/view/login_screen.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
 import 'package:fit_zone/ui/food/view/food_screen.dart';
+import 'package:fit_zone/ui/food/view/food_details_screen.dart';
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart';
 import 'package:fit_zone/ui/food/view_model/meals_cubit.dart';
 import 'package:fit_zone/ui/main_screen/main_screen.dart';
@@ -35,12 +36,16 @@ class MyApp extends StatelessWidget {
         RouteManager.registerScreen: (context) => const RegisterView(),
         RouteManager.onBoardingScreen: (context) => const OnBoardingScreen(),
         RouteManager.foodScreen: (context) => MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (_) => getIt<CategoriesCubit>()),
-            BlocProvider(create: (_) => getIt<MealsCubit>()),
-          ],
-          child: const FoodScreen(),
-        ),
+              providers: [
+                BlocProvider(create: (_) => getIt<CategoriesCubit>()),
+                BlocProvider(create: (_) => getIt<MealsCubit>()),
+              ],
+              child: const FoodScreen(),
+            ),
+        RouteManager.foodDetailsScreen: (context) {
+          final mealId = ModalRoute.of(context)!.settings.arguments as String;
+          return FoodDetailsScreen(mealId: mealId);
+        },
         RouteManager.loginScreen: (context) => BlocProvider(
               create: (context) => getIt<LoginCubit>(),
               child: const LoginScreen(),
