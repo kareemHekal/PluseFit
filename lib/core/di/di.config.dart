@@ -42,7 +42,10 @@ import '../../data/repo_impl/food_repo_impl/get_meals_by_category_repo_impl.dart
     as _i267;
 import '../../data/repo_impl/forget_password_repo_impl.dart' as _i1051;
 import '../../data/repo_impl/login_repo_impl.dart' as _i886;
+<<<<<<< feature/PA-41-Home
 import '../../data/repo_impl/recommendation_repo_impl.dart' as _i364;
+=======
+>>>>>>> development
 import '../../data/repo_impl/register_repo_impl.dart' as _i357;
 import '../../data/repo_impl/workouts_repo_impl.dart' as _i710;
 import '../../domain/repo_contract/food_repo/get_categories_of_meals_repo.dart'
@@ -51,7 +54,10 @@ import '../../domain/repo_contract/food_repo/get_meals_by_category_repo.dart'
     as _i879;
 import '../../domain/repo_contract/forget_password_repo.dart' as _i109;
 import '../../domain/repo_contract/login_repo.dart' as _i496;
+<<<<<<< feature/PA-41-Home
 import '../../domain/repo_contract/recommendation_repo.dart' as _i422;
+=======
+>>>>>>> development
 import '../../domain/repo_contract/register_repo.dart' as _i513;
 import '../../domain/repo_contract/workouts_repo.dart' as _i320;
 import '../../domain/use_cases/food_usecase/get_categories_of_meals_usecase.dart'
@@ -64,10 +70,13 @@ import '../../domain/use_cases/forget_password_usecases/otp_usecase.dart'
     as _i1026;
 import '../../domain/use_cases/forget_password_usecases/reset_password_usecase.dart'
     as _i682;
+<<<<<<< feature/PA-41-Home
 import '../../domain/use_cases/get_muscles_groups_usecase.dart' as _i225;
 import '../../domain/use_cases/get_recommendation_to_day_usecase.dart' as _i201;
 import '../../domain/use_cases/get_workouts_by_muscle_group_id_usecase.dart'
     as _i612;
+=======
+>>>>>>> development
 import '../../domain/use_cases/login_usecase.dart' as _i645;
 import '../../domain/use_cases/register_usecase.dart' as _i328;
 import '../../ui/Auth/complete_register/view_model/complete_register_cubit.dart'
@@ -113,8 +122,11 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i458.GetMealsByCategoryDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.singleton<_i1048.LoginDataSource>(
         () => _i1013.LoginDataSourceImpl(gh<_i1047.ApiManager>()));
+<<<<<<< feature/PA-41-Home
     gh.factory<_i531.RecommendationToDayDataSource>(
         () => _i769.RecommendationToDayDataSourceImpl(gh<_i1047.ApiManager>()));
+=======
+>>>>>>> development
     gh.factory<_i272.GetCategoriesOfMealsRepo>(() =>
         _i511.GetCategoriesOfMealsRepoImpl(
             gh<_i1015.GetCategoriesOfMealsDatasource>()));
