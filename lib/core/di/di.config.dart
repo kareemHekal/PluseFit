@@ -48,7 +48,9 @@ import '../../data/repo_impl/food_repo_impl/get_meals_by_category_repo_impl.dart
     as _i267;
 import '../../data/repo_impl/forget_password_repo_impl.dart' as _i1051;
 import '../../data/repo_impl/login_repo_impl.dart' as _i886;
+
 import '../../data/repo_impl/recommendation_repo_impl.dart' as _i364;
+
 import '../../data/repo_impl/register_repo_impl.dart' as _i357;
 import '../../data/repo_impl/workouts_repo_impl.dart' as _i710;
 import '../../domain/repo_contract/food_repo/get_categories_of_meals_repo.dart'
@@ -59,7 +61,9 @@ import '../../domain/repo_contract/food_repo/get_meals_by_category_repo.dart'
     as _i879;
 import '../../domain/repo_contract/forget_password_repo.dart' as _i109;
 import '../../domain/repo_contract/login_repo.dart' as _i496;
+
 import '../../domain/repo_contract/recommendation_repo.dart' as _i422;
+
 import '../../domain/repo_contract/register_repo.dart' as _i513;
 import '../../domain/repo_contract/workouts_repo.dart' as _i320;
 import '../../domain/use_cases/food_usecase/get_categories_of_meals_usecase.dart'
@@ -74,10 +78,12 @@ import '../../domain/use_cases/forget_password_usecases/otp_usecase.dart'
     as _i1026;
 import '../../domain/use_cases/forget_password_usecases/reset_password_usecase.dart'
     as _i682;
+
 import '../../domain/use_cases/get_muscles_groups_usecase.dart' as _i225;
 import '../../domain/use_cases/get_recommendation_to_day_usecase.dart' as _i201;
 import '../../domain/use_cases/get_workouts_by_muscle_group_id_usecase.dart'
     as _i612;
+
 import '../../domain/use_cases/login_usecase.dart' as _i645;
 import '../../domain/use_cases/register_usecase.dart' as _i328;
 import '../../ui/Auth/complete_register/view_model/complete_register_cubit.dart'
@@ -128,8 +134,10 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i458.GetMealsByCategoryDatasourceImpl(gh<_i1047.ApiManager>()));
     gh.singleton<_i1048.LoginDataSource>(
         () => _i1013.LoginDataSourceImpl(gh<_i1047.ApiManager>()));
+
     gh.factory<_i531.RecommendationToDayDataSource>(
         () => _i769.RecommendationToDayDataSourceImpl(gh<_i1047.ApiManager>()));
+
     gh.factory<_i272.GetCategoriesOfMealsRepo>(() =>
         _i511.GetCategoriesOfMealsRepoImpl(
             gh<_i1015.GetCategoriesOfMealsDatasource>()));
@@ -152,8 +160,10 @@ extension GetItInjectableX on _i174.GetIt {
         _i61.GetMealsByCategoryUsecase(gh<_i879.GetMealsByCategoryRepo>()));
     gh.singleton<_i496.LoginRepo>(
         () => _i886.LoginRepoImpl(gh<_i1048.LoginDataSource>()));
+
     gh.factory<_i500.GetMealDetailsUsecase>(
         () => _i500.GetMealDetailsUsecase(gh<_i422.GetMealDetailsRepo>()));
+
     gh.factory<_i513.RegisterRepo>(
         () => _i357.RegisterRepoImpl(gh<_i504.RegisterDataSource>()));
     gh.factory<_i723.GetCategoriesOfMealsUsecase>(() =>
@@ -163,10 +173,12 @@ extension GetItInjectableX on _i174.GetIt {
         _i328.RegisterUseCase(registerContract: gh<_i513.RegisterRepo>()));
     gh.factory<_i645.LoginUseCase>(
         () => _i645.LoginUseCase(gh<_i496.LoginRepo>()));
+
     gh.factory<_i881.MealDetailsCubit>(() => _i881.MealDetailsCubit(
           gh<_i500.GetMealDetailsUsecase>(),
           gh<_i61.GetMealsByCategoryUsecase>(),
         ));
+
     gh.factory<_i410.MealsCubit>(
         () => _i410.MealsCubit(gh<_i61.GetMealsByCategoryUsecase>()));
     gh.factory<_i906.AuthCubit>(() => _i906.AuthCubit(
