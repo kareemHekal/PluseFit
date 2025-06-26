@@ -31,7 +31,8 @@ class CreateNewPassword extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(AppStrings.enterYourEmail, style: AppTextStyle.regular18),
+              Text(AppStrings.makeSureIts8Characters,
+                  style: AppTextStyle.regular18),
               Text(AppStrings.forgetPassword, style: AppTextStyle.bold20),
               TextFormField(
                 controller: passwordController,
@@ -73,7 +74,7 @@ class CreateNewPassword extends StatelessWidget {
                             NewPassword: rePasswordController.text),
                       );
                     },
-                    child: Text(AppStrings.done, style: AppTextStyle.regular16),
+                    child: Text(AppStrings.done),
                   ),
                 );
               }, listener: (context, state) {

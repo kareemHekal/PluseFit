@@ -1,5 +1,6 @@
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/back_icon.dart';
+import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
@@ -89,7 +90,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
         return AuthBackgroundCover(
           backIcon: const BackIcon(),
           bodyWidget: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(8.0),
             child: Form(
               key: _formKey,
               child: Center(
@@ -102,30 +103,36 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     Text(AppStrings.enterYourEmail,
                         style: AppTextStyle.regular18),
                     Text(AppStrings.forgetPassword, style: AppTextStyle.bold20),
-                    const SizedBox(height: 16),
-                    TextFormField(
-                      key: const ValueKey('email'),
-                      decoration: InputDecoration(
-                        labelText: AppStrings.email,
-                        prefixIcon: const Icon(Icons.email_outlined),
+                    BlurredContainer(
+                        child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        spacing: 16,
+                        children: [
+                          TextFormField(
+                            key: const ValueKey('email'),
+                            decoration: InputDecoration(
+                              labelText: AppStrings.email,
+                              prefixIcon: const Icon(Icons.email_outlined),
+                            ),
+                            validator: Validator.email,
+                            controller: _emailController,
+                            style: AppTextStyle.regular16.copyWith(
+                              color: Theme.of(context).colorScheme.tertiary,
+                            ),
+                          ),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: forgetPressed,
+                              child: Text(
+                                AppStrings.sendOtp,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      validator: Validator.email,
-                      controller: _emailController,
-                      style: AppTextStyle.regular16.copyWith(
-                        color: Theme.of(context).colorScheme.tertiary,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: forgetPressed,
-                          child: Text(AppStrings.sendOtp,
-                              style: AppTextStyle.regular16),
-                        ),
-                      ),
-                    ),
+                    )),
                   ],
                 ),
               ),
