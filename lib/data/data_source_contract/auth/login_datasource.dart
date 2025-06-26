@@ -1,5 +1,6 @@
-import 'package:fit_zone/data/model/register_response/user_model.dart';
+import 'package:fit_zone/data/model/login_responce.dart';
 
 abstract class LoginDataSource {
-  Future<UserModel> login({required String email, required String password});
+  Future<LoginResponse> login(
+      {required String email, required String password});
 }
