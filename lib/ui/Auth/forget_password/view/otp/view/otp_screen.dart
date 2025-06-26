@@ -174,8 +174,9 @@ class _OtpScreenState extends State<OtpScreen> {
                                         );
                                       }
                                     },
-                                    child: Text(AppStrings.confirm,
-                                        style: AppTextStyle.regular16),
+                                    child: Text(
+                                      AppStrings.confirm,
+                                    ),
                                   ),
                                 );
                               },
