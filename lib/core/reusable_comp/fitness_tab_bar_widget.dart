@@ -30,7 +30,7 @@ class FitnessTabBar extends StatelessWidget {
             BackIcon(onPressed: () {
               Navigator.pushReplacementNamed(context, RouteManager.mainScreen);
             }),
-            SizedBox(
+            const SizedBox(
               width: 100,
             ),
             Text(

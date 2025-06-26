@@ -47,7 +47,7 @@ class FitnessCard extends StatelessWidget {
               ),
               Positioned.fill(
                 child: Container(
-                  color: ColorManager.black.withOpacity(0.5),
+                  color: ColorManager.black.withValues(alpha: 0.5),
                 ),
               ),
               Positioned(

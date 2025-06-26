@@ -1,6 +1,6 @@
-/// _id : "67c8499726895f87ce0aa9bc"
-/// name : "Rectus Abdominis"
-/// image : "https://iili.io/33pYHNI.png"
+// _id : "67c8499726895f87ce0aa9bc"
+// name : "Rectus Abdominis"
+// image : "https://iili.io/33pYHNI.png"
 
 class Muscles {
   String? id;

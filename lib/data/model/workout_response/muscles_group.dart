@@ -1,5 +1,3 @@
-/// _id : "67c79f3526895f87ce0aa96b"
-/// name : "Abdominals"
 
 class MusclesGroup {
   String? id;
