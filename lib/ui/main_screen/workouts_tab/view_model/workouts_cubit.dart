@@ -1,11 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:fit_zone/core/api/api_result.dart';
-import 'package:fit_zone/data/model/workout_response/muscles_group.dart';
 import 'package:fit_zone/data/model/workout_response/muscles.dart';
+import 'package:fit_zone/data/model/workout_response/muscles_group.dart';
 import 'package:fit_zone/domain/use_cases/fitness_usecase.dart';
-import 'package:fit_zone/ui/workouts_tab/view_model/workouts_intent.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
+
+import 'workouts_intent.dart';
 
 part 'workouts_state.dart';
 

@@ -3,15 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i3;
 
-import 'package:fit_zone/core/api/api_result.dart' as _i5;
-import 'package:fit_zone/data/model/workout_response/muscles.dart' as _i8;
-import 'package:fit_zone/data/model/workout_response/muscles_group.dart' as _i6;
-import 'package:fit_zone/domain/repo_contract/workout_repo.dart' as _i2;
-import 'package:fit_zone/domain/use_cases/fitness_usecase.dart' as _i3;
+import 'package:fit_zone/core/api/api_result.dart' as _i4;
+import 'package:fit_zone/data/model/workout_response/muscles.dart' as _i7;
+import 'package:fit_zone/data/model/workout_response/muscles_group.dart' as _i5;
+import 'package:fit_zone/domain/use_cases/fitness_usecase.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:mockito/src/dummies.dart' as _i7;
+import 'package:mockito/src/dummies.dart' as _i6;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -27,57 +26,38 @@ import 'package:mockito/src/dummies.dart' as _i7;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeWorkoutRepo_0 extends _i1.SmartFake implements _i2.WorkoutRepo {
-  _FakeWorkoutRepo_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
-}
-
 /// A class which mocks [FitnessUsecase].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockFitnessUsecase extends _i1.Mock implements _i3.FitnessUsecase {
+class MockFitnessUsecase extends _i1.Mock implements _i2.FitnessUsecase {
   MockFitnessUsecase() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.WorkoutRepo get workoutRepo =>
-      (super.noSuchMethod(
-            Invocation.getter(#workoutRepo),
-            returnValue: _FakeWorkoutRepo_0(
-              this,
-              Invocation.getter(#workoutRepo),
-            ),
-          )
-          as _i2.WorkoutRepo);
-
-  @override
-  _i4.Future<_i5.ApiResult<List<_i6.MusclesGroup>>> callGroup({
+  _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>> callGroup({
     required String? id,
     required String? name,
   }) =>
       (super.noSuchMethod(
             Invocation.method(#callGroup, [], {#id: id, #name: name}),
-            returnValue:
-                _i4.Future<_i5.ApiResult<List<_i6.MusclesGroup>>>.value(
-                  _i7.dummyValue<_i5.ApiResult<List<_i6.MusclesGroup>>>(
-                    this,
+            returnValue: _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>>.value(
+          _i6.dummyValue<_i4.ApiResult<List<_i5.MusclesGroup>>>(
+            this,
                     Invocation.method(#callGroup, [], {#id: id, #name: name}),
                   ),
                 ),
-          )
-          as _i4.Future<_i5.ApiResult<List<_i6.MusclesGroup>>>);
+          ) as _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>>);
 
   @override
-  _i4.Future<_i5.ApiResult<List<_i8.Muscles>>> callMuscles(String? cardId) =>
+  _i3.Future<_i4.ApiResult<List<_i7.Muscles>>> callMuscles(String? cardId) =>
       (super.noSuchMethod(
             Invocation.method(#callMuscles, [cardId]),
-            returnValue: _i4.Future<_i5.ApiResult<List<_i8.Muscles>>>.value(
-              _i7.dummyValue<_i5.ApiResult<List<_i8.Muscles>>>(
-                this,
+        returnValue: _i3.Future<_i4.ApiResult<List<_i7.Muscles>>>.value(
+          _i6.dummyValue<_i4.ApiResult<List<_i7.Muscles>>>(
+            this,
                 Invocation.method(#callMuscles, [cardId]),
               ),
             ),
-          )
-          as _i4.Future<_i5.ApiResult<List<_i8.Muscles>>>);
+          ) as _i3.Future<_i4.ApiResult<List<_i7.Muscles>>>);
 }

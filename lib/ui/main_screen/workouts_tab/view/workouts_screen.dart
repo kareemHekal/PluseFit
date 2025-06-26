@@ -1,11 +1,12 @@
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
-import 'package:fit_zone/ui/workouts_tab/view/widget/tab_workout.dart';
-import 'package:fit_zone/ui/workouts_tab/view/widget/workout_card_screen.dart';
-import 'package:fit_zone/ui/workouts_tab/view_model/workouts_cubit.dart';
-import 'package:fit_zone/ui/workouts_tab/view_model/workouts_intent.dart';
+import 'package:fit_zone/ui/main_screen/workouts_tab/view_model/workouts_cubit.dart';
+import 'package:fit_zone/ui/main_screen/workouts_tab/view_model/workouts_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'widget/tab_workout.dart';
+import 'widget/workout_card_screen.dart';
 
 class WorkoutsScreen extends StatefulWidget {
   final String? selectedfitnessId;

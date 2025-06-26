@@ -2,7 +2,7 @@ import 'package:fit_zone/core/api/api_result.dart';
 import 'package:fit_zone/core/reusable_comp/fitness_tab_bar_widget.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/data/model/workout_response/muscles_group.dart';
-import 'package:fit_zone/ui/workouts_tab/view_model/workouts_cubit.dart';
+import 'package:fit_zone/ui/main_screen/workouts_tab/view_model/workouts_cubit.dart';
 import 'package:flutter/material.dart';
 
 class TabWorkout extends StatefulWidget {

@@ -1,4 +1,6 @@
+import 'package:fit_zone/core/reusable_comp/back_icon.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
+import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:flutter/material.dart';
 
 class FitnessTabBar extends StatelessWidget {
@@ -23,17 +25,28 @@ class FitnessTabBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       spacing: 20,
       children: [
-        Text(
-          title,
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall
-              ?.copyWith(fontWeight: FontWeight.w600),
+        Row(
+          children: [
+            BackIcon(onPressed: () {
+              Navigator.pushReplacementNamed(context, RouteManager.mainScreen);
+            }),
+            SizedBox(
+              width: 100,
+            ),
+            Text(
+              title,
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineSmall
+                  ?.copyWith(fontWeight: FontWeight.w600),
+            ),
+          ],
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
           child: TabBar(
+            tabAlignment: TabAlignment.start,
             onTap: onTabChanged,
             controller: controller,
             isScrollable: true,
