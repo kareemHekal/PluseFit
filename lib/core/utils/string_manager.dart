@@ -62,4 +62,7 @@ abstract class AppStrings {
   static String get login => "login".tr();
   static String get foodRecommendation => "foodRecommendation".tr();
   static String get subtitle => "subtitle".tr();
+  static String get workouts => "workouts".tr();
+  static String get fullBody => "fullBody".tr();
+  static String get noWorkoutFound => "noWorkoutFound".tr();
 }

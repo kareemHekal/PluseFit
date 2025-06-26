@@ -1,13 +1,14 @@
 // ignore_for_file: deprecated_member_use
 
+import 'dart:ui';
+
+import 'package:fit_zone/core/utils/assets_manager.dart';
+import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/ui/main_screen/home_screen/home_screen.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen.dart';
 import 'package:fit_zone/ui/main_screen/smart_coach_screen.dart';
-import 'package:fit_zone/ui/main_screen/workouts_screen.dart';
+import 'package:fit_zone/ui/main_screen/workouts_tab/view/workouts_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:fit_zone/core/utils/assets_manager.dart';
-import 'package:fit_zone/core/utils/colors_manager.dart';
-import 'dart:ui';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});

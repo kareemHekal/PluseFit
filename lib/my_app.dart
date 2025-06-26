@@ -4,12 +4,12 @@ import 'package:fit_zone/ui/Auth/forget_password/view/forget_password/view/forge
 import 'package:fit_zone/ui/Auth/login/view/login_screen.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
-import 'package:fit_zone/ui/food/view/food_screen.dart';
 import 'package:fit_zone/ui/food/view/food_details_screen.dart';
+import 'package:fit_zone/ui/food/view/food_screen.dart';
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart';
 import 'package:fit_zone/ui/food/view_model/meals_cubit.dart';
 import 'package:fit_zone/ui/main_screen/main_screen.dart';
-import 'package:fit_zone/ui/main_screen/workouts_screen.dart';
+import 'package:fit_zone/ui/main_screen/workouts_tab/view/workouts_screen.dart';
 import 'package:fit_zone/ui/splash_onboarding/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
