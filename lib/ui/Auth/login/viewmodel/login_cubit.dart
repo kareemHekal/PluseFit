@@ -23,6 +23,7 @@ class LoginCubit extends Cubit<LoginState> {
       final user = await loginUseCase(
           email: loginIntent.email, password: loginIntent.password);
       await CacheHelper.setData(Constant.tokenKey, user.token);
+      await CacheHelper.setData(Constant.userName, user.user?.firstName);
       emit(LoginSuccess(user.user ?? UserModel()));
     } catch (e) {
       emit(LoginError(e.toString()));
