@@ -7,6 +7,7 @@ import 'package:fit_zone/ui/main_screen/home_screen/widgets/popular_training_sec
 import 'package:flutter/material.dart';
 import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'dart:convert';
+import '../../../../core/utils/routes_manager.dart';
 
 import '../../../core/utils/routes_manager.dart';
 
