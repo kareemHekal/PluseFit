@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/utils/assets_manager.dart';
 import '../../../core/utils/colors_manager.dart';
 import '../../../core/utils/config.dart';
+import '../../../core/utils/routes_manager.dart';
 import '../../../core/utils/text_style_manager.dart';
 import '../view_model/categories_cubit.dart';
 import '../view_model/meals_cubit.dart';
@@ -45,7 +46,8 @@ class _FoodScreenState extends State<FoodScreen> {
         forceMaterialTransparency: true,
         leading: InkWell(
           onTap: () {
-            Navigator.pop(context);
+            Navigator.pushReplacementNamed(
+                context, RouteManager.mainScreen);
           },
           child: Image.asset(
             AssetsManager.backIcon,

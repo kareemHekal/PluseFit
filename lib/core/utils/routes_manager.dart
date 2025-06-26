@@ -16,4 +16,5 @@ abstract class RouteManager {
   static const String smartCoach = '/smart-coach-screen';
 
   static const String foodScreen = '/FOODSCREEN';
+  static const String workOutScreen = '/WORKOUTSCREEN';
 }

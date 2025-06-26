@@ -8,6 +8,7 @@ import 'package:fit_zone/ui/food/view/food_screen.dart';
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart';
 import 'package:fit_zone/ui/food/view_model/meals_cubit.dart';
 import 'package:fit_zone/ui/main_screen/main_screen.dart';
+import 'package:fit_zone/ui/main_screen/workouts_screen.dart';
 import 'package:fit_zone/ui/splash_onboarding/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         //RouteManager.createNewPassword: (context) =>  const CreateNewPassword(),
         RouteManager.registerScreen: (context) => const RegisterView(),
         RouteManager.onBoardingScreen: (context) => const OnBoardingScreen(),
+        RouteManager.workOutScreen: (context) => const WorkoutsScreen(),
         RouteManager.foodScreen: (context) => MultiBlocProvider(
           providers: [
             BlocProvider(create: (_) => getIt<CategoriesCubit>()),

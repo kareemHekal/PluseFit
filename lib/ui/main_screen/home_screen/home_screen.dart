@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'dart:convert';
 
+import '../../../core/utils/routes_manager.dart';
+
 class HomeScreen extends StatelessWidget {
   final void Function(String category) onCategoryTap;
   final VoidCallback onSeeAllTap;
@@ -79,13 +81,17 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 24),
             const RecommendationSection(),
             const SizedBox(height: 24),
-            UpcomingWorkoutsSection(onSeeAllTap: onSeeAllTap),
+            UpcomingWorkoutsSection(
+              onSeeAllTap: () {
+                Navigator.pushReplacementNamed(
+                    context, RouteManager.workOutScreen);
+              },
+            ),
             RecommendationForYouSection(
               onSeeAllTap: () {
-                /* -------------------------------------------------------------------------- */
-                /*                          navigate to food page her                         */
-                /* -------------------------------------------------------------------------- */
-              },
+                Navigator.pushReplacementNamed(
+                    context, RouteManager.foodScreen);
+                },
             ),
             const SizedBox(height: 24),
             // Add the Popular Training section here
