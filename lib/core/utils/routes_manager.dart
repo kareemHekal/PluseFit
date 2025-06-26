@@ -16,4 +16,5 @@ abstract class RouteManager {
 
   static const String foodScreen = '/FOODSCREEN';
   static const String workOutScreen = '/WORKOUTSCREEN';
+  static const String foodDetailsScreen = '/FOODDETAILSSCREEN';
 }

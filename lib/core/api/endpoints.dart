@@ -15,5 +15,5 @@ class EndPoint {
   /////    Meals     //////
   static const String getCategoriesOfMeals = "/v1/1/categories.php";
   static const String getMealsByCategory = "/v1/1/filter.php";
-
+  static const String getMealDetailsById = "/v1/1/lookup.php";
 }

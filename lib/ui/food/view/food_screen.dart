@@ -1,4 +1,3 @@
-
 import 'package:fit_zone/core/reusable_comp/home_background_cuver.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/ui/food/view/widgets/food_card.dart';
@@ -53,7 +52,8 @@ class _FoodScreenState extends State<FoodScreen> {
             AssetsManager.backIcon,
           ),
         ),
-        title: Text(AppStrings.foodRecommendation, style: AppTextStyle.medium26),
+        title:
+            Text(AppStrings.foodRecommendation, style: AppTextStyle.medium26),
       ),
       bodyWidget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,12 +65,16 @@ class _FoodScreenState extends State<FoodScreen> {
               if (state is CategoriesLoadingState) {
                 return const Center(child: CircularProgressIndicator());
               } else if (state is CategoriesErrorState) {
-                return Center(child: Text(state.message, style: const TextStyle(color: Colors.white)));
+                return Center(
+                    child: Text(state.message,
+                        style: const TextStyle(color: Colors.white)));
               } else if (state is CategoriesLoadedState) {
                 final categories = state.categories;
 
                 if (categories.isEmpty) {
-                  return const Center(child: Text("No categories found", style: TextStyle(color: Colors.white)));
+                  return const Center(
+                      child: Text("No categories found",
+                          style: TextStyle(color: Colors.white)));
                 }
 
                 if (selectedTab == 0) {
@@ -81,7 +85,8 @@ class _FoodScreenState extends State<FoodScreen> {
                   height: 50,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 5),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                     itemCount: categories.length,
                     itemBuilder: (context, index) {
                       final isSelected = index == selectedTab;
@@ -95,9 +100,12 @@ class _FoodScreenState extends State<FoodScreen> {
                             _loadMealsByCategory(category.strCategory);
                           },
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 8),
                             decoration: BoxDecoration(
-                              color: isSelected ? ColorManager.primaryColor : Colors.transparent,
+                              color: isSelected
+                                  ? ColorManager.primaryColor
+                                  : Colors.transparent,
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
@@ -125,14 +133,16 @@ class _FoodScreenState extends State<FoodScreen> {
                   return const Center(child: CircularProgressIndicator());
                 } else if (state is MealsErrorState) {
                   return Center(
-                    child: Text(state.message, style: const TextStyle(color: Colors.white)),
+                    child: Text(state.message,
+                        style: const TextStyle(color: Colors.white)),
                   );
                 } else if (state is MealsLoadedState) {
                   final meals = state.meals;
 
                   return GridView.builder(
                     padding: const EdgeInsets.all(16),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 16,
                       crossAxisSpacing: 16,
@@ -141,9 +151,17 @@ class _FoodScreenState extends State<FoodScreen> {
                     itemCount: meals.length,
                     itemBuilder: (context, index) {
                       final meal = meals[index];
-                      return FoodCard(
-                        title: meal.strMeal,
-                        imageUrl: meal.strMealThumb,
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed(
+                            RouteManager.foodDetailsScreen,
+                            arguments: meal.idMeal,
+                          );
+                        },
+                        child: FoodCard(
+                          title: meal.strMeal,
+                          imageUrl: meal.strMealThumb,
+                        ),
                       );
                     },
                   );
@@ -157,5 +175,3 @@ class _FoodScreenState extends State<FoodScreen> {
     );
   }
 }
-
-
