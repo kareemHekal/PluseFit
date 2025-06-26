@@ -1,6 +1,9 @@
 // ignore_for_file: depend_on_referenced_packages, avoid_print, non_constant_identifier_names
 
+import 'package:fit_zone/core/cache/shared_pref.dart';
+import 'package:fit_zone/core/constant.dart';
 import 'package:fit_zone/core/di/di.dart';
+import 'package:fit_zone/data/model/register_response/user_model.dart';
 import 'package:fit_zone/domain/use_cases/login_usecase.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_intent.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_state.dart';
@@ -19,7 +22,8 @@ class LoginCubit extends Cubit<LoginState> {
     try {
       final user = await loginUseCase(
           email: loginIntent.email, password: loginIntent.password);
-      emit(LoginSuccess(user));
+      await CacheHelper.setData(Constant.tokenKey, user.token);
+      emit(LoginSuccess(user.user ?? UserModel()));
     } catch (e) {
       emit(LoginError(e.toString()));
     }

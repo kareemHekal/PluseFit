@@ -1,10 +1,14 @@
 import 'package:fit_zone/core/di/di.dart';
-import 'package:fit_zone/core/reusable_comp/custom_button.dart';
+import 'package:fit_zone/core/reusable_comp/back_icon.dart';
+import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
+import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/ui/Auth/forget_password/view/create_new_password/view/create_password.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:lottie/lottie.dart';
+import 'package:pinput/pinput.dart';
+
 import '../../../../../../core/reusable_comp/auth_background_cuver.dart';
 import '../../../../../../core/utils/colors_manager.dart';
 import '../../../../../../core/utils/string_manager.dart';
@@ -14,14 +18,33 @@ import '../../../../view_model/cubit/auth_intent.dart';
 
 class OtpScreen extends StatefulWidget {
   final String email;
-   const OtpScreen(this.email,{super.key,});
+
+  const OtpScreen(
+    this.email, {
+    super.key,
+  });
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
 }
 
 class _OtpScreenState extends State<OtpScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String otp = '';
+
+  final preFilledWidget = Column(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+      Container(
+        width: 56,
+        height: 3,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+    ],
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -29,24 +52,32 @@ class _OtpScreenState extends State<OtpScreen> {
       create: (context) => getIt<AuthCubit>(),
       child: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
-          if (state is SendEmailVerificationSuccessState) {
-            toastMessage(
-              message: state.response?.message ?? "Code resent successfully",
-              tybeMessage: TybeMessage.positive,
+          if (state is VerifyResetCodeLoadingState) {
+            showDialog(
+              context: context,
+              barrierDismissible: false,
+              builder: (_) {
+                return Dialog(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  child: Center(
+                    child: Lottie.asset(
+                      AssetsManager.lottieLoading,
+                      width: 150,
+                      height: 150,
+                      reverse: true,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                );
+              },
             );
-          } else if (state is SendEmailVerificationErrorState) {
+          }
+
+          if (state is VerifyResetCodeSuccessState) {
+            Navigator.of(context, rootNavigator: true).pop();
             toastMessage(
-              message: state.message ?? "Failed to resend code",
-              tybeMessage: TybeMessage.negative,
-            );
-          } else if (state is VerifyResetCodeErrorState) {
-            toastMessage(
-              message: state.message.toString(),
-              tybeMessage: TybeMessage.negative,
-            );
-          } else if (state is VerifyResetCodeSuccessState) {
-            toastMessage(
-              message: state.response!.status.toString(),
+              message: state.response?.status ?? "Verified successfully",
               tybeMessage: TybeMessage.positive,
             );
             Navigator.push(
@@ -56,97 +87,124 @@ class _OtpScreenState extends State<OtpScreen> {
               ),
             );
           }
+
+          if (state is VerifyResetCodeErrorState) {
+            Navigator.of(context, rootNavigator: true).pop();
+            toastMessage(
+              message: state.message ?? "Something went wrong",
+              tybeMessage: TybeMessage.negative,
+            );
+          }
+
+          if (state is SendEmailVerificationSuccessState) {
+            Navigator.of(context, rootNavigator: true).pop();
+            toastMessage(
+              message: state.response?.message ?? "Code resent successfully",
+              tybeMessage: TybeMessage.positive,
+            );
+          }
         },
         child: AuthBackgroundCover(
-          bodyWidget: SingleChildScrollView(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 96),
-                Text(AppStrings.otpCode, style: AppTextStyle.bold20),
-                const SizedBox(height: 8),
-                Text(AppStrings.enterYourOtp, style: AppTextStyle.regular18),
-                const SizedBox(height: 25),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: ColorManager.backgroundColorr,
-                  ),
-                  child: Column(
-                    children: [
-                      OtpTextField(
-                        numberOfFields: 6,
-                        showFieldAsBox: false,
-                        cursorColor: ColorManager.primaryColor,
-                        borderColor: ColorManager.primaryColor,
-                        enabledBorderColor: ColorManager.primaryColor,
-                        disabledBorderColor: ColorManager.white,
-                        focusedBorderColor: ColorManager.primaryColor,
-                        textStyle: AppTextStyle.regular18.copyWith(
-                          color: ColorManager.primaryColor,
-                        ),
-                        fieldWidth: 52,
-                        fieldHeight: 52,
-                        borderWidth: 0,
-                        margin: const EdgeInsets.symmetric(
-                          vertical: 24,
-                          horizontal: 5.5,
-                        ),
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        filled: false,
-                        onSubmit: (String verificationCode) {
-                          setState(() {
-                            otp = verificationCode;
-                          });
-                        },
-                      ),
-                      const SizedBox(height: 24),
-                      BlocBuilder<AuthCubit, AuthState>(
-                        builder: (context, state) {
-                          if (state is VerifyResetCodeLoadingState) {
-                            return const Center(
-                                child: CircularProgressIndicator());
-                          }
-                          return CustomButton(
-                            onPressed: () {
-                              if (otp.length == 6) {
+          backIcon: const BackIcon(),
+          bodyWidget: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(AppStrings.otpCode, style: AppTextStyle.bold20),
+                    Text(AppStrings.enterYourOtp,
+                        style: AppTextStyle.regular18),
+                    const SizedBox(height: 16),
+                    BlurredContainer(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Pinput(
+                              length: 6,
+                              showCursor: true,
+                              preFilledWidget: preFilledWidget,
+                              pinAnimationType: PinAnimationType.slide,
+                              controller: TextEditingController(text: otp),
+                              validator: (value) {
+                                if (value == null || value.length < 6) {
+                                  return 'Please enter full 6-digit OTP';
+                                }
+                                return null;
+                              },
+                              onCompleted: (value) {
+                                otp = value;
+                              },
+                              defaultPinTheme: PinTheme(
+                                height: 60,
+                                width: 60,
+                                textStyle: AppTextStyle.medium20.copyWith(
+                                  color: ColorManager.primaryColor,
+                                ),
+                              ),
+                              errorPinTheme: PinTheme(
+                                height: 60,
+                                width: 60,
+                                textStyle: AppTextStyle.medium20
+                                    .copyWith(color: Colors.red),
+                                decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(12),
+                                  border:
+                                      Border.all(color: Colors.red, width: 1.5),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 24),
+                            BlocBuilder<AuthCubit, AuthState>(
+                              builder: (context, state) {
+                                return SizedBox(
+                                  width: double.infinity,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      if (_formKey.currentState?.validate() ??
+                                          false) {
+                                        BlocProvider.of<AuthCubit>(context)
+                                            .doIntent(
+                                          VerifyResetCode(resetCode: otp),
+                                        );
+                                      }
+                                    },
+                                    child: Text(
+                                      AppStrings.confirm,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                            const SizedBox(height: 12),
+                            Text(AppStrings.didntRecieve,
+                                style: AppTextStyle.medium16),
+                            GestureDetector(
+                              onTap: () {
                                 BlocProvider.of<AuthCubit>(context).doIntent(
-                                  VerifyResetCode(resetCode: otp),
+                                  ForgetPassword(email: widget.email),
                                 );
-                              } else {
-                                toastMessage(
-                                  message: "Please enter the complete OTP code",
-                                  tybeMessage: TybeMessage.negative,
-                                );
-                              }
-                            },
-                            title: AppStrings.confirm,
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 4),
-                      Text(AppStrings.didntRecieve,
-                          style: AppTextStyle.medium16),
-                      const SizedBox(height: 4),
-                      GestureDetector(
-                        onTap: () {
-                          BlocProvider.of<AuthCubit>(context).doIntent(
-                            ForgetPassword(email: widget.email),
-                          );
-                        },
-                        child: Text(
-                          AppStrings.resendCode,
-                          style: AppTextStyle.medium16.copyWith(
-                            color: ColorManager.primaryColor,
-                            decoration: TextDecoration.underline,
-                            decorationColor: ColorManager.primaryColor,
-                          ),
+                              },
+                              child: Text(
+                                AppStrings.resendCode,
+                                style: AppTextStyle.medium16.copyWith(
+                                  color: ColorManager.primaryColor,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),

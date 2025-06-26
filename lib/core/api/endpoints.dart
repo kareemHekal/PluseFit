@@ -12,6 +12,9 @@ class EndPoint {
       "/api/v1/musclesGroup/by-muscle-group";
 
 
+  static const String forgetPasswordEndpoint = "/api/v1/auth/forgotPassword";
+  static const String verifyResetCode = "/api/v1/auth/verifyResetCode";
+  static const String resetPassword = "/api/v1/auth/resetPassword";
 
   /////    Meals     //////
   static const String getCategoriesOfMeals = "/v1/1/categories.php";
