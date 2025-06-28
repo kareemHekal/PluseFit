@@ -53,7 +53,8 @@ class CreateNewPassword extends StatelessWidget {
                 cursorColor: Colors.white,
                 style: const TextStyle(color: Colors.white),
                 validator: (value) =>
-                    Validator.confirmPassword(value, passwordController.text),
+                    Validator.confirmPassword(
+                        rePasswordController.text, passwordController.text),
               ),
               const SizedBox(
                 height: 24,

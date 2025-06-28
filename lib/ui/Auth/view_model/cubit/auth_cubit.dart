@@ -39,7 +39,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> _forgetPassword({required ForgetPassword intent}) async {
+  _forgetPassword({required ForgetPassword intent}) async {
     emit(SendEmailVerificationLoadingState());
     final result = await forgetPasswordUseCase.call(email: intent.email);
 
@@ -50,7 +50,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> _verifyResetCode({required VerifyResetCode intent}) async {
+  _verifyResetCode({required VerifyResetCode intent}) async {
     emit(VerifyResetCodeLoadingState());
     final result = await otpUsecase.call(resetCode: intent.resetCode);
     if (result is SuccessApiResult<OtpResponse>) {
@@ -60,7 +60,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> _resetPassowrd({required ResetPassword intent}) async {
+  _resetPassowrd({required ResetPassword intent}) async {
     emit(ResetPasswordLoadingState());
     final result = await resetPasswordUsecase.call(
         email: intent.email, newPassword: intent.NewPassword);
