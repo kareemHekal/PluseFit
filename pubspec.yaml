@@ -126,6 +126,7 @@ flutter:
     - assets/lottie/
     - assets/images/icon/
     - assets/images/splash_onboarding/
+    - assets/images/smart_coach/
     - assets/translations/
     - assets/images/icon/
 

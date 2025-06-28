@@ -5,11 +5,14 @@ abstract class AssetsManager {
       "assets/images/auth_background.png";
   static const String imagesHomeBackground =
       "assets/images/home_background.png";
+  static const String imageSmartCoachBackground =
+      "assets/images/smart_coach/smart_coach_bg.png";
 
   /// Assets for imagesIconAppIcon
   /// assets/images/icon/app_icon.png
   static const String imagesIconAppIcon = "assets/images/icon/app_icon.png";
   static const String lottieLoading = "assets/lottie/loading.json";
+  static const String coachImg = "assets/images/smart_coach/coach_img.jpg";
 
   /// Assets for imagesIconAppIconForeground
   /// assets/images/icon/app_icon_foreground.png
@@ -23,7 +26,6 @@ abstract class AssetsManager {
   /// Assets for translationsEn
   /// assets/translations/en.json
   static const String translationsEn = "assets/translations/en.json";
-
 
   static const String imageFoodBackground = "assets/images/food_background.jpg";
   static const String backIcon = "assets/images/icon/back_icon.png";

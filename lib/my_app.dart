@@ -16,6 +16,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'config/theme/app_theme.dart';
 import 'core/utils/routes_manager.dart';
+import 'ui/smart_coach/view/chat_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -54,7 +55,8 @@ class MyApp extends StatelessWidget {
             ),
       },
       // initialRoute: RouteManager.mainScreen,
-      initialRoute: RouteManager.onBoardingScreen,
+      // initialRoute: RouteManager.onBoardingScreen,
+      home: const ChatScreen(),
     );
   }
 }
