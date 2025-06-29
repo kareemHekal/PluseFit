@@ -30,8 +30,13 @@ import 'package:mockito/src/dummies.dart' as _i7;
 
 class _FakeGetCategoriesOfMealsRepo_0 extends _i1.SmartFake
     implements _i2.GetCategoriesOfMealsRepo {
-  _FakeGetCategoriesOfMealsRepo_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+  _FakeGetCategoriesOfMealsRepo_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [GetCategoriesOfMealsUsecase].
@@ -46,24 +51,27 @@ class MockGetCategoriesOfMealsUsecase extends _i1.Mock
   @override
   _i2.GetCategoriesOfMealsRepo get getCategoriesOfMealsRepo =>
       (super.noSuchMethod(
-            Invocation.getter(#getCategoriesOfMealsRepo),
-            returnValue: _FakeGetCategoriesOfMealsRepo_0(
-              this,
-              Invocation.getter(#getCategoriesOfMealsRepo),
-            ),
-          )
-          as _i2.GetCategoriesOfMealsRepo);
+        Invocation.getter(#getCategoriesOfMealsRepo),
+        returnValue: _FakeGetCategoriesOfMealsRepo_0(
+          this,
+          Invocation.getter(#getCategoriesOfMealsRepo),
+        ),
+      ) as _i2.GetCategoriesOfMealsRepo);
 
   @override
   _i4.Future<_i5.ApiResult<List<_i6.Category>>> execute() =>
       (super.noSuchMethod(
-            Invocation.method(#execute, []),
-            returnValue: _i4.Future<_i5.ApiResult<List<_i6.Category>>>.value(
-              _i7.dummyValue<_i5.ApiResult<List<_i6.Category>>>(
-                this,
-                Invocation.method(#execute, []),
-              ),
-            ),
-          )
-          as _i4.Future<_i5.ApiResult<List<_i6.Category>>>);
+        Invocation.method(
+          #execute,
+          [],
+        ),
+        returnValue: _i4.Future<_i5.ApiResult<List<_i6.Category>>>.value(
+            _i7.dummyValue<_i5.ApiResult<List<_i6.Category>>>(
+          this,
+          Invocation.method(
+            #execute,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i5.ApiResult<List<_i6.Category>>>);
 }
