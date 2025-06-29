@@ -47,6 +47,10 @@ abstract class AppStrings {
   static String get done => "done".tr();
   static String get skip => "skip".tr();
   static String get back => "back".tr();
+
+  static String get noSavedConversations => "noSavedConversations".tr();
+
+  static String get typeYourMessage => "typeYourMessage".tr();
   static String get smartCoach => "smartCoach".tr();
   static String get doIt => "doIt".tr();
   static String get previousConversations => "previousConversations".tr();

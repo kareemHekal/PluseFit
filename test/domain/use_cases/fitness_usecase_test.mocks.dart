@@ -40,30 +40,42 @@ class MockWorkoutRepo extends _i1.Mock implements _i2.WorkoutRepo {
     required String? name,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#getAllGroupWorkout, [], {#id: id, #name: name}),
-            returnValue:
-                _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>>.value(
-                  _i6.dummyValue<_i4.ApiResult<List<_i5.MusclesGroup>>>(
-                    this,
-                    Invocation.method(#getAllGroupWorkout, [], {
-                      #id: id,
-                      #name: name,
-                    }),
-                  ),
-                ),
-          )
-          as _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>>);
+        Invocation.method(
+          #getAllGroupWorkout,
+          [],
+          {
+            #id: id,
+            #name: name,
+          },
+        ),
+        returnValue: _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>>.value(
+            _i6.dummyValue<_i4.ApiResult<List<_i5.MusclesGroup>>>(
+          this,
+          Invocation.method(
+            #getAllGroupWorkout,
+            [],
+            {
+              #id: id,
+              #name: name,
+            },
+          ),
+        )),
+      ) as _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>>);
 
   @override
   _i3.Future<_i4.ApiResult<List<_i7.Muscles>>> getAllWorkout(String? cardId) =>
       (super.noSuchMethod(
-            Invocation.method(#getAllWorkout, [cardId]),
-            returnValue: _i3.Future<_i4.ApiResult<List<_i7.Muscles>>>.value(
-              _i6.dummyValue<_i4.ApiResult<List<_i7.Muscles>>>(
-                this,
-                Invocation.method(#getAllWorkout, [cardId]),
-              ),
-            ),
-          )
-          as _i3.Future<_i4.ApiResult<List<_i7.Muscles>>>);
+        Invocation.method(
+          #getAllWorkout,
+          [cardId],
+        ),
+        returnValue: _i3.Future<_i4.ApiResult<List<_i7.Muscles>>>.value(
+            _i6.dummyValue<_i4.ApiResult<List<_i7.Muscles>>>(
+          this,
+          Invocation.method(
+            #getAllWorkout,
+            [cardId],
+          ),
+        )),
+      ) as _i3.Future<_i4.ApiResult<List<_i7.Muscles>>>);
 }

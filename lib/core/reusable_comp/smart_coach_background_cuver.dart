@@ -26,26 +26,30 @@ class SmartCoachBackgroundCover extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Scaffold(
-        drawer: const SmartCoachDrawer(),
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-            automaticallyImplyLeading: false,
-            forceMaterialTransparency: true,
-            leading: backIcon,
-            actions: [
-              IconButton(
-                  onPressed: () {
-                    // here it make you to go to side menu (drawer)
-                    Scaffold.of(context).openDrawer();
-                  },
-                  icon: Icon(
-                    Icons.menu_open,
-                    color: Theme.of(context).primaryColor,
-                  )),
-            ],
-            title: appBarTitle),
-        body: bodyWidget,
+      child: PopScope(
+        canPop: false,
+        child: Scaffold(
+          endDrawer: const SmartCoachDrawer(),
+          appBar: AppBar(
+              automaticallyImplyLeading: false,
+              forceMaterialTransparency: true,
+              leading: backIcon,
+              actions: [
+                Builder(
+                  builder: (context) => IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).openEndDrawer();
+                    },
+                    icon: Icon(
+                      Icons.menu_open,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                ),
+              ],
+              title: appBarTitle),
+          body: bodyWidget,
+        ),
       ),
     );
   }

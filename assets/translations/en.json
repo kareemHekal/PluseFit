@@ -46,6 +46,8 @@
   "done": "Done",
   "skip": "Skip",
   "back": "Back",
+  "noSavedConversations": "There are no saved conversations yet.",
+  "typeYourMessage": "Start typing your message to begin...",
   "smartCoach": "Smart Coach",
   "doIt": "Do IT",
   "previousConversations": "Previous conversations",

@@ -30,8 +30,13 @@ import 'package:mockito/src/dummies.dart' as _i7;
 
 class _FakeGetMealsByCategoryRepo_0 extends _i1.SmartFake
     implements _i2.GetMealsByCategoryRepo {
-  _FakeGetMealsByCategoryRepo_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+  _FakeGetMealsByCategoryRepo_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [GetMealsByCategoryUsecase].
@@ -44,26 +49,28 @@ class MockGetMealsByCategoryUsecase extends _i1.Mock
   }
 
   @override
-  _i2.GetMealsByCategoryRepo get getMealsByCategoryRepo =>
-      (super.noSuchMethod(
-            Invocation.getter(#getMealsByCategoryRepo),
-            returnValue: _FakeGetMealsByCategoryRepo_0(
-              this,
-              Invocation.getter(#getMealsByCategoryRepo),
-            ),
-          )
-          as _i2.GetMealsByCategoryRepo);
+  _i2.GetMealsByCategoryRepo get getMealsByCategoryRepo => (super.noSuchMethod(
+        Invocation.getter(#getMealsByCategoryRepo),
+        returnValue: _FakeGetMealsByCategoryRepo_0(
+          this,
+          Invocation.getter(#getMealsByCategoryRepo),
+        ),
+      ) as _i2.GetMealsByCategoryRepo);
 
   @override
   _i4.Future<_i5.ApiResult<List<_i6.Meal>>> execute(String? categoryId) =>
       (super.noSuchMethod(
-            Invocation.method(#execute, [categoryId]),
-            returnValue: _i4.Future<_i5.ApiResult<List<_i6.Meal>>>.value(
-              _i7.dummyValue<_i5.ApiResult<List<_i6.Meal>>>(
-                this,
-                Invocation.method(#execute, [categoryId]),
-              ),
-            ),
-          )
-          as _i4.Future<_i5.ApiResult<List<_i6.Meal>>>);
+        Invocation.method(
+          #execute,
+          [categoryId],
+        ),
+        returnValue: _i4.Future<_i5.ApiResult<List<_i6.Meal>>>.value(
+            _i7.dummyValue<_i5.ApiResult<List<_i6.Meal>>>(
+          this,
+          Invocation.method(
+            #execute,
+            [categoryId],
+          ),
+        )),
+      ) as _i4.Future<_i5.ApiResult<List<_i6.Meal>>>);
 }
