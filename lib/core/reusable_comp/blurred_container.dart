@@ -15,8 +15,8 @@ class BlurredContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BorderRadius effectiveRadius = borderRadius ??
-        BorderRadius.circular(20);
+    final BorderRadius effectiveRadius =
+        borderRadius ?? BorderRadius.circular(20);
 
     final Color backgroundColor = color != null
         ? color!.withValues(alpha: 0.4)
@@ -29,7 +29,6 @@ class BlurredContainer extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: effectiveRadius,
           ),
           child: child,
         ),

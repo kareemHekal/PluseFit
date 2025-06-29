@@ -7,13 +7,14 @@ import 'back_icon.dart';
 
 class SmartCoachBackgroundCover extends StatelessWidget {
   final Widget bodyWidget;
-  final Widget AppBarTitle;
+  final Widget appBarTitle;
   final BackIcon? backIcon;
 
-  const SmartCoachBackgroundCover({super.key,
-    this.backIcon,
-    required this.AppBarTitle,
-    required this.bodyWidget});
+  const SmartCoachBackgroundCover(
+      {super.key,
+      this.backIcon,
+      required this.appBarTitle,
+      required this.bodyWidget});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +22,13 @@ class SmartCoachBackgroundCover extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AssetsManager.imageSmartCoachBackground),
+          image: AssetImage(AssetsManager.imagesSmartCoachSmartCoachBg),
           fit: BoxFit.cover,
         ),
       ),
       child: Scaffold(
         drawer: const SmartCoachDrawer(),
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
             automaticallyImplyLeading: false,
             forceMaterialTransparency: true,
@@ -37,11 +39,12 @@ class SmartCoachBackgroundCover extends StatelessWidget {
                     // here it make you to go to side menu (drawer)
                     Scaffold.of(context).openDrawer();
                   },
-                  icon: Icon(Icons.menu_open, color: Theme
-                      .of(context)
-                      .primaryColor,)),
+                  icon: Icon(
+                    Icons.menu_open,
+                    color: Theme.of(context).primaryColor,
+                  )),
             ],
-            title: AppBarTitle),
+            title: appBarTitle),
         body: bodyWidget,
       ),
     );

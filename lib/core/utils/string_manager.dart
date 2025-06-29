@@ -47,10 +47,8 @@ abstract class AppStrings {
   static String get done => "done".tr();
   static String get skip => "skip".tr();
   static String get back => "back".tr();
-
   static String get smartCoach => "smartCoach".tr();
   static String get doIt => "doIt".tr();
-
   static String get previousConversations => "previousConversations".tr();
   static String get confirmTheNewPassword => "confirmTheNewPassword".tr();
   static String get onBoardingOne => "onBoardingOne".tr();
@@ -66,8 +64,10 @@ abstract class AppStrings {
   static String get workouts => "workouts".tr();
   static String get fullBody => "fullBody".tr();
   static String get noWorkoutFound => "noWorkoutFound".tr();
-
   static String get foodRecommendation => "foodRecommendation".tr();
-
   static String get subtitle => "subtitle".tr();
+  static String get hi => "hi".tr();
+  static String get iamYourSmartCoach => "iamYourSmartCoach".tr();
+  static String get howCanAssistYouToday => "howCanAssistYouToday".tr();
+  static String get getStarted => "getStarted".tr();
 }

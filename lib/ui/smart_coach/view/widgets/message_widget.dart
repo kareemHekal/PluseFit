@@ -15,32 +15,27 @@ class MessageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery
-        .of(context)
-        .size
-        .width;
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment:
-        isCoach ? MainAxisAlignment.start : MainAxisAlignment.end,
+            isCoach ? MainAxisAlignment.start : MainAxisAlignment.end,
         children: [
           if (isCoach)
             const CircleAvatar(
               radius: 22,
-              backgroundImage: AssetImage(
-                  AssetsManager.coachImg),
+              backgroundImage:
+                  AssetImage(AssetsManager.imagesSmartCoachCoachImg),
             ),
           const SizedBox(width: 8),
           Flexible(
             child: ConstrainedBox(
               constraints: BoxConstraints(maxWidth: screenWidth * 0.7),
               child: BlurredContainer(
-                color: isCoach == false ? Theme
-                    .of(context)
-                    .primaryColor : null,
+                color: isCoach == false ? Theme.of(context).primaryColor : null,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(isCoach ? 0 : 16),
                   topRight: Radius.circular(isCoach ? 16 : 0),
@@ -60,8 +55,8 @@ class MessageWidget extends StatelessWidget {
           ),
           if (!isCoach) ...[
             const SizedBox(width: 8),
-            const Icon(
-                Icons.person_2_outlined, color: ColorManager.primaryColor),
+            const Icon(Icons.person_2_outlined,
+                color: ColorManager.primaryColor),
           ],
         ],
       ),

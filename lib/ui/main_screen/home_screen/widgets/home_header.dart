@@ -30,7 +30,7 @@ class HomeHeader extends StatelessWidget {
         Spacer(),
         CircleAvatar(
           radius: 25,
-          backgroundImage: AssetImage(AssetsManager.user),
+          backgroundImage: AssetImage(AssetsManager.imagesIconUseravatar),
         )
       ],
     );

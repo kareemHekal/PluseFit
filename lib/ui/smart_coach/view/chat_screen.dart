@@ -12,7 +12,7 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SmartCoachBackgroundCover(
       backIcon: const BackIcon(),
-      AppBarTitle: Text(
+      appBarTitle: Text(
         AppStrings.smartCoach,
         style: AppTextStyle.bold24,
       ),
@@ -21,11 +21,13 @@ class ChatScreen extends StatelessWidget {
           children: const [
             MessageWidget(
                 isCoach: true, message: 'Hello How Can I Assist You Today ?'),
-            MessageWidget(isCoach: false,
+            MessageWidget(
+                isCoach: false,
                 message: 'Lorem Ipsum Dolor Sit Amet Consectetur.'),
             MessageWidget(
                 isCoach: true, message: 'What would you like to improve?'),
-            MessageWidget(isCoach: false,
+            MessageWidget(
+                isCoach: false,
                 message: 'I want to improve my stamina and flexibility.'),
           ],
         ),
@@ -33,4 +35,3 @@ class ChatScreen extends StatelessWidget {
     );
   }
 }
-
