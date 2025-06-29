@@ -10,7 +10,6 @@ abstract class CacheHelper {
   static Future<bool> setData<T>(String key, T value) async {
     if (_sharedPrefs == null) await init();
 
-    print("📝 Saving [$key] = $value");
 
     if (value is String) {
       return await _sharedPrefs!.setString(key, value);
@@ -46,7 +45,6 @@ abstract class CacheHelper {
       throw Exception("Invalid type");
     }
 
-    print("📦 Loading [$key] = $value");
     return value as T?;
   }
 
