@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fit_zone/core/di/di.dart';
-import 'package:fit_zone/ui/auth/forget_password/view/forget_password/view/forget_screen.dart';
+import 'package:fit_zone/ui/Auth/forget_password/view/forget_password/view/forget_screen.dart';
 import 'package:fit_zone/ui/Auth/login/view/login_screen.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
