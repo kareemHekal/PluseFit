@@ -5,8 +5,8 @@ import 'package:fit_zone/core/constant.dart';
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/data/model/register_response/user_model.dart';
 import 'package:fit_zone/domain/use_cases/login_usecase.dart';
-import 'package:fit_zone/ui/Auth/login/viewmodel/login_intent.dart';
-import 'package:fit_zone/ui/Auth/login/viewmodel/login_state.dart';
+import 'package:fit_zone/ui/auth/login/viewmodel/login_intent.dart';
+import 'package:fit_zone/ui/auth/login/viewmodel/login_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 

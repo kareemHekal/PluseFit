@@ -1,6 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
 
-
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
@@ -8,9 +7,9 @@ import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:fit_zone/core/utils/toast_message.dart';
-import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
-import 'package:fit_zone/ui/Auth/login/viewmodel/login_intent.dart';
-import 'package:fit_zone/ui/Auth/login/viewmodel/login_state.dart';
+import 'package:fit_zone/ui/auth/login/viewmodel/login_intent.dart';
+import 'package:fit_zone/ui/auth/login/viewmodel/login_cubit.dart';
+import 'package:fit_zone/ui/auth/login/viewmodel/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

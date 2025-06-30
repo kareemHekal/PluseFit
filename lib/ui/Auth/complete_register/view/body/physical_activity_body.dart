@@ -1,9 +1,9 @@
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
-import 'package:fit_zone/ui/Auth/complete_register/view/widgets/custom_radio.dart';
-import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_cubit.dart';
-import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_intent.dart';
+import 'package:fit_zone/ui/auth/complete_register/view/widgets/custom_radio.dart';
+import 'package:fit_zone/ui/auth/complete_register/view_model/complete_register_cubit.dart';
+import 'package:fit_zone/ui/auth/complete_register/view_model/complete_register_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

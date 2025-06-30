@@ -109,10 +109,10 @@ import 'package:fit_zone/domain/use_cases/smart_coach/add_conversation_use_case.
     as _i358;
 import 'package:fit_zone/domain/use_cases/smart_coach/get_all_conversations_use_case.dart'
     as _i238;
-import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_cubit.dart'
-    as _i827;
-import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart' as _i887;
-import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart' as _i103;
+import 'package:fit_zone/ui/auth/complete_register/view_model/complete_register_cubit.dart'
+    as _i392;
+import 'package:fit_zone/ui/auth/login/viewmodel/login_cubit.dart' as _i661;
+import 'package:fit_zone/ui/auth/view_model/cubit/auth_cubit.dart' as _i465;
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart' as _i1027;
 import 'package:fit_zone/ui/food/view_model/meal_details_cubit.dart' as _i1022;
 import 'package:fit_zone/ui/food/view_model/meals_cubit.dart' as _i121;
@@ -142,11 +142,11 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final hiveModule = _$HiveModule();
     final loggerModule = _$LoggerModule();
-    gh.factory<_i887.LoginCubit>(() => _i887.LoginCubit());
     await gh.factoryAsync<_i979.Box<_i940.ConversationModel>>(
       () => hiveModule.conversationBox,
       preResolve: true,
     );
+    gh.factory<_i661.LoginCubit>(() => _i661.LoginCubit());
     gh.singleton<_i452.ApiManager>(() => _i452.ApiManager());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.loggerProvider);
     gh.lazySingleton<_i974.PrettyPrinter>(() => loggerModule.prettyPrinter);
@@ -217,7 +217,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i440.FitnessUsecase(gh<_i342.WorkoutRepo>()));
     gh.factory<_i121.MealsCubit>(
         () => _i121.MealsCubit(gh<_i22.GetMealsByCategoryUsecase>()));
-    gh.factory<_i103.AuthCubit>(() => _i103.AuthCubit(
+    gh.factory<_i465.AuthCubit>(() => _i465.AuthCubit(
           gh<_i964.ForgetPasswordUseCase>(),
           gh<_i431.OtpUsecase>(),
           gh<_i219.ResetPasswordUsecase>(),
@@ -238,8 +238,8 @@ extension GetItInjectableX on _i174.GetIt {
         _i238.GetAllConversationsUseCase(gh<_i17.SmartCoachRepoContract>()));
     gh.factory<_i244.GetRecommendationToDayUseCase>(() =>
         _i244.GetRecommendationToDayUseCase(gh<_i168.RecommendationRepo>()));
-    gh.factory<_i827.CompleteRegisterCubit>(
-        () => _i827.CompleteRegisterCubit(gh<_i687.RegisterUseCase>()));
+    gh.factory<_i392.CompleteRegisterCubit>(
+        () => _i392.CompleteRegisterCubit(gh<_i687.RegisterUseCase>()));
     gh.factory<_i954.WorkoutsCubit>(
         () => _i954.WorkoutsCubit(gh<_i440.FitnessUsecase>()));
     gh.factory<_i235.RecommendationCubit>(() =>

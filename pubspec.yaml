@@ -92,6 +92,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   injectable_generator:
   youtube_player_flutter: ^9.0.0
+
 flutter_native_splash:
   color: "#000000"
   image: "assets/images/splash_onboarding/splash_background_icon.png"

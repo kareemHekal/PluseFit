@@ -1,20 +1,19 @@
 import 'package:fit_zone/core/di/di.dart';
+import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/back_icon.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
-import 'package:fit_zone/ui/Auth/forget_password/view/create_new_password/view/create_password.dart';
-import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
+import 'package:fit_zone/core/utils/colors_manager.dart';
+import 'package:fit_zone/core/utils/string_manager.dart';
+import 'package:fit_zone/core/utils/text_style_manager.dart';
+import 'package:fit_zone/core/utils/toast_message.dart';
+import 'package:fit_zone/ui/auth/view_model/cubit/auth_intent.dart';
+import 'package:fit_zone/ui/auth/forget_password/view/create_new_password/view/create_password.dart';
+import 'package:fit_zone/ui/auth/view_model/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pinput/pinput.dart';
-
-import '../../../../../../core/reusable_comp/auth_background_cuver.dart';
-import '../../../../../../core/utils/colors_manager.dart';
-import '../../../../../../core/utils/string_manager.dart';
-import '../../../../../../core/utils/text_style_manager.dart';
-import '../../../../../../core/utils/toast_message.dart';
-import '../../../../view_model/cubit/auth_intent.dart';
 
 class OtpScreen extends StatefulWidget {
   final String email;
