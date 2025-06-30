@@ -1,6 +1,6 @@
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/config.dart';
-import 'package:fit_zone/ui/smart_coach/view/smart_coach_drawer.dart';
+import 'package:fit_zone/ui/smart_coach/view/widgets/smart_coach_drawer.dart';
 import 'package:flutter/material.dart';
 
 import 'back_icon.dart';

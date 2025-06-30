@@ -35,8 +35,8 @@ class MessageWidget extends StatelessWidget {
               constraints: BoxConstraints(maxWidth: Config.screenWidth! * 0.7),
               child: BlurredContainer(
                 color: message.isCoach == false
-                    ? Theme.of(context)
-                    .primaryColor : null,
+                    ? Theme.of(context).colorScheme.primary
+                    : null,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(message.isCoach ? 0 : 16),
                   topRight: Radius.circular(message.isCoach ? 16 : 0),

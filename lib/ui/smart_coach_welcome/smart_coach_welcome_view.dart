@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/smart_coach_background_cuver.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/config.dart';
+import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +38,9 @@ class SmartCoachWelcomeView extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: AppTextStyle.extraBold24),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, RouteManager.smartCoach);
+                      },
                       child: Text(
                         AppStrings.getStarted,
                         style: AppTextStyle.extraBold14,

@@ -9,8 +9,8 @@ import 'package:fit_zone/ui/food/view/food_screen.dart';
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart';
 import 'package:fit_zone/ui/food/view_model/meals_cubit.dart';
 import 'package:fit_zone/ui/main_screen/main_screen.dart';
-import 'package:fit_zone/ui/main_screen/smart_coach_screen.dart';
 import 'package:fit_zone/ui/main_screen/workouts_tab/view/workouts_screen.dart';
+import 'package:fit_zone/ui/smart_coach/view_model/cubit/smart_coach_cubit.dart';
 import 'package:fit_zone/ui/smart_coach_welcome/smart_coach_welcome_view.dart';
 import 'package:fit_zone/ui/splash_onboarding/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -54,6 +54,10 @@ class MyApp extends StatelessWidget {
         RouteManager.loginScreen: (context) => BlocProvider(
               create: (context) => getIt<LoginCubit>(),
               child: const LoginScreen(),
+            ),
+        RouteManager.smartCoach: (context) => BlocProvider(
+              create: (context) => getIt<SmartCoachCubit>(),
+              child: const ChatScreen(),
             ),
         RouteManager.welcomeSmartCoachScreen: (context) =>
             const SmartCoachWelcomeView(),

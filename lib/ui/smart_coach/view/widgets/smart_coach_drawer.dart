@@ -8,7 +8,7 @@ import 'package:fit_zone/ui/smart_coach/view_model/cubit/smart_coach_intent.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'widgets/conversation_widget.dart';
+import 'conversation_widget.dart';
 
 class SmartCoachDrawer extends StatefulWidget {
   const SmartCoachDrawer({super.key});
