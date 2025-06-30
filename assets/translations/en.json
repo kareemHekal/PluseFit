@@ -46,7 +46,11 @@
   "done": "Done",
   "skip": "Skip",
   "back": "Back",
+  "noSavedConversations": "There are no saved conversations yet.",
+  "typeYourMessage": "Start typing your message to begin...",
+  "smartCoach": "Smart Coach",
   "doIt": "Do IT",
+  "previousConversations": "Previous conversations",
   "confirmTheNewPassword": "Confirm the new password",
   "onBoardingOne": "The Price Of Excellence\nIs Discipline",
   "onBoardingTwo": "Fitness Has Never Been So\nMuch Fun",
@@ -62,5 +66,9 @@
   "fullBody": "Full Body",
   "noWorkoutFound": "No Workout Found !!",
   "foodRecommendation": "Food Recommendation",
-  "subtitle": "Lorem Ipsum Dolor Sit Amet Consectetur Et Elitna Elitna Quae Sed Quis Enim Et Duis, Maecel Massa"
+  "subtitle": "Lorem Ipsum Dolor Sit Amet Consectetur Et Elitna Elitna Quae Sed Quis Enim Et Duis, Maecel Massa",
+  "hi": "Hi",
+  "iamYourSmartCoach": "I Am Your Smart Coach",
+  "howCanAssistYouToday": "How Can I Assist You \nToday ?",
+  "getStarted": "Get Started"
 }

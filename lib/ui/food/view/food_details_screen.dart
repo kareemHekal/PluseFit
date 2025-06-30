@@ -169,7 +169,7 @@ class _BackButton extends StatelessWidget {
         Navigator.pop(context);
       },
       child: Image.asset(
-        AssetsManager.backIcon,
+        AssetsManager.imagesIconBackIcon,
         // width: 80,
         // height: 50,
       ),

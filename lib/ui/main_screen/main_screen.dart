@@ -115,25 +115,25 @@ class CustomBottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _CustomNavBarItem(
-            iconPath: AssetsManager.iconHome,
+            iconPath: AssetsManager.imagesIconHome,
             label: 'Explore',
             selected: currentIndex == 0,
             onTap: () => onTap(0),
           ),
           _CustomNavBarItem(
-            iconPath: AssetsManager.iconSmartCoach,
+            iconPath: AssetsManager.imagesIconChatAi,
             label: 'Smart Coach',
             selected: currentIndex == 1,
             onTap: () => onTap(1),
           ),
           _CustomNavBarItem(
-            iconPath: AssetsManager.iconWorkouts,
+            iconPath: AssetsManager.imagesIconGym,
             label: 'Workouts',
             selected: currentIndex == 2,
             onTap: () => onTap(2),
           ),
           _CustomNavBarItem(
-            iconPath: AssetsManager.iconProfile,
+            iconPath: AssetsManager.imagesIconProfile,
             label: 'Profile',
             selected: currentIndex == 3,
             onTap: () => onTap(3),

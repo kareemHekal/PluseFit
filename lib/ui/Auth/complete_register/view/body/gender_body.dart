@@ -17,7 +17,6 @@ class GenderBody extends StatelessWidget {
 
     return BlocBuilder<CompleteRegisterCubit, RegisterStates>(
       builder: (context, state) {
-
         return Center(
           child: Column(
             spacing: 8,

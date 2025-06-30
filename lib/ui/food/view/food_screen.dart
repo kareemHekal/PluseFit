@@ -45,11 +45,10 @@ class _FoodScreenState extends State<FoodScreen> {
         forceMaterialTransparency: true,
         leading: InkWell(
           onTap: () {
-            Navigator.pushReplacementNamed(
-                context, RouteManager.mainScreen);
+            Navigator.pushReplacementNamed(context, RouteManager.mainScreen);
           },
           child: Image.asset(
-            AssetsManager.backIcon,
+            AssetsManager.imagesIconBackIcon,
           ),
         ),
         title:

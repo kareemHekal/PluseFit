@@ -24,8 +24,13 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeResponse_0<T> extends _i1.SmartFake implements _i2.Response<T> {
-  _FakeResponse_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+  _FakeResponse_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [ApiManager].
@@ -43,21 +48,28 @@ class MockApiManager extends _i1.Mock implements _i3.ApiManager {
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(#getRequestForMeal, [], {
-          #endpoint: endpoint,
-          #queryParameters: queryParameters,
-          #headers: headers,
-        }),
-        returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-          _FakeResponse_0<dynamic>(
-            this,
-            Invocation.method(#getRequestForMeal, [], {
+        Invocation.method(
+          #getRequestForMeal,
+          [],
+          {
+            #endpoint: endpoint,
+            #queryParameters: queryParameters,
+            #headers: headers,
+          },
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
+          this,
+          Invocation.method(
+            #getRequestForMeal,
+            [],
+            {
               #endpoint: endpoint,
               #queryParameters: queryParameters,
               #headers: headers,
-            }),
+            },
           ),
-        ),
+        )),
       ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
@@ -67,23 +79,29 @@ class MockApiManager extends _i1.Mock implements _i3.ApiManager {
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#getRequest, [], {
+        Invocation.method(
+          #getRequest,
+          [],
+          {
+            #endpoint: endpoint,
+            #queryParameters: queryParameters,
+            #headers: headers,
+          },
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
+          this,
+          Invocation.method(
+            #getRequest,
+            [],
+            {
               #endpoint: endpoint,
               #queryParameters: queryParameters,
               #headers: headers,
-            }),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(#getRequest, [], {
-                  #endpoint: endpoint,
-                  #queryParameters: queryParameters,
-                  #headers: headers,
-                }),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+            },
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
   _i4.Future<_i2.Response<dynamic>> postRequest({
@@ -92,23 +110,29 @@ class MockApiManager extends _i1.Mock implements _i3.ApiManager {
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#postRequest, [], {
+        Invocation.method(
+          #postRequest,
+          [],
+          {
+            #endpoint: endpoint,
+            #body: body,
+            #headers: headers,
+          },
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
+          this,
+          Invocation.method(
+            #postRequest,
+            [],
+            {
               #endpoint: endpoint,
               #body: body,
               #headers: headers,
-            }),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(#postRequest, [], {
-                  #endpoint: endpoint,
-                  #body: body,
-                  #headers: headers,
-                }),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+            },
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
   _i4.Future<_i2.Response<dynamic>> put({
@@ -118,25 +142,31 @@ class MockApiManager extends _i1.Mock implements _i3.ApiManager {
     Map<String, dynamic>? data,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#put, [], {
+        Invocation.method(
+          #put,
+          [],
+          {
+            #endpoint: endpoint,
+            #queryParameters: queryParameters,
+            #headers: headers,
+            #data: data,
+          },
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
+          this,
+          Invocation.method(
+            #put,
+            [],
+            {
               #endpoint: endpoint,
               #queryParameters: queryParameters,
               #headers: headers,
               #data: data,
-            }),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(#put, [], {
-                  #endpoint: endpoint,
-                  #queryParameters: queryParameters,
-                  #headers: headers,
-                  #data: data,
-                }),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+            },
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
   _i4.Future<_i2.Response<dynamic>> delete({
@@ -145,23 +175,29 @@ class MockApiManager extends _i1.Mock implements _i3.ApiManager {
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#delete, [], {
+        Invocation.method(
+          #delete,
+          [],
+          {
+            #endpoint: endpoint,
+            #queryParameters: queryParameters,
+            #headers: headers,
+          },
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
+          this,
+          Invocation.method(
+            #delete,
+            [],
+            {
               #endpoint: endpoint,
               #queryParameters: queryParameters,
               #headers: headers,
-            }),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(#delete, [], {
-                  #endpoint: endpoint,
-                  #queryParameters: queryParameters,
-                  #headers: headers,
-                }),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+            },
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
   _i4.Future<_i2.Response<dynamic>> patchRequest({
@@ -170,23 +206,29 @@ class MockApiManager extends _i1.Mock implements _i3.ApiManager {
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#patchRequest, [], {
+        Invocation.method(
+          #patchRequest,
+          [],
+          {
+            #endpoint: endpoint,
+            #body: body,
+            #headers: headers,
+          },
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
+          this,
+          Invocation.method(
+            #patchRequest,
+            [],
+            {
               #endpoint: endpoint,
               #body: body,
               #headers: headers,
-            }),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(#patchRequest, [], {
-                  #endpoint: endpoint,
-                  #body: body,
-                  #headers: headers,
-                }),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+            },
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 
   @override
   _i4.Future<_i2.Response<dynamic>> putFormData({
@@ -195,21 +237,27 @@ class MockApiManager extends _i1.Mock implements _i3.ApiManager {
     Map<String, dynamic>? headers,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#putFormData, [], {
+        Invocation.method(
+          #putFormData,
+          [],
+          {
+            #endpoint: endpoint,
+            #formData: formData,
+            #headers: headers,
+          },
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
+          this,
+          Invocation.method(
+            #putFormData,
+            [],
+            {
               #endpoint: endpoint,
               #formData: formData,
               #headers: headers,
-            }),
-            returnValue: _i4.Future<_i2.Response<dynamic>>.value(
-              _FakeResponse_0<dynamic>(
-                this,
-                Invocation.method(#putFormData, [], {
-                  #endpoint: endpoint,
-                  #formData: formData,
-                  #headers: headers,
-                }),
-              ),
-            ),
-          )
-          as _i4.Future<_i2.Response<dynamic>>);
+            },
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
 }

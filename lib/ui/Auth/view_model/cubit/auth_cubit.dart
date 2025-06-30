@@ -1,18 +1,17 @@
 // ignore_for_file: depend_on_referenced_packages, avoid_print, non_constant_identifier_names
 
+import 'package:fit_zone/core/api/api_result.dart';
 import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'package:fit_zone/core/constant.dart';
 import 'package:fit_zone/data/model/forget_pass_response.dart';
 import 'package:fit_zone/data/model/otp_response.dart';
 import 'package:fit_zone/data/model/reset_password_response.dart';
+import 'package:fit_zone/domain/use_cases/forget_password_usecases/forget_password_usecase.dart';
 import 'package:fit_zone/domain/use_cases/forget_password_usecases/otp_usecase.dart';
 import 'package:fit_zone/domain/use_cases/forget_password_usecases/reset_password_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-
-import '../../../../core/api/api_result.dart';
-import '../../../../domain/use_cases/forget_password_usecases/forget_password_usecase.dart';
 import 'auth_intent.dart';
 
 part 'auth_state.dart';

@@ -38,13 +38,17 @@ class MockGetCategoriesOfMealsRepo extends _i1.Mock
   @override
   _i3.Future<_i4.ApiResult<List<_i5.Category>>> getCategoriesOfMeals() =>
       (super.noSuchMethod(
-            Invocation.method(#getCategoriesOfMeals, []),
-            returnValue: _i3.Future<_i4.ApiResult<List<_i5.Category>>>.value(
-              _i6.dummyValue<_i4.ApiResult<List<_i5.Category>>>(
-                this,
-                Invocation.method(#getCategoriesOfMeals, []),
-              ),
-            ),
-          )
-          as _i3.Future<_i4.ApiResult<List<_i5.Category>>>);
+        Invocation.method(
+          #getCategoriesOfMeals,
+          [],
+        ),
+        returnValue: _i3.Future<_i4.ApiResult<List<_i5.Category>>>.value(
+            _i6.dummyValue<_i4.ApiResult<List<_i5.Category>>>(
+          this,
+          Invocation.method(
+            #getCategoriesOfMeals,
+            [],
+          ),
+        )),
+      ) as _i3.Future<_i4.ApiResult<List<_i5.Category>>>);
 }
