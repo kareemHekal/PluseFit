@@ -21,35 +21,41 @@ class SmartCoachWelcomeView extends StatelessWidget {
             Text(AppStrings.iamYourSmartCoach, style: AppTextStyle.medium18),
           ],
         ),
-        bodyWidget: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Center(child: Image.asset(AssetsManager.imagesRobotChatWelocme)),
-            const Spacer(),
-            BlurredContainer(
-                child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(AppStrings.howCanAssistYouToday,
-                      textAlign: TextAlign.center,
-                      style: AppTextStyle.extraBold24),
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, RouteManager.smartCoach);
-                      },
-                      child: Text(
-                        AppStrings.getStarted,
-                        style: AppTextStyle.extraBold14,
-                      ))
-                ],
-              ),
-            )),
-            SizedBox(height: Config.screenHight! * 0.05),
-          ],
+        bodyWidget: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Center(
+                    child: Image.asset(AssetsManager.imagesRobotChatWelocme)),
+                const SizedBox(height: 24),
+                BlurredContainer(
+                    child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(AppStrings.howCanAssistYouToday,
+                          textAlign: TextAlign.center,
+                          style: AppTextStyle.extraBold24),
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, RouteManager.smartCoach);
+                          },
+                          child: Text(
+                            AppStrings.getStarted,
+                            style: AppTextStyle.extraBold14,
+                          ))
+                    ],
+                  ),
+                )),
+                SizedBox(height: Config.screenHight! * 0.05),
+              ],
+            ),
+          ),
         ));
   }
 }
