@@ -1,7 +1,7 @@
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
-import 'package:fit_zone/ui/auth/register/register_view.dart';
+import 'package:fit_zone/ui/Auth/register/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -5,7 +5,7 @@ import 'package:fit_zone/core/utils/config.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
-import 'package:fit_zone/ui/auth/complete_register/view/complete_register_screen.dart';
+import 'package:fit_zone/ui/Auth/complete_register/view/complete_register_screen.dart';
 import 'package:flutter/material.dart';
 
 class RegisterView extends StatefulWidget {

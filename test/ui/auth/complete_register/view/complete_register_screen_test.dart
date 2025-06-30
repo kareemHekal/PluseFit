@@ -1,9 +1,9 @@
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/domain/use_cases/register_usecase.dart';
-import 'package:fit_zone/ui/auth/complete_register/view/complete_register_screen.dart';
-import 'package:fit_zone/ui/auth/complete_register/view/widgets/gender_widget.dart';
-import 'package:fit_zone/ui/auth/complete_register/view_model/complete_register_cubit.dart';
+import 'package:fit_zone/ui/Auth/complete_register/view/complete_register_screen.dart';
+import 'package:fit_zone/ui/Auth/complete_register/view/widgets/gender_widget.dart';
+import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
