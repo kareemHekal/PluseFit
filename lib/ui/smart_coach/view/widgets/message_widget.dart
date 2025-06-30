@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
