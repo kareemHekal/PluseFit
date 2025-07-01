@@ -5,6 +5,7 @@ import 'package:fit_zone/core/utils/config.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
+import 'package:fit_zone/firebase/services/gemini_services.dart';
 import 'package:flutter/material.dart';
 
 class SmartCoachWelcomeView extends StatelessWidget {
@@ -41,7 +42,7 @@ class SmartCoachWelcomeView extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: AppTextStyle.extraBold24),
                       ElevatedButton(
-                          onPressed: () {
+                          onPressed: () async {
                             Navigator.pushNamed(
                                 context, RouteManager.smartCoach);
                           },

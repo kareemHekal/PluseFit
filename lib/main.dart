@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fit_zone/firebase_options.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
@@ -21,6 +22,13 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await FirebaseAppCheck.instance.activate(
+    androidProvider: AndroidProvider.debug,
+    appleProvider: AppleProvider.debug,
+  );
+  FirebaseAppCheck.instance.getToken(true).then((token) {
+    debugPrint("AppCheck Token: ${token}");
+  });
   await Hive.initFlutter();
   Hive.registerAdapter(ConversationModelAdapter());
   Hive.registerAdapter(MessageModelAdapter());

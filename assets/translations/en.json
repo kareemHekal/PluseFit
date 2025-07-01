@@ -70,5 +70,6 @@
   "hi": "Hi",
   "iamYourSmartCoach": "I Am Your Smart Coach",
   "howCanAssistYouToday": "How Can I Assist You \nToday ?",
-  "getStarted": "Get Started"
+  "getStarted": "Get Started",
+  "failedToGetAResponse": "Failed to get a response."
 }
