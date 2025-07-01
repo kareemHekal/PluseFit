@@ -57,7 +57,6 @@ class MyApp extends StatelessWidget {
               create: (context) => getIt<LoginCubit>(),
               child: const LoginScreen(),
             ),
-
         RouteManager.changePasswordScreen: (context) => BlocProvider(
           create: (context) => getIt<ChangePasswordCubit>(),
           child: const ChangePasswordScreen(),
