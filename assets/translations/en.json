@@ -70,5 +70,12 @@
   "hi": "Hi",
   "iamYourSmartCoach": "I Am Your Smart Coach",
   "howCanAssistYouToday": "How Can I Assist You \nToday ?",
-  "getStarted": "Get Started"
+  "getStarted": "Get Started",
+  "changePassword": "Change Password",
+  "Change": "Change Password",
+  "currentPassword": "Current Password",
+  "enterYourPassword": "Enter Your Password",
+  "newPassword": "New Password",
+  "enterYourNewPassword": "Enter Your New Password",
+  "confirmPassword": "Confirm Password"
 }
