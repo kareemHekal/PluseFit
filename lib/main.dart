@@ -26,9 +26,6 @@ void main() async {
     androidProvider: AndroidProvider.debug,
     appleProvider: AppleProvider.debug,
   );
-  FirebaseAppCheck.instance.getToken(true).then((token) {
-    debugPrint("AppCheck Token: ${token}");
-  });
   await Hive.initFlutter();
   Hive.registerAdapter(ConversationModelAdapter());
   Hive.registerAdapter(MessageModelAdapter());
