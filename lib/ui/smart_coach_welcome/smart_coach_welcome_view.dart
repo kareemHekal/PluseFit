@@ -6,6 +6,7 @@ import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:fit_zone/firebase/services/gemini_services.dart';
+import 'package:fit_zone/ui/smart_coach/view/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 class SmartCoachWelcomeView extends StatelessWidget {
@@ -43,8 +44,12 @@ class SmartCoachWelcomeView extends StatelessWidget {
                           style: AppTextStyle.extraBold24),
                       ElevatedButton(
                           onPressed: () async {
-                            Navigator.pushNamed(
-                                context, RouteManager.smartCoach);
+                            await GeminiServices.sendAPromptRequest(
+                                "سلام عليكم");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const ChatScreen()));
                           },
                           child: Text(
                             AppStrings.getStarted,

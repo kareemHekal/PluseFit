@@ -11,14 +11,20 @@ class GeminiServices {
       // Provide a prompt that contains text
       final promptContent = [
         Content.text("""
-You are an intelligent assistant specialized only in topics related to gym, fitness, workouts, nutrition, and training plans. 
-Do not answer any questions that are not related to these areas.
+You are a smart assistant specialized only in topics related to gym, fitness, workouts, nutrition, and training plans.
+
+You must always respond in **both English and Arabic**.
+
+If the user says a greeting like "Hello", "Hi", or "سلام عليكم", respond politely in both languages.
+
+Do not answer questions outside of the gym and fitness field.
 
 Question: $prompt
 """)
       ];
       final response = await model.generateContent(promptContent);
       final result = response.text;
+      log(response.toString());
       log(result.toString());
       return result ?? AppStrings.failedToGetAResponse;
     } catch (e) {
