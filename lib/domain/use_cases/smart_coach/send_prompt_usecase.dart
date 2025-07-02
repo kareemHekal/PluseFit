@@ -4,9 +4,9 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class SendPromptUsecase {
-  SendAPromptDatasource sendAPromptDatasource;
+  final SendAPromptDatasource _sendAPromptDatasource;
   @factoryMethod
-  SendPromptUsecase(this.sendAPromptDatasource);
+  SendPromptUsecase(this._sendAPromptDatasource);
   Future<ApiResult<String?>> sendPrompt(String prompt) async =>
-      await sendAPromptDatasource.sendAPromptRequest(prompt);
+      await _sendAPromptDatasource.sendAPromptRequest(prompt);
 }
