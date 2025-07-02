@@ -55,8 +55,10 @@ class MyApp extends StatelessWidget {
               create: (context) => getIt<LoginCubit>(),
               child: const LoginScreen(),
             ),
-        RouteManager.welcomeSmartCoachScreen: (context) =>
-            const SmartCoachWelcomeView(),
+        RouteManager.welcomeSmartCoachScreen: (context) => BlocProvider(
+              create: (context) => getIt<SmartCoachCubit>(),
+              child: const SmartCoachWelcomeView(),
+            ),
       },
       // initialRoute: RouteManager.mainScreen,
       initialRoute: RouteManager.welcomeSmartCoachScreen,
