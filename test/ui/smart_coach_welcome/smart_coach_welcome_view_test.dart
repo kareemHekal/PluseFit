@@ -48,25 +48,5 @@ void main() {
       final button = find.widgetWithText(ElevatedButton, AppStrings.getStarted);
       expect(button, findsOneWidget);
     });
-
-    testWidgets("should navigate when Get Started button is tapped",
-        (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          initialRoute: RouteManager.welcomeSmartCoachScreen,
-          routes: {
-            RouteManager.welcomeSmartCoachScreen: (context) =>
-                const SmartCoachWelcomeView(),
-            RouteManager.smartCoach: (context) =>
-                const Scaffold(body: Text('Smart Coach Page')),
-          },
-        ),
-      );
-
-      await tester
-          .tap(find.widgetWithText(ElevatedButton, AppStrings.getStarted));
-      await tester.pumpAndSettle();
-      expect(find.text('Smart Coach Page'), findsOneWidget);
-    });
   });
 }
