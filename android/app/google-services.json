@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "751214631491",
+    "project_id": "pulsefit-8b6cb",
+    "storage_bucket": "pulsefit-8b6cb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751214631491:android:9b82b2d08df206d8a452f6",
+        "android_client_info": {
+          "package_name": "com.example.fit_zone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu3O--bVpcX-vEK00Cbqc73D8mevVtrJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
