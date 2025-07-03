@@ -12,7 +12,7 @@ import 'package:fit_zone/ui/main_screen/main_screen.dart';
 import 'package:fit_zone/ui/main_screen/workouts_tab/view/workouts_screen.dart';
 import 'package:fit_zone/ui/smart_coach/view_model/cubit/smart_coach_cubit.dart';
 import 'package:fit_zone/ui/smart_coach_welcome/smart_coach_welcome_view.dart';
-  import 'package:fit_zone/ui/splash_onboarding/on_boarding_screen.dart';
+import 'package:fit_zone/ui/splash_onboarding/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
             ),
       },
       // initialRoute: RouteManager.mainScreen,
-      initialRoute: RouteManager.welcomeSmartCoachScreen,
+      initialRoute: RouteManager.onBoardingScreen,
       // home: const ChatScreen(),
     );
   }
