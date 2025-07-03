@@ -1,5 +1,6 @@
 abstract class Constant {
   static const String tokenKey = 'auth_token';
+  static const String userName = 'userName';
   static const String highestPrice = 'HighestPrice';
   static const String lowestPrice = 'LowestPrice';
   static const String isRememberMe = 'isRememberMe';
@@ -9,12 +10,11 @@ abstract class Constant {
   static RegExp regexPass = RegExp(
     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$',
   );
-  static const String questCacheKey = "is_quest";
-  static const String cacheOnDelivery = "CacheOnDelivery";
-  static const String creditCard = "CreditCard";
-  static const String completedKey = "completed";
-  static const String canceledKey = "canceled";
-  static const String acceptedOrderKey = "accepted_order_id";
+
+  static const String lastConversationIdKey = 'last_conversation_id';
 
   static const Duration connectTimeout = Duration(seconds: 40);
+
+  static const String mealBaseUrl = "https://www.themealdb.com/api/json";
+
 }

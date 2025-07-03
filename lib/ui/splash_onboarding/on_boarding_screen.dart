@@ -1,8 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:flutter/material.dart';
-
 import '../../core/utils/colors_manager.dart';
 import '../../core/utils/text_style_manager.dart';
 
@@ -48,7 +49,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
           ),
           Positioned.fill(
             child: Container(
-              color: Colors.black.withValues(alpha: 0.7),
+              color: Colors.black.withOpacity(0.7),
             ),
           ),
           PageView.builder(
@@ -76,14 +77,11 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                     right: 5,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-
-                          ///                      👇 Login but when it is ready
-                          RouteManager.registerScreen, (route) => false,
-                        );
+                        Navigator.pushReplacementNamed(
+                            context, RouteManager.loginScreen);
                       },
-                      child: Text(AppStrings.skip,
+                      child: _currentPage == pages.length - 1
+                          ? const SizedBox() : Text(AppStrings.skip,
                           style: AppTextStyle.regular16
                               .copyWith(color: Colors.white)),
                     ),
@@ -192,9 +190,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                                 pages.length - 1) {
                                               Navigator.pushNamedAndRemoveUntil(
                                                 context,
-
-                                                ///                    👇 Login but when it is ready
-                                                RouteManager.registerScreen,
+                                                RouteManager.loginScreen,
                                                 (route) => false,
                                               );
                                             } else {

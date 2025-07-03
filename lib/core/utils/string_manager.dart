@@ -1,27 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
-class AppStrings {
-  static String get tryAgain => "tryAgain".tr();
-  static String get orderNotFound => "orderNotFound".tr();
-  static String get storeLocation => "storeLocation".tr();
-  static String get customerLocation => "customerLocation".tr();
-  static String get products => "products".tr();
+abstract class AppStrings {
   static String get male => "male".tr();
   static String get female => "female".tr();
   static String get next => "next".tr();
   static String get year => "Year".tr();
   static String get cm => "cm".tr();
   static String get kg => "kg".tr();
-
-  static String get yourAccountHasBeenCreatedSuccessfully =>
-      "yourAccountHasBeenCreatedSuccessfully".tr();
+  static String get yourAccountHasBeenCreatedSuccessfully => "yourAccountHasBeenCreatedSuccessfully".tr();
   static String get activityLevel => "activityLevel".tr();
   static String get yourRegularPhysical => "yourRegularPhysical".tr();
   static String get whatIsYourGoal => "whatIsYourGoal".tr();
   static String get whatIsYourHeight => "whatIsYourHeight".tr();
   static String get whatIsYourWeight => "whatIsYourWeight".tr();
-
-  static String get thisHelpsUsCreateYourPersonalizedPlan =>
-      "thisHelpsUsCreateYourPersonalizedPlan".tr();
+  static String get thisHelpsUsCreateYourPersonalizedPlan => "thisHelpsUsCreateYourPersonalizedPlan".tr();
   static String get howOldAreYou => "howOldAreYou".tr();
   static String get tellUsAboutYourself => "tellUsAboutYourself".tr();
   static String get weNeedToKnowYourGender => "weNeedToKnowYourGender".tr();
@@ -54,10 +45,16 @@ class AppStrings {
   static String get createNewPasssword => "createNewPasssword".tr();
   static String get password => "password".tr();
   static String get done => "done".tr();
-
   static String get skip => "skip".tr();
   static String get back => "back".tr();
+
+  static String get noSavedConversations => "noSavedConversations".tr();
+
+  static String get typeYourMessage => "typeYourMessage".tr();
+  static String get smartCoach => "smartCoach".tr();
   static String get doIt => "doIt".tr();
+  static String get previousConversations => "previousConversations".tr();
+  static String get confirmTheNewPassword => "confirmTheNewPassword".tr();
   static String get onBoardingOne => "onBoardingOne".tr();
   static String get onBoardingTwo => "onBoardingTwo".tr();
   static String get onBoardingThree => "onBoardingThree".tr();
@@ -68,5 +65,13 @@ class AppStrings {
   static String get register => "register".tr();
   static String get alreadyHaveAnAccount => "alreadyHaveAnAccount".tr();
   static String get login => "login".tr();
+  static String get workouts => "workouts".tr();
+  static String get fullBody => "fullBody".tr();
+  static String get noWorkoutFound => "noWorkoutFound".tr();
+  static String get foodRecommendation => "foodRecommendation".tr();
   static String get subtitle => "subtitle".tr();
+  static String get hi => "hi".tr();
+  static String get iamYourSmartCoach => "iamYourSmartCoach".tr();
+  static String get howCanAssistYouToday => "howCanAssistYouToday".tr();
+  static String get getStarted => "getStarted".tr();
 }

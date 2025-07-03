@@ -7,9 +7,9 @@ abstract class ColorManager {
   static const Color onSecondaryColor = Colors.black;
   static const Color tertiaryColor = Color(0xffD3D3D3);
   static const Color errorBorderColor = Colors.redAccent;
-
+  static const Color navBarBackgroundColor = Color(0xCC242424);
   static const Color backgroundColor = Colors.transparent;
-  static const Color backgroundColorr =  Color(0xff242424);
+  static const Color backgroundColorr = Color(0xff242424);
 
   //==================================== Const Colors ====================================//
   static const white = Color(0xffF9F9F9);

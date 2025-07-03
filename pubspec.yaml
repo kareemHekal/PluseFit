@@ -71,7 +71,10 @@ dependencies:
   mocktail: ^1.0.4
   timelines_plus: ^1.0.6
   url_launcher: ^6.3.1
+  hive:
+  hive_flutter:
   retrofit: ^4.4.2
+  path_provider:
   json_annotation: ^4.9.0
   get: ^4.6.6
   dots_indicator: ^3.0.0
@@ -81,12 +84,15 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  hive_generator: ^2.0.0
+  json_serializable: ^6.9.0
+  build_runner: ^2.4.6
   retrofit_generator: ^9.2.0
-  json_serializable: ^6.9.5
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^5.0.0
   injectable_generator:
-  build_runner:
+  youtube_player_flutter: ^9.0.0
+
 flutter_native_splash:
   color: "#000000"
   image: "assets/images/splash_onboarding/splash_background_icon.png"
@@ -125,6 +131,7 @@ flutter:
     - assets/lottie/
     - assets/images/icon/
     - assets/images/splash_onboarding/
+    - assets/images/smart_coach/
     - assets/translations/
     - assets/images/icon/
 

@@ -1,12 +1,14 @@
 part of 'auth_cubit.dart';
 
- sealed class AuthState {}
+sealed class AuthState {}
 
-final class AuthInitial extends AuthState {}///  FORGOT PASSWORD STATES  ///
+final class AuthInitial extends AuthState {}
+
+///  FORGOT PASSWORD STATES  ///
 
 final class SendEmailVerificationSuccessState extends AuthState {
   ForgetPasswordResponse? response;
-  SendEmailVerificationSuccessState(  this.response);
+  SendEmailVerificationSuccessState(this.response);
 }
 
 final class SendEmailVerificationLoadingState extends AuthState {
@@ -15,7 +17,7 @@ final class SendEmailVerificationLoadingState extends AuthState {
 
 final class SendEmailVerificationErrorState extends AuthState {
   String? message;
-  SendEmailVerificationErrorState( this.message);
+  SendEmailVerificationErrorState(this.message);
 }
 
 ///  VERIFY RESET CODE STATES  ///
@@ -38,7 +40,7 @@ final class VerifyResetCodeErrorState extends AuthState {
 ///  PASSWORD RESET STATES  ///
 
 final class ResetPasswordSuccessState extends AuthState {
-  ResetPasswordResponse? response  ;
+  ResetPasswordResponse? response;
   ResetPasswordSuccessState({required this.response});
 }
 
