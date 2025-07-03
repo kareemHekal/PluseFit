@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
             ),
         RouteManager.welcomeSmartCoachScreen: (context) =>
             const SmartCoachWelcomeView(),
-        RouteManager.exerciseScreen: (context) =>  const ExerciseScreen(),
+        //RouteManager.exerciseScreen: (context) =>  const ExerciseScreen(),
       },
       // initialRoute: RouteManager.mainScreen,
       initialRoute: RouteManager.welcomeSmartCoachScreen,
