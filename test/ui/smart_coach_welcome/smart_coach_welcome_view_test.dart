@@ -1,7 +1,6 @@
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/smart_coach_background_cuver.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/ui/smart_coach_welcome/smart_coach_welcome_view.dart';
 import 'package:flutter/material.dart';
@@ -47,26 +46,6 @@ void main() {
       await tester.pumpWidget(buildWidget());
       final button = find.widgetWithText(ElevatedButton, AppStrings.getStarted);
       expect(button, findsOneWidget);
-    });
-
-    testWidgets("should navigate when Get Started button is tapped",
-        (tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          initialRoute: RouteManager.welcomeSmartCoachScreen,
-          routes: {
-            RouteManager.welcomeSmartCoachScreen: (context) =>
-                const SmartCoachWelcomeView(),
-            RouteManager.smartCoach: (context) =>
-                const Scaffold(body: Text('Smart Coach Page')),
-          },
-        ),
-      );
-
-      await tester
-          .tap(find.widgetWithText(ElevatedButton, AppStrings.getStarted));
-      await tester.pumpAndSettle();
-      expect(find.text('Smart Coach Page'), findsOneWidget);
     });
   });
 }

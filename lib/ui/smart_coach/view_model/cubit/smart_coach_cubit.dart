@@ -1,11 +1,13 @@
 // ignore_for_file: depend_on_referenced_packages, avoid_print, non_constant_identifier_names
 
+import 'package:fit_zone/core/api/api_result.dart';
 import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'package:fit_zone/core/constant.dart';
 import 'package:fit_zone/data/model/smart_coach/conversation_model.dart';
 import 'package:fit_zone/data/model/smart_coach/message_model.dart';
 import 'package:fit_zone/domain/use_cases/smart_coach/add_conversation_use_case.dart';
 import 'package:fit_zone/domain/use_cases/smart_coach/get_all_conversations_use_case.dart';
+import 'package:fit_zone/domain/use_cases/smart_coach/send_prompt_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -18,9 +20,10 @@ part 'smart_coach_state.dart';
 class SmartCoachCubit extends Cubit<SmartCoachState> {
   final GetAllConversationsUseCase _getAllConversationsUseCase;
   final AddConversationUseCase _addConversationUseCase;
+  final SendPromptUsecase _sendPromptUsecase;
 
-  SmartCoachCubit(
-      this._getAllConversationsUseCase, this._addConversationUseCase)
+  SmartCoachCubit(this._getAllConversationsUseCase,
+      this._addConversationUseCase, this._sendPromptUsecase)
       : super(SmartCoachInitial());
 
   /// here is all the messages of the conversation even if it's from the user or the coach
@@ -55,7 +58,8 @@ class SmartCoachCubit extends Cubit<SmartCoachState> {
     messages.add(message);
     if (message.isCoach == false) {
       /// here you must also call the ai model and send him the message by (message.message)
-      /// _callAiModel(message.message);
+      _callAiModel(message.message);
+
       /// like this
     }
     emit(NewMessageAdded(messages: messages));
@@ -89,11 +93,20 @@ class SmartCoachCubit extends Cubit<SmartCoachState> {
     return nextId;
   }
 
-  /// you call this when the message is from the user
-  /// you call it in the _addMessage function like i mentioned
-// _callAiModel(String message) async {
-//    here you must call the ai model and send the message
-//   await response = ____theCall(message);
-//   _addMessage(message: MessageModel(message: response, isCoach: true));
-// }
+  // / you call this when the message is from the user
+  // / you call it in the _addMessage function like i mentioned
+  _callAiModel(String message) async {
+    //  here you must call the ai model and send the message
+    var response = await _sendPromptUsecase.sendPrompt(message);
+    switch (response) {
+      case SuccessApiResult():
+        _addMessage(
+            message: MessageModel(message: response.data ?? "", isCoach: true));
+        break;
+      case ErrorApiResult():
+        _addMessage(
+            message: MessageModel(
+                message: response.exception.toString(), isCoach: true));
+    }
+  }
 }
