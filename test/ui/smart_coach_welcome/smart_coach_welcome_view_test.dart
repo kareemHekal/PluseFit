@@ -1,7 +1,6 @@
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/smart_coach_background_cuver.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/ui/smart_coach_welcome/smart_coach_welcome_view.dart';
 import 'package:flutter/material.dart';
