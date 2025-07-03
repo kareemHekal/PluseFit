@@ -28,7 +28,9 @@ class FitnessCardBuilder extends StatelessWidget {
           child: FitnessCard(
             imgCover: muscles[index].image,
             title: muscles[index].name,
-            onTap: () {},
+            onTap: () {
+              // navigate here
+            },
           ),
         ),
       ),
