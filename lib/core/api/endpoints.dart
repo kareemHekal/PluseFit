@@ -1,6 +1,7 @@
 class EndPoint {
   static const String registerEndpoint = '/api/v1/auth/signup';
   static const String loginEndpoint = '/api/v1/auth/signin';
+  static const String changePasswordEndpoint = "/api/v1/auth/change-password";
 
   static const String forgetPasswordEndpoint = "/api/v1/auth/forgotPassword";
   static const String verifyResetCode = "/api/v1/auth/verifyResetCode";

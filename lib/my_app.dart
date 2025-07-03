@@ -4,6 +4,8 @@ import 'package:fit_zone/ui/Auth/forget_password/view/forget_password/view/forge
 import 'package:fit_zone/ui/Auth/login/view/login_screen.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
+import 'package:fit_zone/ui/change_password/view/change_password_screen.dart';
+import 'package:fit_zone/ui/change_password/view_model/change_password_cubit.dart';
 import 'package:fit_zone/ui/food/view/food_details_screen.dart';
 import 'package:fit_zone/ui/food/view/food_screen.dart';
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart';
@@ -54,6 +56,13 @@ class MyApp extends StatelessWidget {
               create: (context) => getIt<LoginCubit>(),
               child: const LoginScreen(),
             ),
+
+        RouteManager.changePasswordScreen: (context) => BlocProvider(
+          create: (context) => getIt<ChangePasswordCubit>(),
+          child: const ChangePasswordScreen(),
+        ),
+
+
         RouteManager.welcomeSmartCoachScreen: (context) => BlocProvider(
               create: (context) => getIt<SmartCoachCubit>(),
               child: const SmartCoachWelcomeView(),

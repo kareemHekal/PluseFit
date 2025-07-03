@@ -48,6 +48,8 @@ abstract class CacheHelper {
     return value as T?;
   }
 
+
+
   static Future<bool> removeData(String key) async {
     if (_sharedPrefs == null) await init();
     return await _sharedPrefs!.remove(key);
