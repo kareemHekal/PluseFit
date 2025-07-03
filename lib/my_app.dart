@@ -20,7 +20,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'config/theme/app_theme.dart';
 import 'core/utils/routes_manager.dart';
-import 'ui/smart_coach/view/chat_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -62,12 +61,12 @@ class MyApp extends StatelessWidget {
           create: (context) => getIt<ChangePasswordCubit>(),
           child: const ChangePasswordScreen(),
         ),
-        RouteManager.smartCoach: (context) => BlocProvider(
+
+
+        RouteManager.welcomeSmartCoachScreen: (context) => BlocProvider(
               create: (context) => getIt<SmartCoachCubit>(),
-              child: const ChatScreen(),
+              child: const SmartCoachWelcomeView(),
             ),
-        RouteManager.welcomeSmartCoachScreen: (context) =>
-            const SmartCoachWelcomeView(),
       },
       // initialRoute: RouteManager.mainScreen,
       initialRoute: RouteManager.welcomeSmartCoachScreen,

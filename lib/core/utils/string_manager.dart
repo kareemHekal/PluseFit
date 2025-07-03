@@ -79,4 +79,5 @@ abstract class AppStrings {
   static String get newPassword => "newPassword".tr();
   static String get enterYourNewPassword => "enterYourNewPassword".tr();
   static String get confirmPassword => "confirmPassword".tr();
+  static String get failedToGetAResponse => "failedToGetAResponse".tr();
 }
