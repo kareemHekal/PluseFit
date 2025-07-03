@@ -4,6 +4,7 @@ import 'package:fit_zone/ui/Auth/forget_password/view/forget_password/view/forge
 import 'package:fit_zone/ui/Auth/login/view/login_screen.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
+import 'package:fit_zone/ui/exercise/view/exercise_screen.dart';
 import 'package:fit_zone/ui/food/view/food_details_screen.dart';
 import 'package:fit_zone/ui/food/view/food_screen.dart';
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart';
@@ -67,7 +68,7 @@ class MyApp extends StatelessWidget {
       initialRoute: RouteManager.welcomeSmartCoachScreen,
       // home: const ChatScreen(),
      //initialRoute: RouteManager.onBoardingScreen,
-     initialRoute: RouteManager.exerciseScreen,
+    // initialRoute: RouteManager.exerciseScreen,
     );
   }
 }
