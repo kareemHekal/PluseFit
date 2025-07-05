@@ -7,9 +7,7 @@ import 'package:injectable/injectable.dart';
 @injectable
 class ProfileCubit extends Cubit<ProfileState> {
   final GetProfileUseCase getProfileUseCase;
-  ProfileCubit(this.getProfileUseCase) : super(ProfileInitial()) {
-    print('ProfileCubit created');
-  }
+  ProfileCubit(this.getProfileUseCase) : super(ProfileInitial());
 
   void doIntent(ProfileIntent intent) async {
     if (intent is LoadProfileIntent) {

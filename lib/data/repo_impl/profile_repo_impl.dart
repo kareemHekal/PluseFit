@@ -10,7 +10,6 @@ class ProfileRepoImpl implements ProfileRepo {
 
   @override
   Future<ProfileEntity> getProfileData() async {
-    print('ProfileRepoImpl.getProfileData called');
     final model = await dataSource.getProfileData();
     return ProfileEntity.fromModel(model);
   }

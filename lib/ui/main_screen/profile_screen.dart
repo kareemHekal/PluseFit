@@ -16,7 +16,6 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('ProfileScreen build called');
     return BlocProvider(
       create: (context) => ProfileCubit(getIt())..doIntent(LoadProfileIntent()),
       child: BlocBuilder<ProfileCubit, ProfileState>(

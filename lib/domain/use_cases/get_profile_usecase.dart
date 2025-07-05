@@ -8,7 +8,6 @@ class GetProfileUseCase {
   GetProfileUseCase(this.repo);
 
   Future<ProfileEntity> execute() {
-    print('GetProfileUseCase.execute called');
     return repo.getProfileData();
   }
 }
