@@ -71,7 +71,6 @@ abstract class AppStrings {
   static String get hi => "hi".tr();
   static String get iamYourSmartCoach => "iamYourSmartCoach".tr();
   static String get howCanAssistYouToday => "howCanAssistYouToday".tr();
-  static String get getStarted => "getStarted".tr();
   static String get changePassword => "changePassword".tr();
   static String get change => "Change".tr();
   static String get currentPassword => "currentPassword".tr();
@@ -79,5 +78,7 @@ abstract class AppStrings {
   static String get newPassword => "newPassword".tr();
   static String get enterYourNewPassword => "enterYourNewPassword".tr();
   static String get confirmPassword => "confirmPassword".tr();
+  static String get editProfile => "editProfile".tr();
+  static String get getStarted => "getStarted".tr();
   static String get failedToGetAResponse => "failedToGetAResponse".tr();
 }

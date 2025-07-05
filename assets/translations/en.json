@@ -76,7 +76,8 @@
   "enterYourPassword": "Enter Your Password",
   "newPassword": "New Password",
   "enterYourNewPassword": "Enter Your New Password",
-  "confirmPassword": "Confirm Password"
+  "confirmPassword": "Confirm Password",
+  "editProfile": "Edit Profile",
   "getStarted": "Get Started",
   "failedToGetAResponse": "Failed to get a response."
 }

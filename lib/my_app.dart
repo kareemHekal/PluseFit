@@ -6,6 +6,7 @@ import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart';
 import 'package:fit_zone/ui/Auth/register/register_view.dart';
 import 'package:fit_zone/ui/change_password/view/change_password_screen.dart';
 import 'package:fit_zone/ui/change_password/view_model/change_password_cubit.dart';
+import 'package:fit_zone/ui/edit_profile/view/edit_profile_screen.dart';
 import 'package:fit_zone/ui/food/view/food_details_screen.dart';
 import 'package:fit_zone/ui/food/view/food_screen.dart';
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         //RouteManager.createNewPassword: (context) =>  const CreateNewPassword(),
         RouteManager.registerScreen: (context) => const RegisterView(),
         RouteManager.onBoardingScreen: (context) => const OnBoardingScreen(),
+        RouteManager.editProfileScreen: (context) => const EditProfileScreen(),
         RouteManager.workOutScreen: (context) => const WorkoutsScreen(),
         RouteManager.foodScreen: (context) => MultiBlocProvider(
               providers: [
@@ -58,10 +60,9 @@ class MyApp extends StatelessWidget {
             ),
 
         RouteManager.changePasswordScreen: (context) => BlocProvider(
-          create: (context) => getIt<ChangePasswordCubit>(),
-          child: const ChangePasswordScreen(),
-        ),
-
+              create: (context) => getIt<ChangePasswordCubit>(),
+              child: const ChangePasswordScreen(),
+            ),
 
         RouteManager.welcomeSmartCoachScreen: (context) => BlocProvider(
               create: (context) => getIt<SmartCoachCubit>(),
@@ -69,7 +70,7 @@ class MyApp extends StatelessWidget {
             ),
       },
       // initialRoute: RouteManager.mainScreen,
-      initialRoute: RouteManager.welcomeSmartCoachScreen,
+      initialRoute: RouteManager.editProfileScreen,
       // home: const ChatScreen(),
     );
   }
