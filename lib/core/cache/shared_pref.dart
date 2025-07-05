@@ -1,7 +1,6 @@
-import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-@singleton
-class CacheHelper {
+
+abstract class CacheHelper {
   static SharedPreferences? _sharedPrefs;
 
   static Future<void> init() async {
@@ -10,6 +9,7 @@ class CacheHelper {
 
   static Future<bool> setData<T>(String key, T value) async {
     if (_sharedPrefs == null) await init();
+
 
     if (value is String) {
       return await _sharedPrefs!.setString(key, value);
@@ -29,20 +29,26 @@ class CacheHelper {
   static T? getData<T>(String key) {
     if (_sharedPrefs == null) return null;
 
+    dynamic value;
+
     if (T == String) {
-      return _sharedPrefs!.getString(key) as T?;
+      value = _sharedPrefs!.getString(key);
     } else if (T == bool) {
-      return _sharedPrefs!.getBool(key) as T?;
+      value = _sharedPrefs!.getBool(key);
     } else if (T == int) {
-      return _sharedPrefs!.getInt(key) as T?;
+      value = _sharedPrefs!.getInt(key);
     } else if (T == double) {
-      return _sharedPrefs!.getDouble(key) as T?;
+      value = _sharedPrefs!.getDouble(key);
     } else if (T == List<String>) {
-      return _sharedPrefs!.getStringList(key) as T?;
+      value = _sharedPrefs!.getStringList(key);
     } else {
       throw Exception("Invalid type");
     }
+
+    return value as T?;
   }
+
+
 
   static Future<bool> removeData(String key) async {
     if (_sharedPrefs == null) await init();

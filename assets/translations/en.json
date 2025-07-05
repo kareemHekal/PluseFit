@@ -46,7 +46,11 @@
   "done": "Done",
   "skip": "Skip",
   "back": "Back",
+  "noSavedConversations": "There are no saved conversations yet.",
+  "typeYourMessage": "Start typing your message to begin...",
+  "smartCoach": "Smart Coach",
   "doIt": "Do IT",
+  "previousConversations": "Previous conversations",
   "confirmTheNewPassword": "Confirm the new password",
   "onBoardingOne": "The Price Of Excellence\nIs Discipline",
   "onBoardingTwo": "Fitness Has Never Been So\nMuch Fun",
@@ -63,6 +67,7 @@
   "noWorkoutFound": "No Workout Found !!",
   "foodRecommendation": "Food Recommendation",
   "subtitle": "Lorem Ipsum Dolor Sit Amet Consectetur Et Elitna Elitna Quae Sed Quis Enim Et Duis, Maecel Massa",
+
   "welcomeBack": "WELCOME BACK",
   "forgetPasswordQuestion": "Forget Password ?",
   "or": "Or",
@@ -86,4 +91,18 @@
   "weight": "Weight",
   "height": "Height",
   "goal": "Goal"
+
+  "hi": "Hi",
+  "iamYourSmartCoach": "I Am Your Smart Coach",
+  "howCanAssistYouToday": "How Can I Assist You \nToday ?",
+  "changePassword": "Change Password",
+  "Change": "Change Password",
+  "currentPassword": "Current Password",
+  "enterYourPassword": "Enter Your Password",
+  "newPassword": "New Password",
+  "enterYourNewPassword": "Enter Your New Password",
+  "confirmPassword": "Confirm Password"
+  "getStarted": "Get Started",
+  "failedToGetAResponse": "Failed to get a response."
+
 }

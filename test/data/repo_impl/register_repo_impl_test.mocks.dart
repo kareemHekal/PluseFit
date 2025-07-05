@@ -39,17 +39,22 @@ class MockRegisterDataSource extends _i1.Mock
   }
 
   @override
-  _i3.Future<_i4.ApiResult<_i5.RegisterResponse>> register({
-    required _i6.RegisterUserModel? userModel,
-  }) =>
+  _i3.Future<_i4.ApiResult<_i5.RegisterResponse>> register(
+          {required _i6.RegisterUserModel? userModel}) =>
       (super.noSuchMethod(
-            Invocation.method(#register, [], {#userModel: userModel}),
-            returnValue: _i3.Future<_i4.ApiResult<_i5.RegisterResponse>>.value(
-              _i7.dummyValue<_i4.ApiResult<_i5.RegisterResponse>>(
-                this,
-                Invocation.method(#register, [], {#userModel: userModel}),
-              ),
-            ),
-          )
-          as _i3.Future<_i4.ApiResult<_i5.RegisterResponse>>);
+        Invocation.method(
+          #register,
+          [],
+          {#userModel: userModel},
+        ),
+        returnValue: _i3.Future<_i4.ApiResult<_i5.RegisterResponse>>.value(
+            _i7.dummyValue<_i4.ApiResult<_i5.RegisterResponse>>(
+          this,
+          Invocation.method(
+            #register,
+            [],
+            {#userModel: userModel},
+          ),
+        )),
+      ) as _i3.Future<_i4.ApiResult<_i5.RegisterResponse>>);
 }

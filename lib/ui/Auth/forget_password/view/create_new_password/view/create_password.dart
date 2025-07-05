@@ -1,15 +1,14 @@
+import 'package:fit_zone/core/reusable_comp/auth_background_cuver.dart';
 import 'package:fit_zone/core/reusable_comp/back_icon.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
+import 'package:fit_zone/core/utils/string_manager.dart';
+import 'package:fit_zone/core/utils/text_style_manager.dart';
+import 'package:fit_zone/core/utils/toast_message.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
+import 'package:fit_zone/ui/Auth/view_model/cubit/auth_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../../../core/reusable_comp/auth_background_cuver.dart';
-import '../../../../../../core/utils/string_manager.dart';
-import '../../../../../../core/utils/text_style_manager.dart';
-import '../../../../../../core/utils/toast_message.dart';
-import '../../../../view_model/cubit/auth_intent.dart';
 
 class CreateNewPassword extends StatelessWidget {
   final String email;
