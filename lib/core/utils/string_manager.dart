@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+
 abstract class AppStrings {
   static String get male => "male".tr();
   static String get female => "female".tr();
@@ -6,32 +7,42 @@ abstract class AppStrings {
   static String get year => "Year".tr();
   static String get cm => "cm".tr();
   static String get kg => "kg".tr();
-  static String get yourAccountHasBeenCreatedSuccessfully => "yourAccountHasBeenCreatedSuccessfully".tr();
+  static String get yourAccountHasBeenCreatedSuccessfully =>
+      "yourAccountHasBeenCreatedSuccessfully".tr();
   static String get activityLevel => "activityLevel".tr();
   static String get yourRegularPhysical => "yourRegularPhysical".tr();
   static String get whatIsYourGoal => "whatIsYourGoal".tr();
   static String get whatIsYourHeight => "whatIsYourHeight".tr();
   static String get whatIsYourWeight => "whatIsYourWeight".tr();
-  static String get thisHelpsUsCreateYourPersonalizedPlan => "thisHelpsUsCreateYourPersonalizedPlan".tr();
+  static String get thisHelpsUsCreateYourPersonalizedPlan =>
+      "thisHelpsUsCreateYourPersonalizedPlan".tr();
   static String get howOldAreYou => "howOldAreYou".tr();
   static String get tellUsAboutYourself => "tellUsAboutYourself".tr();
   static String get weNeedToKnowYourGender => "weNeedToKnowYourGender".tr();
   static String get emailCantBeEmpty => "emailCantBeEmpty".tr();
   static String get enterValidEmailAddress => "enterValidEmailAddress".tr();
   static String get passwordCantBeEmpty => "passwordCantBeEmpty".tr();
-  static String get passwordMustBeAtLeast6Characters => "passwordMustBeAtLeast6Characters".tr();
-  static String get passwordMustContainAtLeastOneUppercaseLetter => "passwordMustContainAtLeastOneUppercaseLetter".tr();
-  static String get passwordMustContainAtLeastOneNumber => "passwordMustContainAtLeastOneNumber".tr();
-  static String get passwordMustContainAtLeastOneSpecialCharacter => "passwordMustContainAtLeastOneSpecialCharacter".tr();
+  static String get passwordMustBeAtLeast6Characters =>
+      "passwordMustBeAtLeast6Characters".tr();
+  static String get passwordMustContainAtLeastOneUppercaseLetter =>
+      "passwordMustContainAtLeastOneUppercaseLetter".tr();
+  static String get passwordMustContainAtLeastOneNumber =>
+      "passwordMustContainAtLeastOneNumber".tr();
+  static String get passwordMustContainAtLeastOneSpecialCharacter =>
+      "passwordMustContainAtLeastOneSpecialCharacter".tr();
   static String get passwordsDoNotMatch => "passwordsDoNotMatch".tr();
   static String get userNameCannotBeEmpty => "userNameCannotBeEmpty".tr();
-  static String get userNameCannotBeMoreThan20Characters => "userNameCannotBeMoreThan20Characters".tr();
+  static String get userNameCannotBeMoreThan20Characters =>
+      "userNameCannotBeMoreThan20Characters".tr();
   static String get firstNameCannotBeEmpty => "firstNameCannotBeEmpty".tr();
-  static String get firstNameCannotBeMoreThan20Characters => "firstNameCannotBeMoreThan20Characters".tr();
+  static String get firstNameCannotBeMoreThan20Characters =>
+      "firstNameCannotBeMoreThan20Characters".tr();
   static String get lastNameCannotBeEmpty => "lastNameCannotBeEmpty".tr();
-  static String get lastNameCannotBeMoreThan20Characters => "lastNameCannotBeMoreThan20Characters".tr();
+  static String get lastNameCannotBeMoreThan20Characters =>
+      "lastNameCannotBeMoreThan20Characters".tr();
   static String get phoneNumberCannotBeEmpty => "phoneNumberCannotBeEmpty".tr();
-  static String get phoneNumberCannotBeMoreThan20Characters => "phoneNumberCannotBeMoreThan20Characters".tr();
+  static String get phoneNumberCannotBeMoreThan20Characters =>
+      "phoneNumberCannotBeMoreThan20Characters".tr();
   static String get enterYourEmail => "enterYourEmail".tr();
   static String get forgetPassword => "forgetPassword".tr();
   static String get email => "email".tr();
@@ -80,4 +91,12 @@ abstract class AppStrings {
   static String get enterYourNewPassword => "enterYourNewPassword".tr();
   static String get confirmPassword => "confirmPassword".tr();
   static String get failedToGetAResponse => "failedToGetAResponse".tr();
+  static String get profile => "profile".tr();
+  static String get editProfile => "editProfile".tr();
+  static String get selectLanguage => "selectLanguage".tr();
+  static String get security => "security".tr();
+  static String get privacyPolicy => "privacyPolicy".tr();
+  static String get help => "help".tr();
+  static String get logout => "logout".tr();
+  static String get explore => "explore".tr();
 }

@@ -77,5 +77,13 @@
   "enterYourPassword": "أدخل كلمة المرور",
   "newPassword": "كلمة المرور الجديدة",
   "enterYourNewPassword": "أدخل كلمة المرور الجديدة",
-  "confirmPassword": "تأكيد كلمة المرور"
+  "confirmPassword": "تأكيد كلمة المرور",
+  "profile": "الملف الشخصي",
+  "editProfile": "تعديل الملف الشخصي",
+  "selectLanguage": "اختر اللغة",
+  "security": "الأمان",
+  "privacyPolicy": "سياسة الخصوصية",
+  "help": "المساعدة",
+  "logout": "تسجيل الخروج",
+  "explore": "استكشف"
 }

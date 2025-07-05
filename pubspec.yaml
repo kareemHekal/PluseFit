@@ -137,6 +137,7 @@ flutter:
     - assets/images/smart_coach/
     - assets/translations/
     - assets/images/icon/
+    - assets/images/profile_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
