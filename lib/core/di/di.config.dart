@@ -217,31 +217,19 @@ import '../../domain/use_cases/forget_password_usecases/otp_usecase.dart'
     as _i1026;
 import '../../domain/use_cases/forget_password_usecases/reset_password_usecase.dart'
     as _i682;
-import '../../domain/use_cases/get_muscles_groups_usecase.dart' as _i225;
 import '../../domain/use_cases/get_profile_usecase.dart' as _i495;
 import '../../domain/use_cases/get_recommendation_to_day_usecase.dart' as _i201;
-import '../../domain/use_cases/get_workouts_by_muscle_group_id_usecase.dart'
-    as _i612;
 import '../../domain/use_cases/login_usecase.dart' as _i645;
 import '../../domain/use_cases/register_usecase.dart' as _i328;
 import '../../ui/Auth/complete_register/view_model/complete_register_cubit.dart'
     as _i765;
-import '../../ui/Auth/login/viewmodel/login_cubit.dart' as _i210;
-import '../../ui/Auth/view_model/cubit/auth_cubit.dart' as _i906;
-import '../../ui/food/view_model/categories_cubit.dart' as _i535;
 import '../../ui/food/view_model/meal_details_cubit.dart' as _i881;
-import '../../ui/food/view_model/meals_cubit.dart' as _i410;
 import '../../ui/main_screen/home_screen/view_model/recommendation_cubit.dart'
     as _i842;
-import '../../ui/main_screen/home_screen/view_model/upcoming_workouts_cubit.dart'
-    as _i280;
 import '../../ui/main_screen/profile_screen/profile_cubit.dart' as _i315;
 import '../../ui/main_screen/workouts_tab/view_model/workouts_cubit.dart'
     as _i171;
 import '../api/api_manager.dart' as _i1047;
-import '../cache/shared_pref.dart' as _i299;
-import '../logger/logger_module.dart' as _i279;
-
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -326,9 +314,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i645.LoginUseCase>(
         () => _i645.LoginUseCase(gh<_i496.LoginRepo>()));
     gh.factory<_i881.MealDetailsCubit>(() => _i881.MealDetailsCubit(
-          gh<_i500.GetMealDetailsUsecase>(),
-          gh<_i61.GetMealsByCategoryUsecase>(),
-
+        gh<_i500.GetMealDetailsUsecase>(),
+        gh<_i61.GetMealsByCategoryUsecase>()));
     gh.lazySingleton<_i65.GeminiServices>(() => _i65.GeminiServices());
     gh.factory<_i425.SendAPromptDatasource>(
         () => _i135.SendAPromptDatasourceImpl(gh<_i65.GeminiServices>()));

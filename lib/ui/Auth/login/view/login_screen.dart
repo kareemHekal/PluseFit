@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously, deprecated_member_use
+// ignore_for_file: use_build_context_synchronously, deprecated_member_use, duplicate_ignore
 
 import 'package:fit_zone/core/cache/shared_pref.dart';
 

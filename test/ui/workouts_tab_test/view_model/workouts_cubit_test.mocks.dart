@@ -40,17 +40,6 @@ class MockFitnessUsecase extends _i1.Mock implements _i2.FitnessUsecase {
     required String? name,
   }) =>
       (super.noSuchMethod(
-            Invocation.method(#callGroup, [], {#id: id, #name: name}),
-            returnValue:
-                _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>>.value(
-                  _i6.dummyValue<_i4.ApiResult<List<_i5.MusclesGroup>>>(
-                    this,
-                    Invocation.method(#callGroup, [], {#id: id, #name: name}),
-                  ),
-                ),
-          )
-          as _i3.Future<_i4.ApiResult<List<_i5.MusclesGroup>>>);
-
         Invocation.method(
           #callGroup,
           [],
@@ -76,16 +65,6 @@ class MockFitnessUsecase extends _i1.Mock implements _i2.FitnessUsecase {
   @override
   _i3.Future<_i4.ApiResult<List<_i7.Muscles>>> callMuscles(String? cardId) =>
       (super.noSuchMethod(
-            Invocation.method(#callMuscles, [cardId]),
-            returnValue: _i3.Future<_i4.ApiResult<List<_i7.Muscles>>>.value(
-              _i6.dummyValue<_i4.ApiResult<List<_i7.Muscles>>>(
-                this,
-                Invocation.method(#callMuscles, [cardId]),
-              ),
-            ),
-          )
-          as _i3.Future<_i4.ApiResult<List<_i7.Muscles>>>);
-
         Invocation.method(
           #callMuscles,
           [cardId],

@@ -82,7 +82,6 @@ abstract class AppStrings {
   static String get or => "or".tr();
   static String get dontHaveAnAccountYet => "dontHaveAnAccountYet".tr();
   static String get explore => "explore".tr();
-  static String get smartCoach => "smartCoach".tr();
   static String get profile => "profile".tr();
   static String get hi => "hi".tr();
   static String get letsStartYourDay => "letsStartYourDay".tr();
@@ -103,11 +102,9 @@ abstract class AppStrings {
 
   static String get foodRecommendation => "foodRecommendation".tr();
   static String get subtitle => "subtitle".tr();
-  static String get hi => "hi".tr();
   static String get iamYourSmartCoach => "iamYourSmartCoach".tr();
   static String get howCanAssistYouToday => "howCanAssistYouToday".tr();
   static String get getStarted => "getStarted".tr();
-  static String get changePassword => "changePassword".tr();
   static String get change => "Change".tr();
   static String get currentPassword => "currentPassword".tr();
   static String get enterYourPassword => "enterYourPassword".tr();
