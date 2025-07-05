@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
             ),
       },
       // initialRoute: RouteManager.mainScreen,
-      initialRoute: RouteManager.editProfileScreen,
+      initialRoute: RouteManager.onBoardingScreen,
       // home: const ChatScreen(),
     );
   }
