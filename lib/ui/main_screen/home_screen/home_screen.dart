@@ -1,6 +1,7 @@
 import 'package:fit_zone/core/cache/shared_pref.dart';
 import 'package:fit_zone/core/constant.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
+import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/ui/main_screen/home_screen/widgets/categories.dart';
 import 'package:fit_zone/ui/main_screen/home_screen/widgets/popular_training_section.dart';
 import 'package:fit_zone/ui/main_screen/home_screen/widgets/recommendation_for_you_section.dart';
@@ -33,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Hi $userName ,',
+                      '${AppStrings.hi} $userName ,',
                       style: const TextStyle(
                         color: ColorManager.white,
                         fontSize: 18,
@@ -41,9 +42,9 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 4),
-                    const Text(
-                      "Let's Start Your Day",
-                      style: TextStyle(
+                    Text(
+                      AppStrings.letsStartYourDay,
+                      style: const TextStyle(
                         color: ColorManager.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -61,7 +62,7 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 24),
             CategorySection(
               onTap: (category) {
-                if (category == "Trainer") {
+                if (category == AppStrings.trainer) {
                   onCategoryTap(category);
                 } else {
                   _showUpcomingFeatureDialog(context);
@@ -104,11 +105,11 @@ class HomeScreen extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          child: const Padding(
-            padding: EdgeInsets.all(24.0),
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
             child: Text(
-              'Upcoming Feature\nStill processing on it',
-              style: TextStyle(color: ColorManager.white, fontSize: 16),
+              '${AppStrings.upcomingFeature}\n${AppStrings.stillProcessingOnIt}',
+              style: const TextStyle(color: ColorManager.white, fontSize: 16),
               textAlign: TextAlign.center,
             ),
           ),
