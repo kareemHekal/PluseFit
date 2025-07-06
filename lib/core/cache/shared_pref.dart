@@ -1,6 +1,8 @@
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-abstract class CacheHelper {
+@singleton
+class CacheHelper {
   static SharedPreferences? _sharedPrefs;
 
   static Future<void> init() async {
@@ -49,9 +51,20 @@ abstract class CacheHelper {
   }
 
 
-
   static Future<bool> removeData(String key) async {
     if (_sharedPrefs == null) await init();
     return await _sharedPrefs!.remove(key);
   }
+
+  Future<void> _ensureInitialized() async {
+    if (_sharedPrefs == null) {
+      await init();
+    }
+  }
+
+  Future<bool> logout() async {
+    await _ensureInitialized();
+    return await _sharedPrefs!.clear();
+  }
+
 }

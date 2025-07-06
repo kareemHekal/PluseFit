@@ -1,8 +1,12 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:fit_zone/core/reusable_comp/dialogs.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
+import 'package:fit_zone/core/utils/toast_message.dart';
+import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
+import 'package:fit_zone/ui/Auth/view_model/cubit/auth_intent.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen/profile_cubit.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen/profile_intent.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen/profile_state.dart';
@@ -105,6 +109,7 @@ class ProfileScreen extends StatelessWidget {
 class _ProfileMenu extends StatefulWidget {
   final Color orange;
   final String? email;
+
   const _ProfileMenu({required this.orange, this.email});
 
   @override
@@ -181,12 +186,53 @@ class _ProfileMenuState extends State<_ProfileMenu> {
         onTap: () {},
         orange: orange,
       ),
-      _MenuItem(
-        assetIcon: 'assets/images/profile_icons/logout.png',
-        label: AppStrings.logout,
-        onTap: () {},
-        orange: orange,
-        isLogout: true,
+      BlocListener<AuthCubit, AuthState>(
+        listener: (context, state) {
+          if (state is LogoutLoadingState) {
+            showDialog(
+              context: context,
+              builder: (context) => const Center(
+                child: CircularProgressIndicator(
+                  color: ColorManager.primaryColor,
+                ),
+              ),
+            );
+          }
+
+          if (state is LogoutSuccessState) {
+            toastMessage(
+                message: "Logout Successfully, Back to login",
+                tybeMessage: TybeMessage.positive);
+
+            Future.delayed(const Duration(seconds: 2), () {
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                RouteManager.loginScreen,
+                (route) => false,
+              );
+            });
+          }
+
+          if (state is LogoutFailureState) {
+            Navigator.pop(context);
+            toastMessage(
+                message: "Error : ${state.message}",
+                tybeMessage: TybeMessage.negative);
+          }
+        },
+        child: _MenuItem(
+          assetIcon: 'assets/images/profile_icons/logout.png',
+          label: AppStrings.logout,
+          onTap: () {
+            Dialogs.confirmLogout(
+              context,
+              () => Navigator.pop(context),
+              () => context.read<AuthCubit>().doIntent(LogoutIntent()),
+            );
+          },
+          orange: orange,
+          isLogout: true,
+        ),
       ),
     ];
     return Container(
@@ -210,6 +256,7 @@ class _MenuItem extends StatelessWidget {
   final Widget? trailing;
   final Color orange;
   final bool isLogout;
+
   const _MenuItem({
     this.icon,
     this.assetIcon,
