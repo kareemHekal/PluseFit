@@ -3,8 +3,10 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:fit_zone/core/api/api_result.dart';
+import 'package:fit_zone/data/model/edit_profile_model.dart';
 import 'package:fit_zone/domain/use_cases/edit_profile_usecase.dart';
 import 'package:fit_zone/domain/use_cases/upload_photo_usecase.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -15,7 +17,10 @@ import 'edit_profile_state.dart';
 class EditProfileCubit extends Cubit<EditProfileState> {
   final EditProfileUsecase editProfileUsecase;
   final UploadPhotoUseCase uploadPhotoUsecase;
-
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  EditProfileModel editProfileModel = EditProfileModel();
   EditProfileCubit(this.editProfileUsecase, this.uploadPhotoUsecase)
       : super(EditProfileInitial());
 
