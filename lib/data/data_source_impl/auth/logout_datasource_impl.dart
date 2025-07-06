@@ -17,7 +17,7 @@ class LogoutDatasourceImpl implements LogoutDatasource {
   @override
   Future<ApiResult<bool>> logout() async {
     try {
-      final token = await CacheHelper.getData<String>(Constant.tokenKey);
+      String? token = CacheHelper.getData<String>('token');
 
       return await executeApi<bool>(() async {
         var apiResponse = await apiManager.getRequest(
