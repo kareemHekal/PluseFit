@@ -201,23 +201,27 @@ class _ProfileMenuState extends State<_ProfileMenu> {
 
           if (state is LogoutSuccessState) {
             toastMessage(
-                message: "Logout Successfully, Back to login",
-                tybeMessage: TybeMessage.positive);
+              message: "Logout Successfully, Back to login",
+              tybeMessage: TybeMessage.positive,
+            );
 
             Future.delayed(const Duration(seconds: 2), () {
-              Navigator.pushNamedAndRemoveUntil(
-                context,
-                RouteManager.loginScreen,
-                (route) => false,
-              );
+              if (context.mounted) {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  RouteManager.loginScreen,
+                  (route) => false,
+                );
+              }
             });
           }
 
           if (state is LogoutFailureState) {
             Navigator.pop(context);
             toastMessage(
-                message: "Error : ${state.message}",
-                tybeMessage: TybeMessage.negative);
+              message: "Error : ${state.message}",
+              tybeMessage: TybeMessage.negative,
+            );
           }
         },
         child: _MenuItem(
