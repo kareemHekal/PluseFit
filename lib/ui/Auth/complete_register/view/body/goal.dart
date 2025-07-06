@@ -75,7 +75,7 @@ class GoalBody extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: selectedGoal != null ? onNext : null,
-                      child: Text(AppStrings.next),
+                      child: Text(AppStrings.save),
                     ),
                   ),
                 ),

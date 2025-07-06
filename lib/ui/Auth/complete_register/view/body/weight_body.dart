@@ -81,7 +81,7 @@ class _WeightBodyState extends State<WeightBody> {
                       onPressed: () {
                         widget.onPressed(scrollValue);
                       },
-                      child: Text(AppStrings.next),
+                      child: Text(AppStrings.save),
                     ),
                   ),
                 ],

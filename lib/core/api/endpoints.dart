@@ -6,6 +6,8 @@ class EndPoint {
   static const String forgetPasswordEndpoint = "/api/v1/auth/forgotPassword";
   static const String verifyResetCode = "/api/v1/auth/verifyResetCode";
   static const String resetPassword = "/api/v1/auth/resetPassword";
+  static const String editProfile = "/api/v1/auth/editProfile";
+  static const String uploadProfilePhoto = "/api/v1/auth/upload-photo";
 
   static const String recommendationToDay = "/api/v1/muscles/random";
   static const String musclesGroup = "/api/v1/muscles";

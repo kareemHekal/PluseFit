@@ -69,6 +69,11 @@ abstract class AppStrings {
   static String get foodRecommendation => "foodRecommendation".tr();
   static String get subtitle => "subtitle".tr();
   static String get hi => "hi".tr();
+
+  static String get save => "save".tr();
+
+  static String get yourAccountHasBeenUpdatedSuccessfully =>
+      "yourAccountHasBeenUpdatedSuccessfully".tr();
   static String get iamYourSmartCoach => "iamYourSmartCoach".tr();
   static String get howCanAssistYouToday => "howCanAssistYouToday".tr();
   static String get changePassword => "changePassword".tr();

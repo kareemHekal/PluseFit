@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         //RouteManager.createNewPassword: (context) =>  const CreateNewPassword(),
         RouteManager.registerScreen: (context) => const RegisterView(),
         RouteManager.onBoardingScreen: (context) => const OnBoardingScreen(),
-        RouteManager.editProfileScreen: (context) => const EditProfileScreen(),
+        RouteManager.editProfileScreen: (context) => EditProfileScreen(),
         RouteManager.workOutScreen: (context) => const WorkoutsScreen(),
         RouteManager.foodScreen: (context) => MultiBlocProvider(
               providers: [
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
             ),
       },
       // initialRoute: RouteManager.mainScreen,
-      initialRoute: RouteManager.onBoardingScreen,
+      initialRoute: RouteManager.editProfileScreen,
       // home: const ChatScreen(),
     );
   }
