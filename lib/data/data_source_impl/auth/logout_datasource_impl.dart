@@ -3,7 +3,6 @@ import 'package:fit_zone/core/api/api_manager.dart';
 import 'package:fit_zone/core/api/api_result.dart';
 import 'package:fit_zone/core/api/endpoints.dart';
 import 'package:fit_zone/core/cache/shared_pref.dart';
-import 'package:fit_zone/core/constant.dart';
 import 'package:fit_zone/data/data_source_contract/auth/logout_datasource.dart';
 import 'package:injectable/injectable.dart';
 
@@ -24,21 +23,19 @@ class LogoutDatasourceImpl implements LogoutDatasource {
           endpoint: EndPoint.logoutEndpoint,
           headers: {"Authorization": "Bearer $token"},
         );
+
         if (apiResponse.data != null &&
             apiResponse.data["message"] == "success") {
           bool removeToken = await cacheHelper.logout();
-          if (removeToken) {
-            return true;
-          } else {
-            return false;
-          }
+          return removeToken;
         } else {
           return false;
         }
       });
     } catch (err) {
       return ErrorApiResult(
-          Exception("Server connection error: ${err.toString()}"));
+        Exception("Server connection error: ${err.toString()}"),
+      );
     }
   }
 }
