@@ -1,5 +1,5 @@
-
 import 'package:fit_zone/core/utils/colors_manager.dart';
+import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -51,14 +51,22 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         }
       },
       child: AuthBackgroundCover(
-        backIcon: const BackIcon(),
+        backIcon: BackIcon(
+          onPressed: () => Navigator.pushReplacementNamed(
+            context,
+            RouteManager.mainScreen,
+            arguments: {'tabIndex': 3},
+          ),
+        ),
         bodyWidget: Form(
           key: _formKey,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                const SizedBox(height: 50,),
+                const SizedBox(
+                  height: 50,
+                ),
                 TextFormField(
                   controller: currentPasswordController,
                   decoration: InputDecoration(
@@ -102,8 +110,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   ),
                   cursorColor: Colors.white,
                   style: const TextStyle(color: Colors.white),
-                  validator: (value) =>
-                      Validator.confirmPassword(value, newPasswordController.text),
+                  validator: (value) => Validator.confirmPassword(
+                      value, newPasswordController.text),
                   // labelText: AppStrings.confirmPassword,
                   // hintText: AppStrings.confirmPassword,
                   // obscureText: true,

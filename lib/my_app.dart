@@ -58,10 +58,9 @@ class MyApp extends StatelessWidget {
             ),
 
         RouteManager.changePasswordScreen: (context) => BlocProvider(
-          create: (context) => getIt<ChangePasswordCubit>(),
-          child: const ChangePasswordScreen(),
-        ),
-
+              create: (context) => getIt<ChangePasswordCubit>(),
+              child: const ChangePasswordScreen(),
+            ),
 
         RouteManager.welcomeSmartCoachScreen: (context) => BlocProvider(
               create: (context) => getIt<SmartCoachCubit>(),
@@ -69,7 +68,7 @@ class MyApp extends StatelessWidget {
             ),
       },
       // initialRoute: RouteManager.mainScreen,
-      initialRoute: RouteManager.welcomeSmartCoachScreen,
+      initialRoute: RouteManager.onBoardingScreen,
       // home: const ChatScreen(),
     );
   }

@@ -76,7 +76,15 @@
   "enterYourPassword": "Enter Your Password",
   "newPassword": "New Password",
   "enterYourNewPassword": "Enter Your New Password",
-  "confirmPassword": "Confirm Password"
+  "confirmPassword": "Confirm Password",
   "getStarted": "Get Started",
-  "failedToGetAResponse": "Failed to get a response."
+  "failedToGetAResponse": "Failed to get a response.",
+  "profile": "Profile",
+  "editProfile": "Edit Profile",
+  "selectLanguage": "Select Language",
+  "security": "Security",
+  "privacyPolicy": "Privacy Policy",
+  "help": "Help",
+  "logout": "Logout",
+  "explore": "Explore"
 }
