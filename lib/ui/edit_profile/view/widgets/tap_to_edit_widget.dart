@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -22,26 +23,29 @@ class TapToEditWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Text: Your X (Tap to Edit)
-        Text.rich(
-          TextSpan(
-            text: "Your $labelTap ",
-            style: AppTextStyle.medium16,
-            children: [
-              TextSpan(
-                text: "( ",
-                style: AppTextStyle.medium16.copyWith(color: Colors.white),
-              ),
-              TextSpan(
-                text: "Tap to Edit",
-                style: AppTextStyle.medium16.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
+        GestureDetector(
+          onTap: onTapToEdit,
+          child: Text.rich(
+            TextSpan(
+              text: " ${AppStrings.your} $labelTap ",
+              style: AppTextStyle.medium16,
+              children: [
+                TextSpan(
+                  text: "( ",
+                  style: AppTextStyle.medium16.copyWith(color: Colors.white),
                 ),
-              ),
-              TextSpan(
-                text: " )",
-                style: AppTextStyle.medium16.copyWith(color: Colors.white),
-              ),
-            ],
+                TextSpan(
+                  text: AppStrings.tapToEdit,
+                  style: AppTextStyle.medium16.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+                TextSpan(
+                  text: " )",
+                  style: AppTextStyle.medium16.copyWith(color: Colors.white),
+                ),
+              ],
+            ),
           ),
         ),
 

@@ -1,10 +1,10 @@
 class EditProfileModel {
-  final String? firstName;
-  final String? lastName;
-  final String? email;
-  final double? weight;
-  final String? activityLevel;
-  final String? goal;
+  String? firstName;
+  String? lastName;
+  String? email;
+  double? weight;
+  String? activityLevel;
+  String? goal;
 
   EditProfileModel({
     this.firstName,

@@ -1,5 +1,7 @@
 // lib/presentation/tabs/profile_tab/edit_profile/view_model/edit_profile_state.dart
 
+import 'package:fit_zone/domain/entity/profile_entity.dart';
+
 sealed class EditProfileState {}
 
 class EditProfileInitial extends EditProfileState {}
@@ -14,7 +16,11 @@ class EditProfileFailure extends EditProfileState {
   EditProfileFailure(this.message);
 }
 
-class GetUserDataSuccess extends EditProfileState {}
+class GetUserDataSuccess extends EditProfileState {
+  final ProfileEntity editProfileModel;
+
+  GetUserDataSuccess(this.editProfileModel);
+}
 
 class GetUserDataFailure extends EditProfileState {
   final String message;

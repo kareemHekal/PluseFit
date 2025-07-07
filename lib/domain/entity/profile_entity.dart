@@ -7,10 +7,10 @@ class ProfileEntity {
   final String? email;
   final String? gender;
   final int? age;
-  final int? weight;
+  int? weight;
   final int? height;
-  final String? activityLevel;
-  final String? goal;
+  String? activityLevel;
+  String? goal;
   final String? photo;
   final String? createdAt;
 

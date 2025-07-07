@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         //RouteManager.createNewPassword: (context) =>  const CreateNewPassword(),
         RouteManager.registerScreen: (context) => const RegisterView(),
         RouteManager.onBoardingScreen: (context) => const OnBoardingScreen(),
-        RouteManager.editProfileScreen: (context) => EditProfileScreen(),
+        RouteManager.editProfileScreen: (context) => const EditProfileScreen(),
         RouteManager.workOutScreen: (context) => const WorkoutsScreen(),
         RouteManager.foodScreen: (context) => MultiBlocProvider(
               providers: [

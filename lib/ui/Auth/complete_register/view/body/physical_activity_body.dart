@@ -16,12 +16,12 @@ class PhysicalActivityBody extends StatelessWidget {
     required this.onNext,
   });
 
-  static const Map<String, String> _activityLevels = {
-    'Rookie': 'level1',
-    'Beginner': 'level2',
-    'Intermediate': 'level3',
-    'Advance': 'level4',
-    'True Beast': 'level5',
+  static final Map<String, String> _activityLevels = {
+    AppStrings.rookie: 'level1',
+    AppStrings.beginner: 'level2',
+    AppStrings.intermediate: 'level3',
+    AppStrings.advance: 'level4',
+    AppStrings.trueBeast: 'level5',
   };
 
   @override

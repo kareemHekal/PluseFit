@@ -69,6 +69,10 @@
   "subtitle": "Lorem Ipsum Dolor Sit Amet Consectetur Et Elitna Elitna Quae Sed Quis Enim Et Duis, Maecel Massa",
   "hi": "Hi",
   "save": "Save",
+  "weight": "Save",
+  "tapToEdit": "Tap to Edit",
+  "your": "Your",
+  "goal": "Goal",
   "yourAccountHasBeenUpdatedSuccessfully": "your account has been updated successfully",
   "iamYourSmartCoach": "I Am Your Smart Coach",
   "howCanAssistYouToday": "How Can I Assist You \nToday ?",
@@ -91,5 +95,15 @@
   "explore": "Explore",
   "areYouSureToCloseTheApplication": "Are you Sure To Close The Application?",
   "no": "No",
-  "yes": "Yes"
+  "yes": "Yes",
+  "gainWeight": "Gain Weight",
+  "loseWeight": "Lose Weight",
+  "getFitter": "Get Fitter",
+  "gainMoreFlexible": "Gain More Flexible",
+  "learnTheBasic": "Learn The Basic",
+  "rookie": "Rookie",
+  "beginner": "Beginner",
+  "intermediate": "Intermediate",
+  "advance": "Advance",
+  "trueBeast": "True Beast"
 }

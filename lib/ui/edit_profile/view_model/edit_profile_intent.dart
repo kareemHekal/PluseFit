@@ -1,12 +1,7 @@
-import 'package:fit_zone/data/model/edit_profile_model.dart';
 
 sealed class EditProfileIntent {}
 
-class UpdateProfileIntent extends EditProfileIntent {
-  final EditProfileModel editProfileModel;
-
-  UpdateProfileIntent({required this.editProfileModel});
-}
+class UpdateProfileIntent extends EditProfileIntent {}
 
 class UploadPhotoIntent extends EditProfileIntent {
   final String photoPath;

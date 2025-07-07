@@ -16,12 +16,12 @@ class GoalBody extends StatelessWidget {
     required this.onNext,
   });
 
-  static const List<String> _goals = [
-    'Gain Weight',
-    'Lose Weight',
-    'Get Fitter',
-    'Gain More Flexible',
-    'Learn The Basic',
+  static final List<String> _goals = [
+    AppStrings.gainWeight,
+    AppStrings.loseWeight,
+    AppStrings.getFitter,
+    AppStrings.gainMoreFlexible,
+    AppStrings.learnTheBasic,
   ];
 
   @override

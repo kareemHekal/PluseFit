@@ -6,7 +6,7 @@ import 'package:fit_zone/ui/Auth/complete_register/view/widgets/wheel_slider.dar
 import 'package:flutter/material.dart';
 
 class WeightBody extends StatefulWidget {
-  final int initialValue;
+  final num initialValue;
   final ValueChanged<int> onPressed;
 
   const WeightBody({
@@ -20,7 +20,7 @@ class WeightBody extends StatefulWidget {
 }
 
 class _WeightBodyState extends State<WeightBody> {
-  late int scrollValue;
+  late num scrollValue;
 
   @override
   void initState() {
@@ -66,7 +66,7 @@ class _WeightBodyState extends State<WeightBody> {
                     ),
                   ),
                   CustomWheelSlider(
-                    initialValue: scrollValue,
+                    initialValue: scrollValue.toInt(),
                     totalCount: 250,
                     onChanged: (val) {
                       setState(() {
@@ -79,7 +79,7 @@ class _WeightBodyState extends State<WeightBody> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        widget.onPressed(scrollValue);
+                        widget.onPressed(scrollValue.toInt());
                       },
                       child: Text(AppStrings.save),
                     ),
