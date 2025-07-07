@@ -81,5 +81,15 @@
   "confirmPassword": "Confirm Password",
   "editProfile": "Edit Profile",
   "getStarted": "Get Started",
-  "failedToGetAResponse": "Failed to get a response."
+  "failedToGetAResponse": "Failed to get a response.",
+  "profile": "Profile",
+  "selectLanguage": "Select Language",
+  "security": "Security",
+  "privacyPolicy": "Privacy Policy",
+  "help": "Help",
+  "logout": "Logout",
+  "explore": "Explore",
+  "areYouSureToCloseTheApplication": "Are you Sure To Close The Application?",
+  "no": "No",
+  "yes": "Yes"
 }

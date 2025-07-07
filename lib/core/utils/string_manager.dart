@@ -86,4 +86,15 @@ abstract class AppStrings {
   static String get editProfile => "editProfile".tr();
   static String get getStarted => "getStarted".tr();
   static String get failedToGetAResponse => "failedToGetAResponse".tr();
+  static String get profile => "profile".tr();
+  static String get editProfile => "editProfile".tr();
+  static String get selectLanguage => "selectLanguage".tr();
+  static String get security => "security".tr();
+  static String get privacyPolicy => "privacyPolicy".tr();
+  static String get help => "help".tr();
+  static String get logout => "logout".tr();
+  static String get explore => "explore".tr();
+  static String get areYouSureToCloseTheApplication => "areYouSureToCloseTheApplication".tr();
+  static String get no => "no".tr();
+  static String get yes => "yes".tr();
 }

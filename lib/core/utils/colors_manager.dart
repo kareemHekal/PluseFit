@@ -54,6 +54,7 @@ abstract class ColorManager {
   static const black30 = Color(0xff86888A);
   static const black40 = Color(0xff5D6063);
   static const black50 = Color(0xff34383C);
+  static const dialog = Color(0x80242424);
   static const blackBase = Color(0xff0C1015);
   static const black60 = Color(0xff0A0D12);
   static const black70 = Color(0xff080B0E);
