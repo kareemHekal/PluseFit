@@ -85,5 +85,8 @@
   "privacyPolicy": "سياسة الخصوصية",
   "help": "المساعدة",
   "logout": "تسجيل الخروج",
-  "explore": "استكشف"
+  "explore": "استكشف",
+  "areYouSureToCloseTheApplication": "هل أنت متأكد من إغلاق التطبيق؟",
+  "no": "لا",
+  "yes": "نعم"
 }
