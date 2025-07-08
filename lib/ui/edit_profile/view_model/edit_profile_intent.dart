@@ -1,4 +1,3 @@
-
 sealed class EditProfileIntent {}
 
 class UpdateProfileIntent extends EditProfileIntent {}
@@ -10,3 +9,5 @@ class UploadPhotoIntent extends EditProfileIntent {
 }
 
 class GetLoggedUserData extends EditProfileIntent {}
+
+class PickImage extends EditProfileIntent {}

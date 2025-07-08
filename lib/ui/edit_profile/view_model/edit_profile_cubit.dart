@@ -3,6 +3,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:fit_zone/core/api/api_result.dart';
+import 'package:fit_zone/core/utils/toast_message.dart';
 import 'package:fit_zone/data/model/edit_profile_model.dart';
 import 'package:fit_zone/domain/entity/profile_entity.dart';
 import 'package:fit_zone/domain/use_cases/edit_profile_usecase.dart';
@@ -10,6 +11,7 @@ import 'package:fit_zone/domain/use_cases/get_profile_usecase.dart';
 import 'package:fit_zone/domain/use_cases/upload_photo_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 
 import 'edit_profile_intent.dart';
@@ -41,6 +43,9 @@ class EditProfileCubit extends Cubit<EditProfileState> {
         break;
       case GetLoggedUserData():
         _getLoggedUserData();
+        break;
+      case PickImage():
+        _pickImage();
         break;
     }
   }
@@ -76,6 +81,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
 
     switch (result) {
       case SuccessApiResult():
+        await _getLoggedUserData();
         emit(PhotoUploadSuccess());
       case ErrorApiResult(exception: final error):
         emit(PhotoUploadFailure(error.toString()));
@@ -83,7 +89,6 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   }
 
   Future<void> _getLoggedUserData() async {
-    emit(EditProfileLoading());
 
     try {
       final result = await getProfileUseCase.execute();
@@ -94,6 +99,29 @@ class EditProfileCubit extends Cubit<EditProfileState> {
       emit(GetUserDataSuccess(result));
     } catch (e) {
       emit(GetUserDataFailure(e.toString()));
+    }
+  }
+
+  Future<void> _pickImage() async {
+    try {
+      final ImagePicker picker = ImagePicker();
+      final XFile? image = await picker.pickImage(
+        source: ImageSource.gallery,
+        maxWidth: 1024,
+        maxHeight: 1024,
+      );
+
+      if (image != null) {
+        image.path.toLowerCase().endsWith('.png');
+        await _handleUploadPhoto(
+          UploadPhotoIntent(photoPath: image.path),
+        );
+      }
+    } catch (e) {
+      toastMessage(
+        message: "Failed to select image. Please try again.",
+        tybeMessage: TybeMessage.negative,
+      );
     }
   }
 }

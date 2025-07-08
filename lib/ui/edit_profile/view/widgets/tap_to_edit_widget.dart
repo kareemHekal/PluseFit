@@ -64,9 +64,10 @@ class TapToEditWidget extends StatelessWidget {
               ),
               alignment: Alignment.centerLeft,
               child: Text(
-                overflow: TextOverflow.clip,
                 value,
                 style: AppTextStyle.medium16,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
             ),
           ),

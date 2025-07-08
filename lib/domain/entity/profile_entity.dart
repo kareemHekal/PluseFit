@@ -11,7 +11,7 @@ class ProfileEntity {
   final int? height;
   String? activityLevel;
   String? goal;
-  final String? photo;
+  String? photo;
   final String? createdAt;
 
   ProfileEntity({

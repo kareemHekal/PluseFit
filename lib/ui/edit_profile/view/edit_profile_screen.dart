@@ -82,157 +82,171 @@ class EditProfileScreen extends StatelessWidget {
                 },
               ),
               title: AppStrings.editProfile,
-              // ignore: prefer_const_constructors
-              bodyWidget: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      Column(
-                        spacing: 20,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Center(
-                            child: EditProfileImage(
-                              imageUrl: cubit.editProfileModel?.photo ?? '',
-                              onTap: () {},
+              bodyWidget: Column(
+                children: [
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          spacing: 20,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Center(
+                              child: EditProfileImage(
+                                imageUrl: cubit.editProfileModel?.photo ?? '',
+                                onTap: () {
+                                  cubit.doIntent(PickImage());
+                                },
+                              ),
                             ),
-                          ),
-                          Center(
-                              child: Text(
-                                  "${cubit.editProfileModel?.firstName ?? ''} ${cubit.editProfileModel?.lastName ?? ''}",
-                                  style: AppTextStyle.extraBold20,
-                                  overflow: TextOverflow.clip)),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelText: AppStrings.firstName,
-                              prefixIcon:
-                                  const Icon(Icons.person_outline_rounded),
+                            Center(
+                                child: Text(
+                                    "${cubit.editProfileModel?.firstName ?? ''} ${cubit.editProfileModel?.lastName ?? ''}",
+                                    style: AppTextStyle.extraBold20,
+                                    overflow: TextOverflow.clip)),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelText: AppStrings.firstName,
+                                prefixIcon:
+                                    const Icon(Icons.person_outline_rounded),
+                              ),
+                              validator: Validator.firstName,
+                              controller: cubit.firstNameController,
+                              style: AppTextStyle.regular16.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.tertiary),
                             ),
-                            validator: Validator.firstName,
-                            controller: cubit.firstNameController,
-                            style: AppTextStyle.regular16.copyWith(
-                                color: Theme.of(context).colorScheme.tertiary),
-                          ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelText: AppStrings.lastName,
-                              prefixIcon:
-                                  const Icon(Icons.person_outline_rounded),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelText: AppStrings.lastName,
+                                prefixIcon:
+                                    const Icon(Icons.person_outline_rounded),
+                              ),
+                              validator: Validator.lastName,
+                              controller: cubit.lastNameController,
+                              style: AppTextStyle.regular16.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.tertiary),
                             ),
-                            validator: Validator.lastName,
-                            controller: cubit.lastNameController,
-                            style: AppTextStyle.regular16.copyWith(
-                                color: Theme.of(context).colorScheme.tertiary),
-                          ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelText: AppStrings.email,
-                              prefixIcon: const Icon(Icons.email_outlined),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelText: AppStrings.email,
+                                prefixIcon: const Icon(Icons.email_outlined),
+                              ),
+                              validator: Validator.email,
+                              controller: cubit.emailController,
+                              style: AppTextStyle.regular16.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.tertiary),
                             ),
-                            validator: Validator.email,
-                            controller: cubit.emailController,
-                            style: AppTextStyle.regular16.copyWith(
-                                color: Theme.of(context).colorScheme.tertiary),
-                          ),
-                          TapToEditWidget(
-                            onTapToEdit: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => EditUserInfoPage(
-                                      cubit: cubit,
-                                      body: WeightBody(
-                                          initialValue:
-                                              cubit.editProfileModel?.weight ??
-                                                  0,
-                                          onPressed: (int value) {
-                                            cubit.editProfileModel?.weight =
+                            TapToEditWidget(
+                              onTapToEdit: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => EditUserInfoPage(
+                                        cubit: cubit,
+                                        body: WeightBody(
+                                            initialValue: cubit
+                                                    .editProfileModel?.weight ??
+                                                0,
+                                            onPressed: (int value) {
+                                              cubit.editProfileModel?.weight =
+                                                  value;
+                                              cubit.doIntent(
+                                                  UpdateProfileIntent());
+                                              Navigator.pop(context);
+                                            }),
+                                      ),
+                                    ));
+                              },
+                              labelTap: AppStrings.weight,
+                              // here we can get the value from the user from the cubit
+                              // here we can get the value from the user
+                              value:
+                                  cubit.editProfileModel?.weight.toString() ??
+                                      "",
+                            ),
+                            TapToEditWidget(
+                              onTapToEdit: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => EditUserInfoPage(
+                                        cubit: cubit,
+                                        body: GoalBody(
+                                          // here we can get the value from the user from the cubit
+                                          selectedGoal:
+                                              cubit.editProfileModel?.goal,
+                                          onSelectGoal: (value) {
+                                            cubit.editProfileModel?.goal =
                                                 value;
                                             cubit.doIntent(
                                                 UpdateProfileIntent());
                                             Navigator.pop(context);
-                                          }),
-                                    ),
-                                  ));
-                            },
-                            labelTap: AppStrings.weight,
-                            // here we can get the value from the user from the cubit
-                            // here we can get the value from the user
-                            value:
-                                cubit.editProfileModel?.weight.toString() ?? "",
-                          ),
-                          TapToEditWidget(
-                            onTapToEdit: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => EditUserInfoPage(
-                                      cubit: cubit,
-                                      body: GoalBody(
-                                        // here we can get the value from the user from the cubit
-                                        selectedGoal:
-                                            cubit.editProfileModel?.goal,
-                                        onSelectGoal: (value) {
-                                          cubit.editProfileModel?.goal = value;
-                                          cubit.doIntent(UpdateProfileIntent());
-                                          Navigator.pop(context);
-                                        },
-                                        onNext: () {
-                                          Navigator.pop(context);
-                                        },
+                                          },
+                                          onNext: () {
+                                            Navigator.pop(context);
+                                          },
+                                        ),
                                       ),
-                                    ),
-                                  ));
-                            },
-                            labelTap: AppStrings.goal,
-                            // here we can get the value from the user from the cubit
-                            value: cubit.editProfileModel?.goal ?? "",
-                          ),
-                          TapToEditWidget(
-                            onTapToEdit: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => EditUserInfoPage(
-                                      cubit: cubit,
-                                      body: PhysicalActivityBody(
-                                        // here we can get the value from the user from the cubit
-                                        selectedLevel: cubit
-                                            .editProfileModel?.activityLevel,
-                                        onSelect: (value) {
-                                          cubit.editProfileModel
-                                              ?.activityLevel = value;
-                                          cubit.doIntent(UpdateProfileIntent());
-                                          Navigator.pop(context);
-                                        },
-                                        onNext: () {
-                                          Navigator.pop(context);
-                                        },
+                                    ));
+                              },
+                              labelTap: AppStrings.goal,
+                              // here we can get the value from the user from the cubit
+                              value: cubit.editProfileModel?.goal ?? "",
+                            ),
+                            TapToEditWidget(
+                              onTapToEdit: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => EditUserInfoPage(
+                                        cubit: cubit,
+                                        body: PhysicalActivityBody(
+                                          // here we can get the value from the user from the cubit
+                                          selectedLevel: cubit
+                                              .editProfileModel?.activityLevel,
+                                          onSelect: (value) {
+                                            cubit.editProfileModel
+                                                ?.activityLevel = value;
+                                            cubit.doIntent(
+                                                UpdateProfileIntent());
+                                            Navigator.pop(context);
+                                          },
+                                          onNext: () {
+                                            Navigator.pop(context);
+                                          },
+                                        ),
                                       ),
-                                    ),
-                                  ));
-                            },
-                            labelTap: AppStrings.activityLevel,
-                            // here we can get the value from the user
-                            value: cubit.editProfileModel?.activityLevel ?? "",
-                          ),
-                        ],
+                                    ));
+                              },
+                              labelTap: AppStrings.activityLevel,
+                              // here we can get the value from the user
+                              value:
+                                  cubit.editProfileModel?.activityLevel ?? "",
+                            ),
+                          ],
+                        ),
                       ),
-                      SizedBox(
-                        width: double.infinity,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: SizedBox(
+                      width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
                             cubit.doIntent(UpdateProfileIntent());
                           },
-                          child: Text(AppStrings.save,
-                              style: AppTextStyle.regular16),
-                        ),
+                        child: Text(AppStrings.save,
+                            style: AppTextStyle.regular16),
                       ),
-                    ],
+                      ),
                   ),
-                ),
+                ],
               ));
         },
       ),
