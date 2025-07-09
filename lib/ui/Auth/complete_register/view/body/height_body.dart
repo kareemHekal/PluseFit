@@ -81,7 +81,7 @@ class _HeightBodyState extends State<HeightBody> {
                             cubit.doIntent(
                                 UpdateUserIntent(height: scrollValue));
                           },
-                          child: Text(AppStrings.next),
+                          child: Text(AppStrings.save),
                         ),
                       ),
                     ],

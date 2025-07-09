@@ -70,7 +70,7 @@ class GenderBody extends StatelessWidget {
                                       UpdateIndex(isBackButton: false));
                                 }
                               : null,
-                          child: Text(AppStrings.next),
+                          child: Text(AppStrings.save),
                         ),
                       ),
                       const SizedBox(height: 10),

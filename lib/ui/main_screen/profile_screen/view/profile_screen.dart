@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:easy_localization/easy_localization.dart';
+import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/dialogs.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
@@ -7,13 +9,11 @@ import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/toast_message.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_cubit.dart';
 import 'package:fit_zone/ui/Auth/view_model/cubit/auth_intent.dart';
-import 'package:fit_zone/ui/main_screen/profile_screen/profile_cubit.dart';
-import 'package:fit_zone/ui/main_screen/profile_screen/profile_intent.dart';
-import 'package:fit_zone/ui/main_screen/profile_screen/profile_state.dart';
+import 'package:fit_zone/ui/main_screen/profile_screen/view_model/profile_cubit.dart';
+import 'package:fit_zone/ui/main_screen/profile_screen/view_model/profile_intent.dart';
+import 'package:fit_zone/ui/main_screen/profile_screen/view_model/profile_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fit_zone/core/di/di.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -38,31 +38,20 @@ class ProfileScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            IconButton(
-                              icon: const Icon(Icons.arrow_back,
-                                  color: ColorManager.primaryColor, size: 32),
-                              onPressed: () => Navigator.pushReplacementNamed(
-                                  context, RouteManager.mainScreen,
-                                  arguments: {'tabIndex': 0}),
-                              padding: EdgeInsets.zero,
-                            ),
-                            const SizedBox(width: 8),
-                            Expanded(
-                              child: Container(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  AppStrings.profile,
-                                  style: const TextStyle(
-                                    color: ColorManager.white,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.2,
-                                  ),
+                            Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                AppStrings.profile,
+                                style: const TextStyle(
+                                  color: ColorManager.white,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.2,
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 40),
                           ],
                         ),
                       ),
@@ -144,7 +133,10 @@ class _ProfileMenuState extends State<_ProfileMenu> {
       _MenuItem(
         icon: Icons.edit,
         label: AppStrings.editProfile,
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacementNamed(
+              context, RouteManager.editProfileScreen);
+        },
         orange: orange,
       ),
       _MenuItem(

@@ -80,7 +80,7 @@ class _AgeBodyState extends State<AgeBody> {
                             cubit.doIntent(UpdateIndex(isBackButton: false));
                             cubit.doIntent(UpdateUserIntent(age: scrollValue));
                           },
-                          child: Text(AppStrings.next),
+                          child: Text(AppStrings.save),
                         ),
                       ),
                     ],

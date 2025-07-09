@@ -69,6 +69,18 @@ abstract class AppStrings {
   static String get foodRecommendation => "foodRecommendation".tr();
   static String get subtitle => "subtitle".tr();
   static String get hi => "hi".tr();
+  static String get save => "save".tr();
+
+  static String get weight => "weight".tr();
+
+  static String get tapToEdit => "tapToEdit".tr();
+
+  static String get your => "your".tr();
+
+  static String get goal => "goal".tr();
+
+  static String get yourAccountHasBeenUpdatedSuccessfully =>
+      "yourAccountHasBeenUpdatedSuccessfully".tr();
   static String get iamYourSmartCoach => "iamYourSmartCoach".tr();
   static String get howCanAssistYouToday => "howCanAssistYouToday".tr();
   static String get changePassword => "changePassword".tr();
@@ -78,10 +90,10 @@ abstract class AppStrings {
   static String get newPassword => "newPassword".tr();
   static String get enterYourNewPassword => "enterYourNewPassword".tr();
   static String get confirmPassword => "confirmPassword".tr();
+  static String get editProfile => "editProfile".tr();
   static String get getStarted => "getStarted".tr();
   static String get failedToGetAResponse => "failedToGetAResponse".tr();
   static String get profile => "profile".tr();
-  static String get editProfile => "editProfile".tr();
   static String get selectLanguage => "selectLanguage".tr();
   static String get security => "security".tr();
   static String get privacyPolicy => "privacyPolicy".tr();
@@ -91,4 +103,24 @@ abstract class AppStrings {
   static String get areYouSureToCloseTheApplication => "areYouSureToCloseTheApplication".tr();
   static String get no => "no".tr();
   static String get yes => "yes".tr();
+
+  static String get gainWeight => "gainWeight".tr();
+
+  static String get loseWeight => "loseWeight".tr();
+
+  static String get getFitter => "getFitter".tr();
+
+  static String get gainMoreFlexible => "gainMoreFlexible".tr();
+
+  static String get learnTheBasic => "learnTheBasic".tr();
+
+  static String get rookie => "rookie".tr();
+
+  static String get beginner => "beginner".tr();
+
+  static String get intermediate => "intermediate".tr();
+
+  static String get advance => "advance".tr();
+
+  static String get trueBeast => "trueBeast".tr();
 }

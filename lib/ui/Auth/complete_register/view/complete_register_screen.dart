@@ -99,10 +99,32 @@ class CompleteRegisterScreen extends StatelessWidget {
           final bodies = [
             const GenderBody(),
             const AgeBody(),
-            const WeightBody(),
+            WeightBody(
+              onPressed: (scrollValue) {
+                cubit.doIntent(UpdateIndex(isBackButton: false));
+                cubit.doIntent(UpdateUserIntent(weight: scrollValue));
+              },
+              initialValue: (cubit.user.weight ?? 100).toInt(),
+            ),
             const HeightBody(),
-            GoalBody(),
-            PhysicalActivityBody(),
+            GoalBody(
+              selectedGoal: cubit.user.goal,
+              onSelectGoal: (goal) {
+                cubit.doIntent(UpdateUserIntent(goal: goal));
+              },
+              onNext: () {
+                cubit.doIntent(UpdateIndex(isBackButton: false));
+              },
+            ),
+            PhysicalActivityBody(
+              selectedLevel: cubit.user.activityLevel,
+              onSelect: (level) {
+                cubit.doIntent(UpdateUserIntent(activityLevel: level));
+              },
+              onNext: () {
+                cubit.doIntent(UpdateIndex(isBackButton: false));
+              },
+            ),
           ];
 
           return AuthBackgroundCover(
