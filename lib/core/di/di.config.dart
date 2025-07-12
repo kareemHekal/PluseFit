@@ -28,12 +28,16 @@ import 'package:fit_zone/data/data_source_contract/change_password_datasource.da
     as _i221;
 import 'package:fit_zone/data/data_source_contract/edit_profile_datasource.dart'
     as _i356;
+import 'package:fit_zone/data/data_source_contract/exercise_by_muscle_datasource.dart'
+    as _i432;
 import 'package:fit_zone/data/data_source_contract/food_datasource/get_categories_of_meals_datasource.dart'
     as _i1069;
 import 'package:fit_zone/data/data_source_contract/food_datasource/get_meal_details_datasource.dart'
     as _i1021;
 import 'package:fit_zone/data/data_source_contract/food_datasource/get_meals_by_category_datasource.dart'
     as _i83;
+import 'package:fit_zone/data/data_source_contract/level_datasource.dart'
+    as _i576;
 import 'package:fit_zone/data/data_source_contract/recommendation_to_day_datasource.dart'
     as _i866;
 import 'package:fit_zone/data/data_source_contract/smart_coach_data_source.dart'
@@ -54,12 +58,16 @@ import 'package:fit_zone/data/data_source_impl/change_password_datasource_impl.d
     as _i969;
 import 'package:fit_zone/data/data_source_impl/edit_profile_datasource_impl.dart'
     as _i452;
+import 'package:fit_zone/data/data_source_impl/exercise_by_muscle_datasource_impl.dart'
+    as _i754;
 import 'package:fit_zone/data/data_source_impl/food_datasource_impl/get_categories_of_meals_datasource_impl.dart'
     as _i912;
 import 'package:fit_zone/data/data_source_impl/food_datasource_impl/get_meal_details_datasource_impl.dart'
     as _i1061;
 import 'package:fit_zone/data/data_source_impl/food_datasource_impl/get_meals_by_category_datasource_impl.dart'
     as _i382;
+import 'package:fit_zone/data/data_source_impl/level_datasource_impl.dart'
+    as _i983;
 import 'package:fit_zone/data/data_source_impl/recommendation_to_day_datasource_impl.dart'
     as _i555;
 import 'package:fit_zone/data/data_source_impl/smart_coach_data_source_impl.dart'
@@ -73,6 +81,8 @@ import 'package:fit_zone/data/model/smart_coach/conversation_model.dart'
 import 'package:fit_zone/data/repo_impl/change_password_repo_impl.dart'
     as _i938;
 import 'package:fit_zone/data/repo_impl/edit_profile_repo_impl.dart' as _i569;
+import 'package:fit_zone/data/repo_impl/exercise_by_muscle_repo_impl.dart'
+    as _i289;
 import 'package:fit_zone/data/repo_impl/food_repo_impl/get_categories_of_meals_repo_impl.dart'
     as _i859;
 import 'package:fit_zone/data/repo_impl/food_repo_impl/get_meal_details_repo_impl.dart'
@@ -81,6 +91,7 @@ import 'package:fit_zone/data/repo_impl/food_repo_impl/get_meals_by_category_rep
     as _i318;
 import 'package:fit_zone/data/repo_impl/forget_password_repo_impl.dart'
     as _i639;
+import 'package:fit_zone/data/repo_impl/level_repo_impl.dart' as _i984;
 import 'package:fit_zone/data/repo_impl/login_repo_impl.dart' as _i446;
 import 'package:fit_zone/data/repo_impl/logout_repo_impl.dart' as _i634;
 import 'package:fit_zone/data/repo_impl/profile_repo_impl.dart' as _i118;
@@ -93,6 +104,8 @@ import 'package:fit_zone/data/repo_impl/workouts_repo_impl.dart' as _i874;
 import 'package:fit_zone/domain/repo_contract/change_password_repo.dart'
     as _i863;
 import 'package:fit_zone/domain/repo_contract/edit_profile_repo.dart' as _i886;
+import 'package:fit_zone/domain/repo_contract/exercise_by_muscle_repo.dart'
+    as _i927;
 import 'package:fit_zone/domain/repo_contract/food_repo/get_categories_of_meals_repo.dart'
     as _i817;
 import 'package:fit_zone/domain/repo_contract/food_repo/get_meal_details_repo.dart'
@@ -101,6 +114,7 @@ import 'package:fit_zone/domain/repo_contract/food_repo/get_meals_by_category_re
     as _i970;
 import 'package:fit_zone/domain/repo_contract/forget_password_repo.dart'
     as _i98;
+import 'package:fit_zone/domain/repo_contract/level_repo.dart' as _i47;
 import 'package:fit_zone/domain/repo_contract/login_repo.dart' as _i700;
 import 'package:fit_zone/domain/repo_contract/logout_repo.dart' as _i815;
 import 'package:fit_zone/domain/repo_contract/profile_repo.dart' as _i504;
@@ -113,6 +127,8 @@ import 'package:fit_zone/domain/repo_contract/workout_repo.dart' as _i342;
 import 'package:fit_zone/domain/repo_contract/workouts_repo.dart' as _i450;
 import 'package:fit_zone/domain/use_cases/change_password_usecase.dart' as _i24;
 import 'package:fit_zone/domain/use_cases/edit_profile_usecase.dart' as _i996;
+import 'package:fit_zone/domain/use_cases/exercise_by_muscle_usecase.dart'
+    as _i207;
 import 'package:fit_zone/domain/use_cases/fitness_usecase.dart' as _i440;
 import 'package:fit_zone/domain/use_cases/food_usecase/get_categories_of_meals_usecase.dart'
     as _i450;
@@ -133,6 +149,7 @@ import 'package:fit_zone/domain/use_cases/get_recommendation_to_day_usecase.dart
     as _i244;
 import 'package:fit_zone/domain/use_cases/get_workouts_by_muscle_group_id_usecase.dart'
     as _i8;
+import 'package:fit_zone/domain/use_cases/level_usecase.dart' as _i920;
 import 'package:fit_zone/domain/use_cases/login_usecase.dart' as _i904;
 import 'package:fit_zone/domain/use_cases/logout_usecase.dart' as _i581;
 import 'package:fit_zone/domain/use_cases/register_usecase.dart' as _i687;
@@ -156,6 +173,8 @@ import 'package:fit_zone/ui/change_password/view_model/change_password_cubit.dar
     as _i188;
 import 'package:fit_zone/ui/edit_profile/view_model/edit_profile_cubit.dart'
     as _i648;
+import 'package:fit_zone/ui/exercise/view_model/cubit/level_cubit.dart'
+    as _i459;
 import 'package:fit_zone/ui/food/view_model/categories_cubit.dart' as _i1027;
 import 'package:fit_zone/ui/food/view_model/meal_details_cubit.dart' as _i1022;
 import 'package:fit_zone/ui/food/view_model/meals_cubit.dart' as _i121;
@@ -199,6 +218,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i65.GeminiServices>(() => _i65.GeminiServices());
     gh.factory<_i425.SendAPromptDatasource>(
         () => _i135.SendAPromptDatasourceImpl(gh<_i65.GeminiServices>()));
+    gh.factory<_i576.LevelDatasource>(
+        () => _i983.LevelDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i1021.GetMealDetailsDatasource>(
         () => _i1061.GetMealDetailsDatasourceImpl(gh<_i452.ApiManager>()));
     gh.singleton<_i60.ProfileDataSource>(
@@ -207,6 +228,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i546.ForgetPasswordDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i98.ForgetPasswordRepo>(() =>
         _i639.ForgetPasswordRepoImpl(gh<_i122.ForgetPasswordDatasource>()));
+    gh.factory<_i432.ExerciseByMuscleDatasource>(
+        () => _i754.ExerciseByMuscleDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i221.ChangePasswordDatasource>(
         () => _i969.ChangePasswordDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i791.LogoutDatasource>(() => _i401.LogoutDatasourceImpl(
@@ -217,6 +240,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i452.EditProfileDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i285.WorkoutsDataSource>(
         () => _i687.WorkoutsDataSourceImpl(gh<_i452.ApiManager>()));
+    gh.factory<_i47.LevelRepo>(
+        () => _i984.LevelRepoImpl(gh<_i576.LevelDatasource>()));
     gh.factory<_i1069.GetCategoriesOfMealsDatasource>(
         () => _i912.GetCategoriesOfMealsDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i41.SendPromptUsecase>(
@@ -242,6 +267,8 @@ extension GetItInjectableX on _i174.GetIt {
             gh<_i1069.GetCategoriesOfMealsDatasource>()));
     gh.factory<_i581.LogoutUsecase>(
         () => _i581.LogoutUsecase(logoutRepoContract: gh<_i815.LogoutRepo>()));
+    gh.factory<_i927.ExerciseByMuscleRepo>(() =>
+        _i289.ExerciseByMuscleRepoImpl(gh<_i432.ExerciseByMuscleDatasource>()));
     gh.factory<_i135.RegisterDataSource>(
         () => _i922.RegisterDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i178.SmartCoachDataSource>(() => _i605.SmartCoachDataSourceImpl(
@@ -256,9 +283,13 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i431.OtpUsecase(gh<_i98.ForgetPasswordRepo>()));
     gh.factory<_i219.ResetPasswordUsecase>(
         () => _i219.ResetPasswordUsecase(gh<_i98.ForgetPasswordRepo>()));
+    gh.factory<_i920.LevelUsecase>(
+        () => _i920.LevelUsecase(gh<_i47.LevelRepo>()));
     gh.factory<_i970.GetMealsByCategoryRepo>(() =>
         _i318.GetMealsByCategoryRepoImpl(
             gh<_i83.GetMealsByCategoryDatasource>()));
+    gh.factory<_i207.ExerciseByMuscleUsecase>(
+        () => _i207.ExerciseByMuscleUsecase(gh<_i927.ExerciseByMuscleRepo>()));
     gh.factory<_i168.RecommendationRepo>(() => _i121.RecommendationRepoImpl(
         gh<_i866.RecommendationToDayDataSource>()));
     gh.factory<_i24.ChangePasswordUsecase>(
@@ -323,6 +354,10 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i358.AddConversationUseCase(gh<_i17.SmartCoachRepoContract>()));
     gh.factory<_i238.GetAllConversationsUseCase>(() =>
         _i238.GetAllConversationsUseCase(gh<_i17.SmartCoachRepoContract>()));
+    gh.factory<_i459.ExerciseCubit>(() => _i459.ExerciseCubit(
+          gh<_i920.LevelUsecase>(),
+          gh<_i207.ExerciseByMuscleUsecase>(),
+        ));
     gh.factory<_i244.GetRecommendationToDayUseCase>(() =>
         _i244.GetRecommendationToDayUseCase(gh<_i168.RecommendationRepo>()));
     gh.factory<_i112.ProfileCubit>(

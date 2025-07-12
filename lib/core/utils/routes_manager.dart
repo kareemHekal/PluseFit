@@ -12,9 +12,12 @@ abstract class RouteManager {
   static const String otpScreen = '/otp-screen';
   static const String editProfileScreen = '/edit-profile-screen';
   static const String createNewPassword = '/create-new-password-screen';
+  static const String exerciseScreen = '/ExerciseScreen';
+
   static const String smartCoach = '/smart-coach-screen';
   static const String welcomeSmartCoachScreen = '/welcome-smart-coach-screen';
   static const String foodScreen = '/FOODSCREEN';
   static const String workOutScreen = '/WORKOUTSCREEN';
   static const String foodDetailsScreen = '/FOODDETAILSSCREEN';
+
 }
