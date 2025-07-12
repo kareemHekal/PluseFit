@@ -34,9 +34,7 @@ class WorkoutCardScreen extends StatelessWidget {
             } else {
               return FitnessCardBuilder(
                 muscles: state.muscles,
-                onTap: () {
-
-                },
+                onTap: () {},
               );
             }
           case WorkoutFailureState():
