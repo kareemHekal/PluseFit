@@ -1,7 +1,7 @@
 import 'package:fit_zone/core/reusable_comp/fitness_card_resuble/fitness_card.dart';
 import 'package:fit_zone/data/model/workout_response/muscles.dart';
 import 'package:flutter/material.dart';
-import '../../../ui/exercise/view/exercise_screen.dart';
+import 'package:fit_zone/ui/exercise/view/exercise_screen.dart';
 
 
  class FitnessCardBuilder extends StatelessWidget {
