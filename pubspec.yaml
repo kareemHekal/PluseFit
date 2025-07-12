@@ -61,7 +61,6 @@ dependencies:
   easy_localization: any
   mockito: ^5.4.5
   bloc_test: ^10.0.0
-  skeletonizer: ^1.4.3
   carousel_slider: ^5.0.0
   smooth_page_indicator: ^1.2.1
   logger: ^2.5.0
@@ -137,6 +136,7 @@ flutter:
     - assets/images/smart_coach/
     - assets/translations/
     - assets/images/icon/
+    - assets/images/profile_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

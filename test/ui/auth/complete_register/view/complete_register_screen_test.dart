@@ -28,7 +28,7 @@ void main() {
   });
 
   group(
-      "CompleteRegisterScreen UI Test for widgets whose visibility depends on cubit",
+      "CompleteRegisterScreen UI Test for widgets whose visibility depends on view_model",
       () {
     testWidgets('check if background is present', (tester) async {
       await tester.pumpWidget(buildWidget());

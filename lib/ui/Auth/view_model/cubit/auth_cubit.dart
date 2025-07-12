@@ -9,6 +9,7 @@ import 'package:fit_zone/data/model/reset_password_response.dart';
 import 'package:fit_zone/domain/use_cases/forget_password_usecases/forget_password_usecase.dart';
 import 'package:fit_zone/domain/use_cases/forget_password_usecases/otp_usecase.dart';
 import 'package:fit_zone/domain/use_cases/forget_password_usecases/reset_password_usecase.dart';
+import 'package:fit_zone/domain/use_cases/logout_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -21,9 +22,10 @@ class AuthCubit extends Cubit<AuthState> {
   final ForgetPasswordUseCase forgetPasswordUseCase;
   OtpUsecase otpUsecase;
   final ResetPasswordUsecase resetPasswordUsecase;
+  final LogoutUsecase logoutUsecase;
 
-  AuthCubit(
-      this.forgetPasswordUseCase, this.otpUsecase, this.resetPasswordUsecase)
+  AuthCubit(this.forgetPasswordUseCase, this.otpUsecase,
+      this.resetPasswordUsecase, this.logoutUsecase)
       : super(AuthInitial());
 
   static AuthCubit get(BuildContext context) => BlocProvider.of(context);
@@ -35,6 +37,8 @@ class AuthCubit extends Cubit<AuthState> {
       _verifyResetCode(intent: intent);
     } else if (intent is ResetPassword) {
       _resetPassowrd(intent: intent);
+    }else if (intent is LogoutIntent) {
+      _logout(intent: intent);
     }
   }
 
@@ -70,4 +74,20 @@ class AuthCubit extends Cubit<AuthState> {
       emit(ResetPasswordErrorState(message: result.exception.toString()));
     }
   }
+
+  _logout({required LogoutIntent intent}) async {
+    emit(LogoutLoadingState());
+    final result = await logoutUsecase.invoke();
+    switch (result) {
+      case SuccessApiResult():
+        {
+          emit(LogoutSuccessState());
+        }
+      case ErrorApiResult():
+        {
+          emit(LogoutFailureState(message: result.exception.toString()));
+        }
+    }
+  }
+
 }

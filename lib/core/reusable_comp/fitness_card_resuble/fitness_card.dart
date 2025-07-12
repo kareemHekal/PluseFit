@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/config.dart';
 import 'package:flutter/material.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class FitnessCard extends StatelessWidget {
   final String? title;
@@ -31,13 +30,6 @@ class FitnessCard extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: imgCover ?? "",
                   fit: BoxFit.cover,
-                  progressIndicatorBuilder: (context, url, downloadProgress) =>
-                      Skeletonizer(
-                    enabled: true,
-                    child: Container(
-                      color: const Color.fromARGB(128, 0, 0, 0),
-                    ),
-                  ),
                   errorWidget: (context, url, error) => const Icon(
                     Icons.error_outline_rounded,
                     color: ColorManager.red,

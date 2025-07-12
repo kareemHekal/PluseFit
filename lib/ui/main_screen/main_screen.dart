@@ -5,9 +5,10 @@ import 'dart:ui';
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
+import 'package:fit_zone/core/utils/routes_manager.dart';
+import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/ui/main_screen/home_screen/home_screen.dart';
-import 'package:fit_zone/ui/main_screen/profile_screen.dart';
-import 'package:fit_zone/ui/main_screen/smart_coach_screen.dart';
+import 'package:fit_zone/ui/main_screen/profile_screen/view/profile_screen.dart';
 import 'package:fit_zone/ui/main_screen/workouts_tab/view/workouts_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -35,9 +36,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             });
           },
         ),
-        const SmartCoachScreen(),
         const WorkoutsScreen(),
-        const ProfileScreen(),
+        ProfileScreen(key: UniqueKey()),
       ];
 
   @override
@@ -117,28 +117,30 @@ class CustomBottomNavBar extends StatelessWidget {
         children: [
           _CustomNavBarItem(
             iconPath: AssetsManager.imagesIconHome,
-            label: 'Explore',
+            label: AppStrings.explore,
             selected: currentIndex == 0,
             onTap: () => onTap(0),
           ),
           _CustomNavBarItem(
             iconPath: AssetsManager.imagesIconChatAi,
-            label: 'Smart Coach',
-            selected: currentIndex == 1,
-            onTap: () => Navigator.pushNamed(
-                context, RouteManager.welcomeSmartCoachScreen),
+            label: AppStrings.smartCoach,
+            selected: currentIndex == -1,
+            onTap: () {
+              Navigator.pushNamed(
+                  context, RouteManager.welcomeSmartCoachScreen);
+            },
           ),
           _CustomNavBarItem(
             iconPath: AssetsManager.imagesIconGym,
-            label: 'Workouts',
-            selected: currentIndex == 2,
-            onTap: () => onTap(2),
+            label: AppStrings.workouts,
+            selected: currentIndex == 1,
+            onTap: () => onTap(1),
           ),
           _CustomNavBarItem(
             iconPath: AssetsManager.imagesIconProfile,
-            label: 'Profile',
-            selected: currentIndex == 3,
-            onTap: () => onTap(3),
+            label: AppStrings.profile,
+            selected: currentIndex == 2,
+            onTap: () => onTap(2),
           ),
         ],
       ),

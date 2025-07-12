@@ -1,5 +1,6 @@
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/config.dart';
+import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:flutter/material.dart';
 
 import 'back_icon.dart';
@@ -8,7 +9,7 @@ class HomeBackgroundCover extends StatelessWidget {
   final Widget bodyWidget;
   final BackIcon? backIcon;
   final String? title;
-  final AppBar? appBar; // for used in home screen
+  final AppBar? appBar;
 
   const HomeBackgroundCover(
       {super.key,
@@ -32,7 +33,10 @@ class HomeBackgroundCover extends StatelessWidget {
             AppBar(
                 forceMaterialTransparency: true,
                 leading: backIcon,
-                title: Text(title ?? "")),
+                title: Text(
+                  title ?? "",
+                  style: AppTextStyle.semiBold24,
+                )),
         body: bodyWidget,
       ),
     );
