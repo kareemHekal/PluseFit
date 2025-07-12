@@ -2,7 +2,6 @@ import 'package:fit_zone/config/theme/app_theme.dart';
 import 'package:fit_zone/core/reusable_comp/fitness_card_resuble/fitness_card_builder.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
-import 'package:fit_zone/ui/exercise/view/exercise_screen.dart';
 import 'package:fit_zone/ui/main_screen/workouts_tab/view_model/workouts_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
