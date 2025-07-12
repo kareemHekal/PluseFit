@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
+import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/ui/main_screen/home_screen/home_screen.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen.dart';
 import 'package:fit_zone/ui/main_screen/smart_coach_screen.dart';
@@ -124,7 +125,8 @@ class CustomBottomNavBar extends StatelessWidget {
             iconPath: AssetsManager.imagesIconChatAi,
             label: 'Smart Coach',
             selected: currentIndex == 1,
-            onTap: () => onTap(1),
+            onTap: () => Navigator.pushNamed(
+                context, RouteManager.welcomeSmartCoachScreen),
           ),
           _CustomNavBarItem(
             iconPath: AssetsManager.imagesIconGym,

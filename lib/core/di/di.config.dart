@@ -126,6 +126,13 @@ import 'package:fit_zone/domain/use_cases/smart_coach/add_conversation_use_case.
     as _i358;
 import 'package:fit_zone/domain/use_cases/smart_coach/get_all_conversations_use_case.dart'
     as _i238;
+import 'package:fit_zone/domain/use_cases/smart_coach/send_prompt_usecase.dart'
+    as _i41;
+import 'package:fit_zone/firebase/datasource/send_a_prompt_datasource.dart'
+    as _i425;
+import 'package:fit_zone/firebase/datasource_impl/gemini/send_a_prompt_datasource_impl.dart'
+    as _i135;
+import 'package:fit_zone/firebase/services/gemini_services.dart' as _i65;
 import 'package:fit_zone/ui/Auth/complete_register/view_model/complete_register_cubit.dart'
     as _i827;
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_cubit.dart' as _i887;
@@ -169,6 +176,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i452.ApiManager>(() => _i452.ApiManager());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.loggerProvider);
     gh.lazySingleton<_i974.PrettyPrinter>(() => loggerModule.prettyPrinter);
+    gh.lazySingleton<_i65.GeminiServices>(() => _i65.GeminiServices());
+    gh.factory<_i425.SendAPromptDatasource>(
+        () => _i135.SendAPromptDatasourceImpl(gh<_i65.GeminiServices>()));
     gh.factory<_i576.LevelDatasource>(
         () => _i983.LevelDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i1021.GetMealDetailsDatasource>(
@@ -204,6 +214,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i922.RegisterDatasourceImpl(gh<_i452.ApiManager>()));
     gh.factory<_i178.SmartCoachDataSource>(() => _i605.SmartCoachDataSourceImpl(
         gh<_i979.Box<_i940.ConversationModel>>()));
+    gh.factory<_i41.SendPromptUsecase>(
+        () => _i41.SendPromptUsecase(gh<_i425.SendAPromptDatasource>()));
     gh.factory<_i450.WorkoutsRepo>(
         () => _i874.WorkoutsRepoImpl(gh<_i285.WorkoutsDataSource>()));
     gh.factory<_i964.ForgetPasswordUseCase>(
@@ -282,6 +294,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i404.SmartCoachCubit>(() => _i404.SmartCoachCubit(
           gh<_i238.GetAllConversationsUseCase>(),
           gh<_i358.AddConversationUseCase>(),
+          gh<_i41.SendPromptUsecase>(),
         ));
     return this;
   }
