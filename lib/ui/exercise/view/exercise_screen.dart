@@ -4,7 +4,7 @@ import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:fit_zone/ui/exercise/view/widgets/categpry_widget.dart';
 import 'package:fit_zone/ui/exercise/view/widgets/exercise_widget.dart';
-import 'package:fit_zone/ui/exercise/view/widgets/info_widget.dart';
+ import 'package:fit_zone/ui/exercise/view/widgets/info_widget.dart';
  import 'package:fit_zone/ui/exercise/view_model/cubit/level_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
