@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
         //RouteManager.exerciseScreen: (context) =>  const ExerciseScreen(),
       },
       // initialRoute: RouteManager.mainScreen,
-      initialRoute: RouteManager.welcomeSmartCoachScreen,
+      initialRoute: RouteManager.workOutScreen,
       // home: const ChatScreen(),
      //initialRoute: RouteManager.onBoardingScreen,
     // initialRoute: RouteManager.exerciseScreen,

@@ -2,6 +2,8 @@ import 'package:fit_zone/core/reusable_comp/fitness_card_resuble/fitness_card.da
 import 'package:fit_zone/data/model/workout_response/muscles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../ui/exercise/view/exercise_screen.dart';
+
 class FitnessCardBuilder extends StatelessWidget {
   final List<Muscles> muscles;
   final VoidCallback onTap;
@@ -28,7 +30,10 @@ class FitnessCardBuilder extends StatelessWidget {
           child: FitnessCard(
             imgCover: muscles[index].image,
             title: muscles[index].name,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,  MaterialPageRoute(builder: (context) => ExerciseScreen(muscleImage:muscles[index].image??"" ,muscleName: muscles[index].name??"",muscleId: muscles[index].id??"",),) );
+
+            },
           ),
         ),
       ),

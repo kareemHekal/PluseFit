@@ -20,8 +20,8 @@ class ExerciseByMuscleDatasourceImpl extends ExerciseByMuscleDatasource {
     final apiResult = await executeApi(() async {
       final response = await apiManager.getRequest(
         endpoint: EndPoint.exerciseByMuscleEndpoint(
-          primeMoverMuscleId: "67c8499726895f87ce0aa9c2",
-          difficultyLevelId: "67c797e226895f87ce0aa94b",
+          primeMoverMuscleId: primeMoverMuscleId,
+          difficultyLevelId: difficultyLevelId,
         ),
       );
       return response.data;
