@@ -1,7 +1,6 @@
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/core/reusable_comp/back_icon.dart';
 import 'package:fit_zone/core/reusable_comp/smart_coach_background_cuver.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:fit_zone/data/model/smart_coach/conversation_model.dart';
@@ -54,9 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
             backIcon: BackIcon(
               onPressed: () {
                 cubit.doIntent(AddConversation());
-                Navigator.pushReplacementNamed(
-                    context, RouteManager.welcomeSmartCoachScreen);
-                // or navigate to the welcome screen
+                Navigator.pop(context);
               },
             ),
             appBarTitle: Text(
