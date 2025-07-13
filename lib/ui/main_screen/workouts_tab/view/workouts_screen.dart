@@ -1,5 +1,4 @@
 import 'package:fit_zone/core/di/di.dart';
-import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/ui/main_screen/workouts_tab/view_model/workouts_cubit.dart';
 import 'package:fit_zone/ui/main_screen/workouts_tab/view_model/workouts_intent.dart';
 import 'package:flutter/material.dart';
@@ -32,45 +31,35 @@ class _WorkoutsScreenState extends State<WorkoutsScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(AssetsManager.imagesHomeBackground),
-                fit: BoxFit.cover),
+      child: Column(
+        spacing: 10,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 0,
+            child: TabWorkout(
+              id: widget.selectedfitnessId ?? workoutID,
+              workoutsCubit: _workoutsCubit,
+              onCategorySelected: (selectedfitnessId) {
+                setState(() {
+                  workoutID = selectedfitnessId ?? "";
+                });
+                _workoutsCubit.doIntent(
+                  WorkoutsCardIntent(cardId: workoutID),
+                );
+              },
+            ),
           ),
-          padding: const EdgeInsets.symmetric(vertical: 24),
-          child: Column(
-            spacing: 10,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 0,
-                child: TabWorkout(
-                  id: widget.selectedfitnessId ?? workoutID,
-                  workoutsCubit: _workoutsCubit,
-                  onCategorySelected: (selectedfitnessId) {
-                    setState(() {
-                      workoutID = selectedfitnessId ?? "";
-                    });
-                    _workoutsCubit.doIntent(
-                      WorkoutsCardIntent(cardId: workoutID),
-                    );
-                  },
-                ),
-              ),
-              const SizedBox(height: 5),
-              Expanded(
-                flex: 6,
-                child: BlocProvider.value(
-                  value: _workoutsCubit,
-                  child: const WorkoutCardScreen(),
-                ),
-              ),
-            ],
+          const SizedBox(height: 5),
+          Expanded(
+            flex: 6,
+            child: BlocProvider.value(
+              value: _workoutsCubit,
+              child: const WorkoutCardScreen(),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

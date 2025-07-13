@@ -1,7 +1,4 @@
 // ignore_for_file: deprecated_member_use
-
-import 'dart:ui';
-
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
@@ -54,17 +51,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       children: [
         Positioned.fill(
           child: Image.asset(
-            AssetsManager.imagesAuthBackground,
+            AssetsManager.imagesHomeBackground,
             fit: BoxFit.cover,
           ),
         ),
-        Positioned.fill(
-          child: Container(
-            color: Colors.black.withOpacity(0.6),
-          ),
-        ),
         Scaffold(
-          backgroundColor: Colors.transparent,
           body: IndexedStack(
             index: _currentIndex,
             children: _screens,
@@ -77,16 +68,13 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           bottom: 35,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(32),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-              child: CustomBottomNavBar(
-                currentIndex: _currentIndex,
-                onTap: (index) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
-              ),
+            child: CustomBottomNavBar(
+              currentIndex: _currentIndex,
+              onTap: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
             ),
           ),
         ),
