@@ -81,6 +81,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                       onPressed: () async {
                         await CacheHelper.setData<bool>(
                             Constant.isNewUser, false);
+                        if (!context.mounted) return;
                         Navigator.pushReplacementNamed(
                             context, RouteManager.loginScreen);
                       },
