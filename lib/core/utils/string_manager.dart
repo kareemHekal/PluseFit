@@ -70,17 +70,11 @@ abstract class AppStrings {
   static String get subtitle => "subtitle".tr();
   static String get hi => "hi".tr();
   static String get save => "save".tr();
-
   static String get weight => "weight".tr();
-
   static String get tapToEdit => "tapToEdit".tr();
-
   static String get your => "your".tr();
-
   static String get goal => "goal".tr();
-
-  static String get yourAccountHasBeenUpdatedSuccessfully =>
-      "yourAccountHasBeenUpdatedSuccessfully".tr();
+  static String get yourAccountHasBeenUpdatedSuccessfully => "yourAccountHasBeenUpdatedSuccessfully".tr();
   static String get iamYourSmartCoach => "iamYourSmartCoach".tr();
   static String get howCanAssistYouToday => "howCanAssistYouToday".tr();
   static String get changePassword => "changePassword".tr();
@@ -103,24 +97,16 @@ abstract class AppStrings {
   static String get areYouSureToCloseTheApplication => "areYouSureToCloseTheApplication".tr();
   static String get no => "no".tr();
   static String get yes => "yes".tr();
-
   static String get gainWeight => "gainWeight".tr();
-
   static String get loseWeight => "loseWeight".tr();
-
   static String get getFitter => "getFitter".tr();
-
   static String get gainMoreFlexible => "gainMoreFlexible".tr();
-
   static String get learnTheBasic => "learnTheBasic".tr();
-
   static String get rookie => "rookie".tr();
-
   static String get beginner => "beginner".tr();
-
   static String get intermediate => "intermediate".tr();
-
   static String get advance => "advance".tr();
-
   static String get trueBeast => "trueBeast".tr();
+  static String get welcomeBack => "welcomeBack".tr();
+  static String get donthaveAnAccount => "donthaveAnAccount".tr();
 }

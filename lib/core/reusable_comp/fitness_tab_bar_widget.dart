@@ -1,6 +1,4 @@
-import 'package:fit_zone/core/reusable_comp/back_icon.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:flutter/material.dart';
 
 class FitnessTabBar extends StatelessWidget {
@@ -26,13 +24,8 @@ class FitnessTabBar extends StatelessWidget {
       spacing: 20,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BackIcon(onPressed: () {
-              Navigator.pushReplacementNamed(context, RouteManager.mainScreen);
-            }),
-            const SizedBox(
-              width: 100,
-            ),
             Text(
               title,
               style: Theme.of(context)

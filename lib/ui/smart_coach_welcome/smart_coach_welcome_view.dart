@@ -1,5 +1,4 @@
 import 'package:fit_zone/core/di/di.dart';
-import 'package:fit_zone/core/reusable_comp/back_icon.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/smart_coach_background_cuver.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
@@ -17,18 +16,17 @@ class SmartCoachWelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Config().init(context);
-    return SmartCoachBackgroundCover(
-        backIcon: const BackIcon(),
-        appBarTitle: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('${AppStrings.hi} User', style: AppTextStyle.medium16),
-            Text(AppStrings.iamYourSmartCoach, style: AppTextStyle.medium18),
-          ],
-        ),
-        bodyWidget: BlocProvider(
-          create: (context) => getIt<SmartCoachCubit>(),
-          child: SafeArea(
+    return BlocProvider(
+      create: (context) => getIt<SmartCoachCubit>(),
+      child: SmartCoachBackgroundCover(
+          appBarTitle: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('${AppStrings.hi} User', style: AppTextStyle.medium16),
+              Text(AppStrings.iamYourSmartCoach, style: AppTextStyle.medium18),
+            ],
+          ),
+          bodyWidget: SafeArea(
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -66,7 +64,7 @@ class SmartCoachWelcomeView extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ));
+          )),
+    );
   }
 }

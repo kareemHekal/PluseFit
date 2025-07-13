@@ -5,6 +5,7 @@ import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/validator.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
+import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:fit_zone/core/utils/toast_message.dart';
 import 'package:fit_zone/ui/Auth/login/viewmodel/login_intent.dart';
@@ -56,22 +57,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         horizontal: 24.0, vertical: 32),
                     child: Form(
                       key: _formKey,
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            'Hey There',
+                            AppStrings.heyThere,
                             style: AppTextStyle.medium16,
                           ),
                           Text(
-                            'WELCOME BACK',
+                            AppStrings.welcomeBack,
                             style: AppTextStyle.bold18,
                           ),
                           const SizedBox(height: 32),
                           Text(
-                            'Login',
+                            AppStrings.login,
                             style: AppTextStyle.bold20,
                             textAlign: TextAlign.center,
                           ),
@@ -79,9 +79,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextFormField(
                             controller: _emailController,
                             validator: Validator.email,
-                            decoration: const InputDecoration(
-                              labelText: 'Email',
-                              prefixIcon: Icon(Icons.email_outlined),
+                            decoration: InputDecoration(
+                              labelText: AppStrings.email,
+                              prefixIcon: const Icon(Icons.email_outlined),
                             ),
                             keyboardType: TextInputType.emailAddress,
                           ),
@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             validator: Validator.password,
                             obscureText: _obscurePassword,
                             decoration: InputDecoration(
-                              labelText: 'Password',
+                              labelText: AppStrings.password,
                               prefixIcon: const Icon(Icons.lock_outline),
                               suffixIcon: IconButton(
                                 icon: Icon(_obscurePassword
@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     .pushNamed(RouteManager.forgetPassword);
                               },
                               child: Text(
-                                'Forget Password ?',
+                                '${AppStrings.forgetPassword}?',
                                 style: AppTextStyle.medium12.copyWith(
                                   color: ColorManager.primaryColor,
                                   decoration: TextDecoration.underline,
@@ -147,7 +147,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 16),
                               ),
-                              child: Text('Login', style: AppTextStyle.bold16),
+                              child: Text(AppStrings.login,
+                                  style: AppTextStyle.bold16),
                             ),
                           ),
                           const SizedBox(height: 12),
@@ -155,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Dont Have An Account Yet ? ",
+                                AppStrings.donthaveAnAccount,
                                 style: AppTextStyle.medium12,
                               ),
                               GestureDetector(
@@ -164,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       context, RouteManager.registerScreen);
                                 },
                                 child: Text(
-                                  'Register',
+                                  AppStrings.register,
                                   style: AppTextStyle.bold12.copyWith(
                                     color: ColorManager.primaryColor,
                                   ),

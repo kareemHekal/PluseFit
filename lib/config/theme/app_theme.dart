@@ -19,21 +19,66 @@ class AppTheme {
         brightness: Brightness.light,
       ),
       textTheme: const TextTheme(
-        displayLarge: TextStyle(fontSize: 57, fontWeight: FontWeight.normal, color: ColorManager.white),
-        displayMedium: TextStyle(fontSize: 45, fontWeight: FontWeight.normal, color: ColorManager.white),
-        displaySmall: TextStyle(fontSize: 36, fontWeight: FontWeight.normal, color: ColorManager.white),
-        headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.normal, color: ColorManager.white),
-        headlineMedium: TextStyle(fontSize: 28, fontWeight: FontWeight.normal, color: ColorManager.white),
-        headlineSmall: TextStyle(fontSize: 24, fontWeight: FontWeight.normal, color: ColorManager.white),
-        titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.w500, color: ColorManager.white),
-        titleMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: ColorManager.white),
-        titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: ColorManager.white),
-        bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: ColorManager.white),
-        bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: ColorManager.white),
-        bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.normal, color: ColorManager.white),
-        labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: ColorManager.white),
-        labelMedium: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: ColorManager.white),
-        labelSmall: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: ColorManager.white),
+        displayLarge: TextStyle(
+            fontSize: 57,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        displayMedium: TextStyle(
+            fontSize: 45,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        displaySmall: TextStyle(
+            fontSize: 36,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        headlineLarge: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        headlineMedium: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        headlineSmall: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        titleLarge: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w500,
+            color: ColorManager.white),
+        titleMedium: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            color: ColorManager.white),
+        titleSmall: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: ColorManager.white),
+        bodyLarge: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        bodyMedium: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        bodySmall: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.normal,
+            color: ColorManager.white),
+        labelLarge: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: ColorManager.white),
+        labelMedium: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
+            color: ColorManager.white),
+        labelSmall: TextStyle(
+            fontSize: 11,
+            fontWeight: FontWeight.w500,
+            color: ColorManager.white),
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: false,

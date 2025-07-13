@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:fit_zone/core/cache/shared_pref.dart';
+import 'package:fit_zone/core/constant.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
@@ -76,14 +78,18 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                     top: 60,
                     right: 5,
                     child: TextButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        await CacheHelper.setData<bool>(
+                            Constant.isNewUser, false);
+                        if (!context.mounted) return;
                         Navigator.pushReplacementNamed(
                             context, RouteManager.loginScreen);
                       },
                       child: _currentPage == pages.length - 1
-                          ? const SizedBox() : Text(AppStrings.skip,
-                          style: AppTextStyle.regular16
-                              .copyWith(color: Colors.white)),
+                          ? const SizedBox()
+                          : Text(AppStrings.skip,
+                              style: AppTextStyle.regular16
+                                  .copyWith(color: Colors.white)),
                     ),
                   ),
                   Positioned(
@@ -185,9 +191,12 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                       SizedBox(
                                         width: 100,
                                         child: ElevatedButton(
-                                          onPressed: () {
+                                          onPressed: () async {
                                             if (_currentPage ==
                                                 pages.length - 1) {
+                                              await CacheHelper.setData<bool>(
+                                                  Constant.isNewUser, false);
+                                              if (!context.mounted) return;
                                               Navigator.pushNamedAndRemoveUntil(
                                                 context,
                                                 RouteManager.loginScreen,
