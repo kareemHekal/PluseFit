@@ -16,17 +16,17 @@ class SmartCoachWelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Config().init(context);
-    return SmartCoachBackgroundCover(
-        appBarTitle: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('${AppStrings.hi} User', style: AppTextStyle.medium16),
-            Text(AppStrings.iamYourSmartCoach, style: AppTextStyle.medium18),
-          ],
-        ),
-        bodyWidget: BlocProvider(
-          create: (context) => getIt<SmartCoachCubit>(),
-          child: SafeArea(
+    return BlocProvider(
+      create: (context) => getIt<SmartCoachCubit>(),
+      child: SmartCoachBackgroundCover(
+          appBarTitle: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('${AppStrings.hi} User', style: AppTextStyle.medium16),
+              Text(AppStrings.iamYourSmartCoach, style: AppTextStyle.medium18),
+            ],
+          ),
+          bodyWidget: SafeArea(
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -64,7 +64,7 @@ class SmartCoachWelcomeView extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ));
+          )),
+    );
   }
 }
