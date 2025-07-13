@@ -1,5 +1,4 @@
 import 'package:fit_zone/core/di/di.dart';
-import 'package:fit_zone/core/reusable_comp/back_icon.dart';
 import 'package:fit_zone/core/reusable_comp/blurred_container.dart';
 import 'package:fit_zone/core/reusable_comp/smart_coach_background_cuver.dart';
 import 'package:fit_zone/core/utils/assets_manager.dart';
