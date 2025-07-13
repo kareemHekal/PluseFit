@@ -12,13 +12,12 @@ class ConversationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushAndRemoveUntil(
+        Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) =>
                 ChatScreen(conversationModel: conversationModel),
           ),
-          (route) => false,
         );
       },
       child: Row(
