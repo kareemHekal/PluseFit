@@ -5,10 +5,11 @@ import 'dart:ui';
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
 import 'package:fit_zone/core/utils/routes_manager.dart';
- import 'package:fit_zone/core/utils/string_manager.dart';
+import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/ui/main_screen/home_screen/home_screen.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen/view/profile_screen.dart';
 import 'package:fit_zone/ui/main_screen/workouts_tab/view/workouts_screen.dart';
+import 'package:fit_zone/ui/smart_coach_welcome/smart_coach_welcome_view.dart';
 import 'package:flutter/material.dart';
 
 class MainNavigationScreen extends StatefulWidget {
@@ -35,6 +36,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             });
           },
         ),
+        const SmartCoachWelcomeView(),
         const WorkoutsScreen(),
         ProfileScreen(key: UniqueKey()),
       ];
@@ -121,25 +123,21 @@ class CustomBottomNavBar extends StatelessWidget {
             onTap: () => onTap(0),
           ),
           _CustomNavBarItem(
-            iconPath: AssetsManager.imagesIconChatAi,
-            label: AppStrings.smartCoach,
-            selected: currentIndex == -1,
-            onTap: () {
-              Navigator.pushNamed(
-                  context, RouteManager.welcomeSmartCoachScreen);
-            },
-          ),
+              iconPath: AssetsManager.imagesIconChatAi,
+              label: AppStrings.smartCoach,
+              selected: currentIndex == 1,
+              onTap: () => onTap(1)),
           _CustomNavBarItem(
             iconPath: AssetsManager.imagesIconGym,
             label: AppStrings.workouts,
-            selected: currentIndex == 1,
-            onTap: () => onTap(1),
+            selected: currentIndex == 2,
+            onTap: () => onTap(2),
           ),
           _CustomNavBarItem(
             iconPath: AssetsManager.imagesIconProfile,
             label: AppStrings.profile,
-            selected: currentIndex == 2,
-            onTap: () => onTap(2),
+            selected: currentIndex == 3,
+            onTap: () => onTap(3),
           ),
         ],
       ),
