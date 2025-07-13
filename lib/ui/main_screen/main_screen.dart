@@ -4,7 +4,6 @@ import 'dart:ui';
 
 import 'package:fit_zone/core/utils/assets_manager.dart';
 import 'package:fit_zone/core/utils/colors_manager.dart';
-import 'package:fit_zone/core/utils/routes_manager.dart';
 import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/ui/main_screen/home_screen/home_screen.dart';
 import 'package:fit_zone/ui/main_screen/profile_screen/view/profile_screen.dart';
