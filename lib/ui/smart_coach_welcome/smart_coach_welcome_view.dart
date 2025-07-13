@@ -18,7 +18,6 @@ class SmartCoachWelcomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     Config().init(context);
     return SmartCoachBackgroundCover(
-        backIcon: const BackIcon(),
         appBarTitle: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
