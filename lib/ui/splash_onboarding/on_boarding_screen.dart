@@ -195,8 +195,8 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                                                 pages.length - 1) {
                                               await CacheHelper.setData<bool>(
                                                   Constant.isNewUser, false);
+                                              if (!context.mounted) return;
                                               Navigator.pushNamedAndRemoveUntil(
-                                                // ignore: use_build_context_synchronously
                                                 context,
                                                 RouteManager.loginScreen,
                                                 (route) => false,
