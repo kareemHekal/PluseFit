@@ -62,8 +62,8 @@ class MyApp extends StatelessWidget {
               child: const ChangePasswordScreen(),
             ),
       },
-      initialRoute: RouteManager.mainScreen,
-      // initialRoute: RouteManager.onBoardingScreen,
+      // initialRoute: RouteManager.mainScreen,
+      initialRoute: RouteManager.onBoardingScreen,
     );
   }
 }

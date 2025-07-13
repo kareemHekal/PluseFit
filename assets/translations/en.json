@@ -105,5 +105,7 @@
   "beginner": "Beginner",
   "intermediate": "Intermediate",
   "advance": "Advance",
-  "trueBeast": "True Beast"
+  "trueBeast": "True Beast",
+  "welcomeBack": "WELCOME BACK",
+  "donthaveAnAccount": "Dont Have An Account Yet ? "
 }
