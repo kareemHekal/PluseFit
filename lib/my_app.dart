@@ -1,4 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:fit_zone/core/cache/shared_pref.dart';
+import 'package:fit_zone/core/constant.dart';
 import 'package:fit_zone/core/di/di.dart';
 import 'package:fit_zone/ui/Auth/forget_password/view/forget_password/view/forget_screen.dart';
 import 'package:fit_zone/ui/Auth/login/view/login_screen.dart';
@@ -63,7 +65,19 @@ class MyApp extends StatelessWidget {
             ),
       },
       // initialRoute: RouteManager.mainScreen,
-      initialRoute: RouteManager.onBoardingScreen,
+      initialRoute: initRoute(),
     );
+  }
+
+  String? initRoute() {
+    final isRememberMe = CacheHelper.getData<bool>(Constant.isRememberMe);
+    final isNewUser = CacheHelper.getData<bool>(Constant.isNewUser);
+    if (isRememberMe == true && isNewUser == false) {
+      return RouteManager.mainScreen;
+    } else if (isRememberMe == false || isRememberMe == null) {
+      return RouteManager.loginScreen;
+    } else {
+      return RouteManager.onBoardingScreen;
+    }
   }
 }

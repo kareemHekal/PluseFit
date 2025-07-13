@@ -37,7 +37,7 @@ class AuthCubit extends Cubit<AuthState> {
       _verifyResetCode(intent: intent);
     } else if (intent is ResetPassword) {
       _resetPassowrd(intent: intent);
-    }else if (intent is LogoutIntent) {
+    } else if (intent is LogoutIntent) {
       _logout(intent: intent);
     }
   }
@@ -81,6 +81,7 @@ class AuthCubit extends Cubit<AuthState> {
     switch (result) {
       case SuccessApiResult():
         {
+          await CacheHelper.setData<bool>(Constant.isRememberMe, false);
           emit(LogoutSuccessState());
         }
       case ErrorApiResult():
@@ -89,5 +90,4 @@ class AuthCubit extends Cubit<AuthState> {
         }
     }
   }
-
 }
