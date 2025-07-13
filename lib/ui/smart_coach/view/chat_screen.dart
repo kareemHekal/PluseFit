@@ -5,6 +5,7 @@ import 'package:fit_zone/core/utils/string_manager.dart';
 import 'package:fit_zone/core/utils/text_style_manager.dart';
 import 'package:fit_zone/data/model/smart_coach/conversation_model.dart';
 import 'package:fit_zone/data/model/smart_coach/message_model.dart';
+import 'package:fit_zone/ui/main_screen/main_screen.dart';
 import 'package:fit_zone/ui/smart_coach/view/widgets/messages_list_view.dart';
 import 'package:fit_zone/ui/smart_coach/view_model/cubit/smart_coach_cubit.dart';
 import 'package:fit_zone/ui/smart_coach/view_model/cubit/smart_coach_intent.dart';
@@ -53,7 +54,15 @@ class _ChatScreenState extends State<ChatScreen> {
             backIcon: BackIcon(
               onPressed: () {
                 cubit.doIntent(AddConversation());
-                Navigator.pop(context);
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MainNavigationScreen(
+                      navigationTabIndex: 1,
+                    ),
+                  ),
+                  (route) => false,
+                );
               },
             ),
             appBarTitle: Text(

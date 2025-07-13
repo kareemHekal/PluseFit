@@ -12,14 +12,22 @@ import 'package:fit_zone/ui/smart_coach_welcome/smart_coach_welcome_view.dart';
 import 'package:flutter/material.dart';
 
 class MainNavigationScreen extends StatefulWidget {
-  const MainNavigationScreen({super.key});
+  final int? navigationTabIndex;
+  const MainNavigationScreen({super.key, this.navigationTabIndex});
 
   @override
   State<MainNavigationScreen> createState() => _MainNavigationScreenState();
 }
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
-  int _currentIndex = 0;
+  late int _currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = widget.navigationTabIndex ?? 0;
+  }
+
   List<Widget> get _screens => [
         HomeScreen(
           onCategoryTap: (category) {
