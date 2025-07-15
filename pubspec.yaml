@@ -33,59 +33,70 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  collection: any
   pinput: any
-  flutter_timer_countdown: any
   cupertino_icons: any
   fluttertoast: any
-  flutter_screenutil: any
   dartz: any
   cached_network_image: any
   flutter_bloc: any
   pretty_dio_logger: ^1.4.0
   provider: any
-  injectable_generator: ^2.7.0
   bloc: any
   get_it: ^8.0.3
   injectable: ^2.5.0
   shimmer:
-  build_runner: ^2.4.15
-  webview_flutter: ^4.11.0
-  flutter_svg: ^2.1.0
-  flutter_otp_text_field: any
   google_fonts: any
   dio: any
   image_picker: any
   shared_preferences: ^2.5.3
-  percent_indicator: any
-  flutter_plugin_android_lifecycle: any
+  percent_indicator: ^4.2.5
+  wheel_slider: ^1.2.2
   easy_localization: any
-  mockito: any
-  bloc_test: any
-  skeletonizer: ^1.4.3
-  carousel_slider: ^5.0.0
-  smooth_page_indicator: ^1.2.1
+  mockito: ^5.4.5
   logger: ^2.5.0
-  badges: ^3.1.2
-  animation_list: ^3.1.0
-  auto_size_text: ^3.0.0
-  mocktail: ^1.0.4
-  timelines_plus: ^1.0.6
   url_launcher: ^6.3.1
-  retrofit: ^4.4.2
-  json_annotation: ^4.9.0
-
-dev_dependencies:
+  hive:
+  hive_flutter:
+  get: ^4.6.6
+  flutter_native_splash: ^2.4.4
+  lottie: ^3.3.1
+  bloc_test: ^10.0.0
   flutter_test:
     sdk: flutter
-  retrofit_generator: ^9.2.0
-  json_serializable: ^6.9.5
+  firebase_core: ^3.14.0
+  firebase_ai: ^2.1.0
+  firebase_app_check: ^0.3.2+8
+  mocktail: ^1.0.4
+
+dev_dependencies:
+  hive_generator: ^2.0.0
+  build_runner: ^2.4.6
+  flutter_launcher_icons: ^0.14.4
+  flutter_lints: ^5.0.0
+  injectable_generator:
+  youtube_player_flutter: ^9.0.0
+
+flutter_native_splash:
+  color: "#000000"
+  image: "assets/images/splash_onboarding/splash_background_icon.png"
+  android: true
+  ios: true
+  web: false
+  android_12:
+    image: "assets/images/splash_onboarding/splash_background_icon.png"
+    icon_background_color: "#000000"
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon/app_icon.png"
+  adaptive_icon_background: "#1A1A1A"
+  adaptive_icon_foreground: "assets/images/icon/app_icon_foreground.png"
+
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -99,8 +110,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images
-    - assets/translations
+    - assets/images/
+    - assets/lottie/
+    - assets/images/icon/
+    - assets/images/splash_onboarding/
+    - assets/images/smart_coach/
+    - assets/translations/
+    - assets/images/icon/
+    - assets/images/profile_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -127,3 +144,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_assets:
+  assets_path: assets/
+  output_path: lib/core/utils/
+  filename: assets_manager.dart
+  field_prefix:
+  classname: AssetsManager

@@ -1,0 +1,22 @@
+name: Validate Branch Name
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+    branches:
+      - development
+
+jobs:
+  validate-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          echo "Branch name is ${{ github.head_ref }}"
+          if [[ ! "${{ github.head_ref }}" =~ ^(feature|bugfix|hotfix|release)/[A-Z]+-[0-9]+-[a-zA-Z0-9_-]+$ ]]; then
+            echo "❌ Branch name '${{ github.head_ref }}' is invalid."
+            echo "✅ It should match: feature/ECOM-27-Initialize-Project"
+            exit 1
+          else
+            echo "✅ Branch name is valid."
+          fi

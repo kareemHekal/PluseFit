@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ColorManager {
-  static const Color primaryColor = Colors.pinkAccent;
-  static const Color secondaryColor = Colors.pink;
-  static const Color backgroundColor = Colors.white;
-  static const Color borderColor = Colors.black;
-  static const Color textColor = Colors.black;
-  static const Color errorColor = Colors.red;
-  static const Color disabledColor = Colors.grey;
-  static const Color addToCartButtonColor = Color(0xffD21E6A);
+abstract class ColorManager {
+  static const Color primaryColor = Color(0xffFF4100);
+  static const Color onPrimaryColor = Color(0xffFFFFFF);
+  static const Color secondaryColor = Color(0xffFF6A00);
+  static const Color onSecondaryColor = Colors.black;
+  static const Color tertiaryColor = Color(0xffD3D3D3);
+  static const Color errorBorderColor = Colors.redAccent;
+  static const Color navBarBackgroundColor = Color(0xCC242424);
+  static const Color backgroundColor = Colors.transparent;
+  static const Color backgroundColorr = Color(0xff242424);
 
   //==================================== Const Colors ====================================//
   static const white = Color(0xffF9F9F9);
@@ -16,8 +17,6 @@ class ColorManager {
   static const grey = Color(0xff535353);
   static const red = Color(0xffCC1010);
   static const green = Color(0xff0CB359);
-  static const pink = Color(0xffD2166A);
-  static const lightPink = Color(0xf0F9ECF0);
   static const lightGreen = Color(0xFF94EC97);
   static const lightGreen1 = Color(0xFFBDF7BF);
   static const lightGreen2 = Color(0xFFD1FBD3);
@@ -36,18 +35,18 @@ class ColorManager {
   static const white90 = Color(0xff535353);
   static const white100 = Color(0xff323232);
 
-  //==================================== Pink Shades ====================================//
-  static const pink10 = Color(0xfff6d2e1);
-  static const pink20 = Color(0xfff0b4cd);
-  static const pink30 = Color(0xffe98fb5);
-  static const pink40 = Color(0xffe1699c);
-  static const pink50 = Color(0xffda4483);
-  static const pinkBase = Color(0xffd21e6a);
-  static const pink60 = Color(0xffaf1958);
-  static const pink70 = Color(0xff8c1447);
-  static const pink80 = Color(0xff690f35);
-  static const pink90 = Color(0xff460a23);
-  static const pink100 = Color(0xff2a0615);
+// ==================================== orange Shades ====================================//
+
+  static const orange10 = Color(0xffFFECE5);
+  static const orange20 = Color(0xffFFD9CC);
+  static const orange30 = Color(0xffFFC6B2);
+  static const orange40 = Color(0xffFFB399);
+  static const orange50 = Color(0xffFFA080);
+  static const orange60 = Color(0xffFF8D66);
+  static const orange70 = Color(0xffFF7A4D);
+  static const orange80 = Color(0xffFF6733);
+  static const orange90 = Color(0xffFF541A);
+  static const orange = Color(0xffFF4100);
 
   //==================================== Black Shades ====================================//
   static const black10 = Color(0xffcecfd0);
@@ -55,6 +54,7 @@ class ColorManager {
   static const black30 = Color(0xff86888A);
   static const black40 = Color(0xff5D6063);
   static const black50 = Color(0xff34383C);
+  static const dialog = Color(0x80242424);
   static const blackBase = Color(0xff0C1015);
   static const black60 = Color(0xff0A0D12);
   static const black70 = Color(0xff080B0E);
