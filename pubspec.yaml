@@ -52,7 +52,6 @@ dependencies:
   percent_indicator: ^4.2.5
   wheel_slider: ^1.2.2
   easy_localization: any
-  mockito: ^5.4.5
   logger: ^2.5.0
   url_launcher: ^6.3.1
   hive:
@@ -60,7 +59,6 @@ dependencies:
   get: ^4.6.6
   flutter_native_splash: ^2.4.4
   lottie: ^3.3.1
-  bloc_test: ^10.0.0
   flutter_test:
     sdk: flutter
   firebase_core: ^3.14.0
@@ -69,12 +67,21 @@ dependencies:
   mocktail: ^1.0.4
 
 dev_dependencies:
-  hive_generator: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  bloc_test: ^9.1.7
+  mocktail: ^1.0.4
+  hive_ce_generator: ^1.10.0  # بديل hive_generator الحديث
   build_runner: ^2.4.6
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^5.0.0
   injectable_generator:
   youtube_player_flutter: ^9.0.0
+
+
+dependency_overrides:
+  web_socket_channel: ^3.0.1
+
 
 flutter_native_splash:
   color: "#000000"
@@ -150,3 +157,5 @@ flutter_assets:
   filename: assets_manager.dart
   field_prefix:
   classname: AssetsManager
+
+
